@@ -1,0 +1,113 @@
+:root {
+  --primary: #a7af90;
+  --primary-light: #d9e0bb;
+  --primary-dark: #a8b88a;
+  --primary-hover: #a8b88a;
+
+  /* === SECONDARY COLORS === */
+  --secondary: #e9edc9;
+  --secondary-light: #f0f3d4;
+  --secondary-dark: #d4d9b0;
+  --secondary-dark: #c2c89a;
+
+  /* === ACCENT COLORS === */
+  --accent: #d4a373;
+  --accent-light: #ddb48a;
+  --accent-dark: #c4935c;
+
+  /* === SUCCESS/ERROR/WARNING === */
+  --success: #ccd5ae;
+  --success-hover: #a8b88a;
+  --error: #c4935c;
+  --warning: #faedcd;
+  --warning-hover: #f5e4b8;
+
+  /* === TEXT COLORS === */
+  --text-primary: #6b5b3d;
+  --text-secondary: #8b7355;
+  --text-muted: #a8b88a;
+  --text-light: #faedcd;
+  --text-white: #fefae0;
+  --text-snow: #fefae0;
+
+  /* === BACKGROUND COLORS === */
+  --bg-primary: #fefae0;
+  --bg-secondary: #faedcd;
+  --bg-accent: #e9edc9;
+  --bg-dark: #d4d9b0;
+  --bg-main-content: #fffefb;
+
+  /* === NAVIGATION === */
+  --nav-bg: #e9edc9;
+  --nav-text: #6b5b3d;
+  --nav-bg-hover: #d4d9b0;
+  --nav-expand: #ccd5ae;
+
+  /* === FOOTER === */
+  --footer-bg: #6b5b3d;
+  --footer-text: #d4d9b0;
+
+  /* === BORDERS === */
+  --border-light: #e9edc9;
+  --border-medium: #d4d9b0;
+  --border-dark: #a8b88a;
+
+  /* === BUTTON COLORS === */
+  --btn-auth-bg: #6b5b3d;
+  --btn-auth-hover: #8b7355;
+  --btn-run-bg: #ccd5ae;
+  --btn-run-hover: #a8b88a;
+  --btn-test-bg: #d4a373;
+  --btn-test-hover: #c4935c;
+  --btn-reset-bg: #c4935c;
+  --btn-solution-bg: #faedcd;
+  --btn-solution-hover: #f5e4b8;
+  --btn-disabled: #d4d9b0;
+
+  /* === PROGRESS BARS === */
+  --progress-bg: #e9edc9;
+  --progress-fill: #ccd5ae;
+  --progress-star-empty: #e9edc9;
+  --progress-star-filled: #d4a373;
+  --progress-star-gold: #ddb48a;
+  --progress-star-gold-bg: #f5e4b8;
+
+  /* === STATUS COLORS === */
+  --status-completed: #ccd5ae;
+  --status-in-progress: #d4a373;
+  --status-locked: #a8b88a;
+  --status-active: #d4a373;
+  --status-active-bg: #f5e4b8;
+
+  /* === SHADOWS === */
+  --shadow-light: rgba(107, 91, 61, 0.05);
+  --shadow-medium: rgba(107, 91, 61, 0.1);
+  --shadow-dark: rgba(107, 91, 61, 0.2);
+  --shadow-overlay: rgba(107, 91, 61, 0.5);
+
+  /* === EDITOR COLORS === */
+  --editor-bg: #fefae0;
+  --editor-border: #e9edc9;
+  --editor-tab-active: #faedcd;
+  --editor-tab-inactive: #a8b88a;
+  --editor-tab-hover: #e9edc9;
+
+  /* === MODAL/OVERLAY === */
+  --modal-overlay: rgba(107, 91, 61, 0.5);
+  --modal-bg: #fefae0;
+
+  /* === INTRO PAGE THEME === */
+  --intro-bg-gradient-start: #fefae0;
+  --intro-bg-gradient-end: #e9edc9;
+  --intro-header-gradient-start: #ccd5ae;
+  --intro-header-gradient-end: #d4a373;
+  --intro-button-gradient-start: #d4a373;
+  --intro-button-gradient-end: #ccd5ae;
+  --intro-button-shadow: rgba(212, 163, 115, 0.3);
+
+  /* === QUIZ/FORM COLORS === */
+  --quiz-correct: #ccd5ae;
+  --quiz-incorrect: #c4935c;
+  --form-input-border: #d4d9b0;
+  --form-divider: #e9edc9;
+}

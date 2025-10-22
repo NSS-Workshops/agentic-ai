@@ -1,0 +1,30 @@
+@import "@nss-workshops/nss-core/styles.css";
+
+/* @import url("./styles/summer-fields.css"); */
+/* @import url("./styles/moonlit-mist.css"); */
+
+
+
+.mermaid {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+    background: transparent;
+}
+
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+    background: transparent;
+}
+
+/* Ensure Mermaid diagrams are responsive */
+@media (max-width: 768px) {
+    .mermaid {
+        margin: 1rem 0;
+    }
+
+    .mermaid svg {
+        font-size: 12px;
+    }
+}
