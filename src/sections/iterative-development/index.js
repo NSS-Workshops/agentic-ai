@@ -7,10 +7,10 @@ const chapterModules = import.meta.glob('./*/index.js', { eager: true })
 
 // Section configuration. This is the only code you change.
 const config = {
-  id: "ai-fundamentals-cursor",
-  title: "Fundamentals and Cursor",
-  description: "Introduction to LLM concepts, AI-assisted development, and getting started with Cursor IDE",
-  order: 1,
+  id: "iterative-development",
+  title: "Iterative Development",
+  description: "Learn iterative development strategies using multiple AI modes and maintain oversight in AI-assisted development",
+  order: 3,
 }
 
 // Create chapters array

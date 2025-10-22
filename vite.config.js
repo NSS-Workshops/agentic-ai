@@ -25,7 +25,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   // Read config.js to get courseName and doAuth
-  let courseName = env.VITE_COURSE_NAME || 'My Course';
+  let courseName = env.VITE_COURSE_NAME || 'Agentic AI';
   let courseUrl = env.VITE_COURSE_URL_SLUG || courseName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
   let doAuth = env.VITE_REQUIRES_GITHUB_AUTHENTICATION === 'true';
 
