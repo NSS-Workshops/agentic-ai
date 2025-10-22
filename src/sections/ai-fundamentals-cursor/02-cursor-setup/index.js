@@ -13,5 +13,6 @@ export default {
     previousChapterId: "llm-fundamentals",
     nextChapterId: "prompt-engineering",
     requiresAuth: false,
+    exercise: null,
     content
 }

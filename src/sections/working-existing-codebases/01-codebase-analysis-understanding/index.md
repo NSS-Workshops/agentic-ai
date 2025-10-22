@@ -1,5 +1,3 @@
-# Codebase Analysis and Understanding
-
 When you join a new team or inherit an existing project, one of your first challenges is understanding how the codebase works. Think of it like moving into a house that someone else built - you need to figure out where everything is, how the systems work, and what the previous owner's intentions were before you start making changes.
 
 AI tools, particularly Ask mode in RooCode, excel at helping you quickly understand existing codebases. Instead of spending days or weeks reading through files trying to piece together the architecture, you can have intelligent conversations about the code structure and get explanations tailored to your specific questions.

@@ -13,5 +13,6 @@ export const featureAdditionModificationChapter = {
   description: 'Using Architect mode for new feature strategy, maintaining existing code style, identifying breaking changes, creating algorithmic task lists',
   content,
   previousChapterId: 'codebase-analysis-understanding',
-  nextChapterId: 'debugging-refactoring'
+  nextChapterId: 'debugging-refactoring',
+  exercise: null
 };

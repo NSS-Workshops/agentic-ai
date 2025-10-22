@@ -1,5 +1,3 @@
-# RooCode Setup and Security
-
 Welcome to the world of advanced agentic AI development! In this chapter, you'll learn how to set up RooCode, a sophisticated AI development tool that goes far beyond basic AI assistance. Think of RooCode as upgrading from a helpful assistant to having a team of specialized AI experts working on your project.
 
 ## What Makes RooCode Different?

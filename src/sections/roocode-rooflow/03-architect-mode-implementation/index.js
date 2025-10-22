@@ -13,5 +13,6 @@ export default {
     previousChapterId: "roocode-modes-rooflow",
     nextChapterId: null,
     requiresAuth: false,
+    exercise: null,
     content
 }

@@ -14,5 +14,6 @@ export const codebaseAnalysisUnderstandingChapter = {
   content,
   order: 1,
   previousChapterId: null,
-  nextChapterId: 'feature-addition-modification'
+  nextChapterId: 'feature-addition-modification',
+  exercise: null
 };

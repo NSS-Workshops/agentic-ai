@@ -13,5 +13,6 @@ export default {
     previousChapterId: null,
     nextChapterId: "cursor-setup",
     requiresAuth: false,
+    exercise: null,
     content
 }

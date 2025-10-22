@@ -13,5 +13,6 @@ export default {
     previousChapterId: "roocode-setup-security",
     nextChapterId: "architect-mode-implementation",
     requiresAuth: false,
+    exercise: null,
     content
 }

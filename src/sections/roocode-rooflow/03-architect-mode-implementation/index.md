@@ -1,5 +1,3 @@
-# Architect Mode Implementation
-
 Welcome to the strategic heart of RooCode! Architect Mode is your system design specialist - think of it as having a senior architect on your team who focuses on the big picture, makes thoughtful technology decisions, and ensures your project has a solid foundation for growth.
 
 ## What Makes Architect Mode Special?

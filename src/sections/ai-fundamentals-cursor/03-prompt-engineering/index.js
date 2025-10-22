@@ -13,5 +13,6 @@ export default {
     previousChapterId: "cursor-setup",
     nextChapterId: "agentic-memories",
     requiresAuth: false,
+    exercise: null,
     content
 }

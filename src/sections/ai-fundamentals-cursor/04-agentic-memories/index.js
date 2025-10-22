@@ -13,5 +13,6 @@ export default {
     previousChapterId: "prompt-engineering",
     nextChapterId: null,
     requiresAuth: false,
+    exercise: null,
     content
 }

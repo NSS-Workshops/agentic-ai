@@ -13,5 +13,6 @@ export default {
     previousChapterId: null,
     nextChapterId: "cross-task-context-memory-bank",
     requiresAuth: false,
+    exercise: null,
     content
 }

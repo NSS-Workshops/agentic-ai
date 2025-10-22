@@ -13,5 +13,6 @@ export const debuggingRefactoringChapter = {
   description: 'Using AI tools to identify and fix bugs, improving code quality incrementally, writing tests for existing untested code, using Orchestrator mode for implementation',
   content,
   previousChapterId: 'feature-addition-modification',
-  nextChapterId: null
+  nextChapterId: null,
+  exercise: null
 };

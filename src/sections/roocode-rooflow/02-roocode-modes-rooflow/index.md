@@ -1,5 +1,3 @@
-# RooCode Modes and RooFlow Introduction
-
 Now that you have RooCode set up securely, it's time to explore what makes it truly powerful: its specialized AI modes and the RooFlow orchestration system. Think of this as upgrading from having one general assistant to having a specialized team of experts, each with their own expertise and personality.
 
 ## Understanding RooCode Modes

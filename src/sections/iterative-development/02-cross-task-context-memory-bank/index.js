@@ -13,5 +13,6 @@ export default {
     previousChapterId: "iterative-development-ask-mode",
     nextChapterId: null,
     requiresAuth: false,
+    exercise: null,
     content
 }
