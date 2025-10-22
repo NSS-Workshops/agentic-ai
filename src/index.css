@@ -1,9 +1,11 @@
 @import "@nss-workshops/nss-core/styles.css";
 
-/* @import url("./styles/summer-fields.css"); */
-/* @import url("./styles/moonlit-mist.css"); */
-
-
+section pre[class^="language-"] {
+    background-color: #ffffff;
+    border: 1px dotted var(--border-medium);
+    font-family: 'Fira Code', monospace;
+    font-size: 1rem;
+}
 
 .mermaid {
     display: flex;
