@@ -6,9 +6,7 @@ In the previous section, you learned how **Architect** mode helps you plan and s
 
 Iterative development is like building a house room by room instead of trying to construct the entire structure at once. You complete one small, manageable piece, review it, make sure it works correctly, and then move on to the next piece.
 
-Think of it this way:
-- **Traditional approach**: "Build me a complete e-commerce website with user authentication, product catalog, shopping cart, and payment processing"
-- **Iterative approach**: "Let's start by creating a simple product display page, then add the ability to view product details, then implement a basic shopping cart"
+Think of it this way: The traditional approach asks for everything at once—"Build me a complete e-commerce website with user authentication, product catalog, shopping cart, and payment processing." The iterative approach breaks this down into manageable pieces—"Let's start by creating a simple product display page, then add the ability to view product details, then implement a basic shopping cart."
 
 ## Why Iterative Development Matters
 
@@ -24,11 +22,7 @@ Iterative development keeps you in the driver's seat. You review and approve eac
 
 ### Reduces Cognitive Overload
 
-Large AI-generated outputs can be overwhelming. By breaking work into smaller pieces, you can:
-- Understand each component thoroughly
-- Spot issues early when they're easier to fix
-- Learn from each iteration
-- Build confidence in the codebase
+Large AI-generated outputs can be overwhelming. By breaking work into smaller pieces, you can understand each component thoroughly, spot issues early when they're easier to fix, learn from each iteration, and build confidence in the codebase.
 
 ### Enables Course Correction
 
@@ -38,17 +32,9 @@ If the AI takes your project in an unexpected direction, you can catch it early 
 
 ### The Two-Phase Approach
 
-**Phase 1: Strategy with Architect Mode**
-- Define the overall project vision
-- Break down the project into logical phases
-- Identify dependencies between components
-- Create a roadmap for implementation
+**Phase 1: Strategy with Architect Mode** focuses on defining the overall project vision, breaking down the project into logical phases, identifying dependencies between components, and creating a roadmap for implementation.
 
-**Phase 2: Implementation with Ask Mode**
-- Request one specific step at a time
-- Review and test each implementation
-- Ask clarifying questions about the approach
-- Request modifications or improvements
+**Phase 2: Implementation with Ask Mode** involves requesting one specific step at a time, reviewing and testing each implementation, asking clarifying questions about the approach, and requesting modifications or improvements as needed.
 
 ### The Iterative Cycle
 
@@ -74,14 +60,7 @@ Let's walk through how you might use this approach to build a simple task manage
 I want to build a simple task management web application using React. The app should allow users to add tasks, mark them as complete, and delete tasks. I want to build this iteratively, one feature at a time. Can you help me break this down into manageable steps?
 ```
 
-**Architect mode might respond with:**
-1. Set up basic React project structure
-2. Create a simple task display component
-3. Add functionality to display a list of hardcoded tasks
-4. Implement add new task functionality
-5. Add task completion toggle
-6. Implement task deletion
-7. Add basic styling and polish
+**Architect mode might respond with a structured plan:** First, set up the basic React project structure to establish your foundation. Next, create a simple task display component to handle individual task presentation. Then add functionality to display a list of hardcoded tasks, followed by implementing the ability to add new tasks. After that, add a task completion toggle feature, implement task deletion capabilities, and finally add basic styling and polish to complete the application.
 
 ### Step 2: Implementation with Ask Mode
 
@@ -101,11 +80,7 @@ Great! The project structure looks good. Now let's move to step 2: Create a simp
 
 ### The Key Difference
 
-Notice how each **Ask** mode prompt requests **one specific step** rather than asking for everything at once. This approach:
-- Gives you control over the pace
-- Allows you to understand each piece
-- Lets you provide feedback and direction
-- Keeps the AI focused on a single, clear objective
+Notice how each **Ask** mode prompt requests **one specific step** rather than asking for everything at once. This approach gives you control over the pace, allows you to understand each piece thoroughly, lets you provide feedback and direction throughout the process, and keeps the AI focused on a single, clear objective.
 
 ## Best Practices for Iterative Development
 
@@ -118,33 +93,19 @@ Begin with the simplest possible version of each feature. You can always add com
 
 ### 2. Test Each Step
 
-Before moving to the next iteration:
-- Run the code and verify it works
-- Check that it matches your expectations
-- Test edge cases if applicable
-- Make sure you understand the implementation
+Before moving to the next iteration, take time to run the code and verify it works as expected. Check that the implementation matches your expectations, test edge cases if applicable, and make sure you understand how the code functions and why it was implemented that way.
 
 ### 3. Ask Clarifying Questions
 
-Don't hesitate to ask **Ask** mode to explain its approach:
-- "Why did you choose this particular method?"
-- "What are the pros and cons of this approach?"
-- "How would this scale if we had hundreds of tasks?"
+Don't hesitate to ask **Ask** mode to explain its approach. Questions like "Why did you choose this particular method?", "What are the pros and cons of this approach?", and "How would this scale if we had hundreds of tasks?" help you understand the reasoning behind implementation decisions and learn best practices.
 
 ### 4. Request Modifications
 
-If something doesn't feel right, ask for changes:
-- "Can you refactor this to use a more functional approach?"
-- "I'd prefer to use CSS modules instead of inline styles"
-- "This component feels too complex—can we break it down further?"
+If something doesn't feel right, don't hesitate to ask for changes. You might request "Can you refactor this to use a more functional approach?", express preferences like "I'd prefer to use CSS modules instead of inline styles", or ask for simplification with "This component feels too complex—can we break it down further?"
 
 ### 5. Document Your Progress
 
-Keep notes about:
-- What you've completed
-- What you learned from each step
-- Decisions you made and why
-- What you want to tackle next
+Keep notes about what you've completed, what you learned from each step, decisions you made and why you made them, and what you want to tackle next. This documentation helps you maintain momentum across development sessions and provides valuable context for future decisions.
 
 ## Common Pitfalls to Avoid
 
@@ -155,11 +116,7 @@ Keep notes about:
 
 ### Skipping the Review Step
 
-Don't immediately ask for the next feature without understanding the current one. Take time to:
-- Read through the code
-- Run it in your browser
-- Experiment with modifications
-- Ask questions if anything is unclear
+Don't immediately ask for the next feature without understanding the current one. Take time to read through the code carefully, run it in your browser to see how it behaves, experiment with modifications to understand how different parts work together, and ask questions if anything is unclear.
 
 ### Over-Planning
 
@@ -171,15 +128,11 @@ Now it's time to practice this approach. You'll be building a personal portfolio
 
 ### Your Task
 
-1. **Start with Architect Mode**: Ask Architect mode to help you plan a personal portfolio site that includes:
-   - A homepage with your introduction
-   - An about page with your background
-   - A projects page showcasing your work
-   - A contact page with your information
+**Start with Architect Mode** by asking it to help you plan a personal portfolio site that includes a homepage with your introduction, an about page with your background, a projects page showcasing your work, and a contact page with your information.
 
-2. **Break It Down**: Work with Architect mode to break this into 6-8 manageable steps
+**Break It Down** by working with Architect mode to divide this project into 6-8 manageable steps that build upon each other logically.
 
-3. **Begin Implementation**: Use Ask mode to implement just the first step
+**Begin Implementation** by using Ask mode to implement just the first step, focusing on understanding and testing that single piece before moving forward.
 
 ### Getting Started
 
@@ -193,11 +146,8 @@ Remember: The goal isn't to complete the entire portfolio in this exercise. Focu
 
 ## Key Takeaways
 
-- **Iterative development keeps you in control** of the development process
-- **Architect mode helps you plan**, while **Ask mode helps you implement**
-- **Request one step at a time** rather than large, complex features
-- **Review and understand each step** before moving to the next
-- **Don't be afraid to ask questions** or request modifications
-- **Test frequently** to catch issues early
+Iterative development fundamentally keeps you in control of the development process, ensuring you understand and approve each step before moving forward. **Architect mode helps you plan** by breaking down complex projects into manageable phases, while **Ask mode helps you implement** by focusing on one specific step at a time rather than attempting large, complex features all at once.
+
+The success of this approach depends on taking time to review and understand each step before moving to the next, never hesitating to ask questions or request modifications when something doesn't feel right, and testing frequently to catch issues early when they're easier to fix. This methodical approach builds both your understanding of the codebase and your confidence as a developer.
 
 In the next chapter, you'll learn how to maintain context across multiple development sessions using RooFlow's Memory Bank feature, ensuring your iterative development process can span multiple work sessions without losing important context.

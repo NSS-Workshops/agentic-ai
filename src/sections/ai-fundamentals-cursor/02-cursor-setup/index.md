@@ -6,10 +6,7 @@ Unlike traditional code editors where AI is an add-on, Cursor was designed from 
 
 ### Why Cursor for This Workshop?
 
-- **Free tier with GPT-4.1** - No API keys or subscriptions needed to get started
-- **Familiar interface** - Based on VS Code, so minimal learning curve
-- **Multiple AI interaction modes** - Chat, inline suggestions, and code completion
-- **Professional-grade features** - Everything you need for real development work
+Cursor is an ideal choice for people new to learning AI-assisted development because it removes the typical barriers that prevents many from getting started. The platform offers a generous free tier with GPT-4.1 access, meaning you can begin experimenting with advanced AI features immediately without needing API keys, subscriptions, or complex setup procedures. Since Cursor is built on the same foundation as VS Code, you'll find yourself in a familiar environment that minimizes the learning curve while maximizing your ability to focus on AI concepts rather than wrestling with a new interface. The editor provides multiple AI interaction modes—including chat, inline suggestions, and intelligent code completion—all integrated seamlessly into a professional-grade development environment that mirrors what you'll use in real-world projects.
 
 ## Installation and Setup
 
@@ -19,20 +16,56 @@ Unlike traditional code editors where AI is an add-on, Cursor was designed from 
 2. Click **"Download for [Your OS]"**
 3. Install like any other application
 
-### Step 2: Initial Setup
+### Step 2: Clone First Workshop Project
+
+In your terminal, make a new directory in your home directory for this workshop.
+
+```sh
+mkdir -p ~/agentic-ai-workshop
+```
+
+Then navigate to that directory
+
+```sh
+cd ~/agentic-ai-workshop
+```
+
+Clone the **Coins-R-Us** project and `cd` to that directory
+
+```sh
+git clone git@github.com:NSS-Workshops/coins-r-us.git
+cd coins-r-us
+```
+
+Then open the project in Cursor
+
+```sh
+cursor .
+```
+
+### Step 3: Initial Setup
 
 When you first open Cursor:
 
 1. **Sign up for an account** - This enables the free AI features
 2. **Choose your theme** - Light, dark, or system preference
-3. **Import VS Code settings** (optional) - If you're already a VS Code user
 
-### Step 3: Verify AI Access
+### Step 4: Activate Free Models
+
+1. From the app menu at the top, choose **Cursor** -> **Settings** -> **Cursor Settings**
+2. Click on **Models**
+3. Search "gemini" and enable **gemini-2.5-flash**
+4. Search "super" and enable **code-supernova-1-million**
+5. Search "gpt" and enable **gpt-4.1**
+
+You will start with using the **gpt-4.1** LLM. The other two require you to generate an API on their respective platforms, which you will do in a future session. As always, the curious are encouraged to use Google to figure this out on their own if they want to enable them now.
+
+### Step 5: Verify AI Access
 
 1. Open any code file (or create a new one)
 2. Press `Cmd+K` (Mac) or `Ctrl+K` (Windows/Linux)
 3. You should see the AI chat interface appear
-4. Type "Hello" and press Enter - you should get a response
+4. Type "What is this project about?" and press Enter - you should get a response
 
 If this works, you're ready to go!
 
@@ -40,12 +73,7 @@ If this works, you're ready to go!
 
 ### 1. Chat Interface (`Cmd+L` / `Ctrl+L`)
 
-The **Chat** feature is like having a coding conversation with an AI assistant:
-
-- **Ask questions** about your code
-- **Request explanations** of complex functions
-- **Get debugging help** when things go wrong
-- **Brainstorm solutions** to coding problems
+The **Chat** feature transforms your coding experience by providing an intelligent conversation partner that understands your development context. You can engage with this AI assistant to ask detailed questions about your code's functionality, request clear explanations of complex functions that might be difficult to understand, seek debugging assistance when errors arise, and collaboratively brainstorm creative solutions to challenging programming problems. This conversational approach makes learning more interactive and helps you develop a deeper understanding of both your code and programming concepts in general.
 
 **Example Chat Prompts:**
 ```
@@ -57,12 +85,7 @@ The **Chat** feature is like having a coding conversation with an AI assistant:
 
 ### 2. Inline AI (`Cmd+K` / `Ctrl+K`)
 
-**Inline AI** lets you generate or modify code directly in your editor:
-
-- **Generate new code** from descriptions
-- **Refactor existing code** with specific instructions
-- **Add comments** and documentation
-- **Fix bugs** with targeted changes
+**Inline AI** revolutionizes how you write and modify code by allowing you to generate or transform code directly within your editor through natural language instructions. This powerful feature enables you to describe what you want in plain English and watch as new code materializes based on your specifications, refactor existing code blocks with targeted improvements, automatically add comprehensive comments and documentation to make your code more maintainable, and apply precise bug fixes without manually hunting through complex logic. The inline approach keeps you in your coding flow while providing AI assistance exactly where and when you need it.
 
 **Example Inline Prompts:**
 ```
@@ -74,86 +97,64 @@ The **Chat** feature is like having a coding conversation with an AI assistant:
 
 ### 3. Tab Completion
 
-As you type, Cursor automatically suggests code completions:
+As you type, Cursor's intelligent tab completion system anticipates your coding intentions and offers contextually relevant suggestions that go far beyond simple autocomplete. The system provides smart suggestions that understand not just the immediate code you're writing, but the broader context of your project, including variable names, function signatures, and established patterns throughout your codebase.
 
-- **Smart suggestions** based on your current context
-- **Multi-line completions** for complex patterns
-- **Context-aware** - understands your project structure
-- **Press Tab** to accept suggestions
+When working with complex programming patterns, Cursor can suggest entire multi-line code blocks that follow best practices and maintain consistency with your existing code style. Simply press Tab to accept these AI-powered suggestions and watch your coding speed increase dramatically while maintaining high code quality.
 
 ### 4. Code Selection Features
 
-Select any code and:
+Cursor's code selection features provide targeted AI assistance for specific portions of your codebase, making it easy to get help with exactly the code you're working on.
 
-- **Right-click → "Ask Cursor"** - Get explanations or suggestions
-- **Use keyboard shortcuts** for quick AI actions
-- **Generate tests** for selected functions
-- **Refactor** selected code blocks
+When you select any block of code, you can right-click and choose **"Ask Cursor"** to receive detailed explanations of what the code does or get suggestions for improvements, use convenient keyboard shortcuts to trigger quick AI actions without interrupting your workflow, automatically generate comprehensive test cases for selected functions to improve your code's reliability, and apply intelligent refactoring suggestions that enhance code structure while preserving functionality.
+
+This selection-based approach ensures that AI assistance remains focused and relevant to your immediate needs.
 
 ## Cost Considerations and Limits
 
 ### Free Tier Limits
 
-Cursor's free tier includes:
-- **Limited monthly usage** - Generous for learning, but not unlimited
-- **GPT-4.1 access** - High-quality AI responses
-- **All core features** - Chat, inline AI, completions
+Cursor's free tier provides a carefully balanced offering that supports serious learning while maintaining sustainable service quality. The platform includes limited monthly usage that proves generous enough for educational purposes and skill development, though it's designed to encourage thoughtful use rather than unlimited experimentation.
+
+You'll have full access to GPT-4.1, ensuring that your AI interactions benefit from the most advanced language model capabilities available, delivering high-quality responses that can genuinely accelerate your learning.
+
+Most importantly, the free tier doesn't restrict access to core features—you'll have complete access to chat functionality, inline AI assistance, and intelligent code completions, giving you the full Cursor experience without financial barriers.
 
 ### Usage Tips to Stay Within Limits
 
-1. **Be specific in prompts** - Avoid back-and-forth conversations
-2. **Use completions wisely** - Don't accept every suggestion
-3. **Focus on learning** - Use AI to understand, not just generate
-4. **Review usage** - Check your remaining quota in settings
+To maximize your free tier benefits and develop good AI-assisted coding habits, focus on crafting specific, detailed prompts that communicate your needs clearly in a single interaction, avoiding lengthy back-and-forth conversations that consume your quota unnecessarily.
+
+Exercise thoughtful judgment with code completions by evaluating each suggestion rather than automatically accepting every AI recommendation, ensuring that accepted code aligns with your project's goals and coding standards. Prioritize using AI as a learning accelerator rather than a code generator—ask for explanations, request alternative approaches, and seek to understand the reasoning behind AI suggestions so you develop genuine programming skills alongside AI proficiency.
 
 ### When You Hit Limits
 
 If you exceed the free tier:
+
 - **Wait for reset** - Limits refresh monthly
-- **Upgrade to Pro** - For unlimited usage
-- **Switch to other tools** - We'll introduce RooCode next week
+- **Upgrade to Pro** - For unlimited usage. This will cost you, so only do this if you're willing to pay for Cursor.
 
 ## Your First AI-Assisted Coding Session
 
 Let's practice with a simple exercise:
 
-### Exercise: Create a Task Manager Function
+### Exercise: Implement a color pallette
 
-1. **Create a new file** called `task-manager.js`
-2. **Use Inline AI** (`Cmd+K` / `Ctrl+K`) with this prompt:
-   ```
-   Create a function called createTaskManager that returns an object with methods to add, remove, and list tasks
-   ```
-3. **Review the generated code** - Does it make sense?
-4. **Use Chat** (`Cmd+L` / `Ctrl+L`) to ask:
-   ```
-   Explain how this task manager works and suggest improvements
-   ```
-5. **Implement suggestions** using inline AI
+1. Go to [coolers.co](https://coolors.co/palettes/trending) and find a color pallette you like.
+2. Open that pallette
+3. Copy the URL of the pallette
+4. Open the `page.module.css` file in Cursor
+5. Open the chat interface
+6. Make sure that the **Agent** mode is selected in the chat interface
+7. Choose **gpt-4.1** as your model
+8. Enter the following prompt
 
-### What to Notice
+```
+Access the color pallette at the following URL: {paste your URL here}
 
-- **Code quality** - Is the generated code readable and well-structured?
-- **Completeness** - Does it handle edge cases?
-- **Your understanding** - Can you explain what each part does?
+Implement that theme in this project
+```
 
-## Best Practices for Cursor
-
-### Do's ✅
-
-- **Provide context** - Include relevant code in your prompts
-- **Be specific** - "Add error handling" vs "Make this better"
-- **Review everything** - Never use code you don't understand
-- **Iterate gradually** - Make small changes, test, repeat
-- **Ask for explanations** - Use AI to learn, not just generate
-
-### Don'ts ❌
-
-- **Don't blindly accept** - Always review generated code
-- **Don't skip testing** - AI code can have subtle bugs
-- **Don't over-rely** - Maintain your coding skills
-- **Don't ignore errors** - If something seems wrong, investigate
-- **Don't share sensitive data** - Be mindful of what you include in prompts
+9. When the agent is done implementing the color pallette, click the **Review changes** text at the end of the response to see what code it implemented.
+10. Then click the **Keep All** button at the bottom of the chat panel.
 
 ## Troubleshooting Common Issues
 
@@ -192,23 +193,8 @@ The key difference: **AI accelerates each step**, but you still need to understa
 
 ## Key Takeaways
 
-1. **Cursor integrates AI seamlessly** into familiar VS Code-like interface
-2. **Multiple interaction modes** - Chat, inline, completions, and selection-based
-3. **Free tier is generous** for learning but has limits
-4. **Always review and understand** generated code
-5. **Use AI to accelerate learning**, not replace understanding
-6. **Context matters** - Better prompts lead to better results
+Cursor represents a significant evolution in development environments by seamlessly integrating AI assistance into a familiar VS Code-like interface, eliminating the friction typically associated with adopting new tools while providing access to cutting-edge AI capabilities. The platform's strength lies in its multiple interaction modes—chat for conversational problem-solving, inline AI for direct code generation and modification, intelligent completions for accelerated typing, and selection-based assistance for targeted help—each designed to support different aspects of your development workflow.
 
-In the next chapter, we'll dive deeper into the art of prompt engineering—how to communicate effectively with AI to get the best results for your coding projects.
+While the free tier offers generous access that supports serious learning and experimentation, understanding its limits helps you develop sustainable usage patterns and appreciate the value of thoughtful AI interaction. The fundamental principle of always reviewing and understanding generated code cannot be overstated, as this practice ensures code quality while reinforcing your learning and maintaining your ability to debug and modify AI-generated solutions.
 
-## Practice Assignment
-
-Before moving on, spend 30 minutes exploring Cursor:
-
-1. **Install Cursor** and complete the setup
-2. **Try each AI feature** - Chat, inline AI, completions
-3. **Create a simple project** - Maybe a calculator or todo list
-4. **Ask questions** about any code you don't understand
-5. **Document your experience** - What worked well? What was confusing?
-
-This hands-on practice will prepare you for the more advanced concepts in the next chapter.
+Most importantly, view AI as a powerful accelerator for learning rather than a replacement for understanding—use it to explore new concepts, understand complex patterns, and gain insights that enhance your programming knowledge. Remember that context drives results: the more specific, detailed, and relevant information you provide in your prompts, the more useful and accurate the AI's responses will be.

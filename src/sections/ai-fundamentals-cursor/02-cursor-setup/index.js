@@ -9,7 +9,7 @@ import content from "./index.md?raw";
 
 export default {
     id: "cursor-setup",
-    title: "Getting Started with Cursor IDE",
+    title: "Getting Started with Cursor",
     previousChapterId: "llm-fundamentals",
     nextChapterId: "prompt-engineering",
     requiresAuth: false,

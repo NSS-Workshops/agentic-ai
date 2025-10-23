@@ -6,11 +6,11 @@ While Code Mode focuses on implementation and Ask Mode provides explanations, Ar
 
 ### Architect Mode's Unique Perspective
 
-**Systems Thinking**: Considers how all parts of your application work together
-**Long-term Vision**: Plans for scalability, maintainability, and future requirements
-**Quality Focus**: Emphasizes best practices, patterns, and professional standards
-**Documentation-First**: Creates clear specifications and architectural decisions
-**Risk Assessment**: Identifies potential problems before they become issues
+Architect Mode brings a comprehensive systems thinking approach that considers how all parts of your application work together as a cohesive whole. Rather than focusing on individual components in isolation, it maintains a long-term vision that plans for scalability, maintainability, and future requirements that may not be obvious today.
+
+This strategic perspective emphasizes quality throughout the development process, ensuring that best practices, proven patterns, and professional standards are woven into every architectural decision. Architect Mode takes a documentation-first approach, creating clear specifications and recording architectural decisions with their rationale, making your project's evolution transparent and maintainable.
+
+Perhaps most importantly, Architect Mode excels at risk assessment, proactively identifying potential problems before they become costly issues. This forward-thinking approach saves significant time and resources by addressing architectural concerns during the planning phase rather than during crisis management.
 
 ## Interactive Strategy Development
 
@@ -220,43 +220,13 @@ src/
 
 ### Architecture Improvements Explained
 
-**1. Separation of Concerns**
-```
-Before: Everything mixed together
-After:
-- Components handle UI only
-- Services handle business logic
-- Store manages application state
-- Utils provide helper functions
-```
+The transformation from a monolithic structure to a well-architected system involves several key improvements that work together to create maintainable, scalable code. The most fundamental change is implementing proper separation of concerns, where the original mixed-together approach is replaced with a clear division of responsibilities. Components now handle UI rendering exclusively, while services manage all business logic, the store maintains application state centrally, and utility functions provide reusable helper functionality.
 
-**2. State Management Strategy**
-```
-Problem: Props drilling and scattered state
-Solution: Redux Toolkit for global state
-- User authentication state
-- Posts and interactions
-- UI state (loading, errors)
-```
+State management represents another critical improvement that addresses the common problem of props drilling and scattered state throughout the application. The solution involves implementing Redux Toolkit for centralized global state management, organizing user authentication state, posts and interactions, and UI state including loading indicators and error conditions in a predictable, debuggable structure.
 
-**3. Error Handling Architecture**
-```
-Problem: No error handling
-Solution: Layered error handling
-- API level: Network and server errors
-- Component level: UI error boundaries
-- User level: Friendly error messages
-```
+Error handling transforms from a complete absence of error management to a comprehensive layered approach that catches and manages errors at multiple levels. This includes API-level handling for network and server errors, component-level error boundaries that prevent crashes from propagating, and user-level friendly error messages that maintain a positive user experience even when things go wrong.
 
-**4. Performance Architecture**
-```
-Problem: No optimization
-Solution: Multiple optimization strategies
-- React.memo for expensive components
-- useMemo for expensive calculations
-- Lazy loading for routes
-- Pagination for large data sets
-```
+Performance optimization evolves from an unoptimized system to a multi-strategy approach that ensures the application remains responsive as it grows. This includes implementing React.memo for expensive components that don't need frequent re-renders, useMemo for computationally expensive calculations, lazy loading for routes to reduce initial bundle size, and pagination for large data sets to maintain fast load times.
 
 ### Implementation Roadmap
 
@@ -472,80 +442,34 @@ A scalable social networking platform for creative professionals
 Architect Mode integrates quality considerations throughout the planning process:
 
 ### Code Quality Standards
-```
-## Quality Standards Framework
 
-### Code Organization
-- Consistent folder structure
-- Clear naming conventions
-- Separation of concerns
-- Modular architecture
+Architect Mode integrates comprehensive quality standards throughout the architectural planning process, ensuring that quality considerations are built into the system design rather than added as an afterthought. The quality framework begins with code organization principles that establish consistent folder structures, clear naming conventions, proper separation of concerns, and modular architecture patterns that make the codebase maintainable and scalable.
 
-### Testing Strategy
-- Unit tests for business logic
-- Integration tests for API endpoints
-- E2E tests for critical user flows
-- Performance tests for scalability
+The testing strategy forms a critical pillar of quality assurance, encompassing multiple layers of verification that work together to ensure system reliability. This includes unit tests for business logic that verify individual components work correctly, integration tests for API endpoints that confirm different parts of the system communicate properly, end-to-end tests for critical user flows that validate the complete user experience, and performance tests for scalability that ensure the system maintains responsiveness under load.
 
-### Performance Standards
-- Page load times < 2 seconds
-- API response times < 500ms
-- Mobile performance optimization
-- Accessibility compliance (WCAG 2.1)
+Performance standards are woven into architectural decisions from the beginning, with specific targets that guide technology choices and implementation approaches. These standards typically include page load times under 2 seconds for optimal user experience, API response times under 500ms for responsive interactions, mobile performance optimization to ensure cross-device compatibility, and accessibility compliance with WCAG 2.1 standards to ensure inclusive design.
 
-### Security Requirements
-- Input validation and sanitization
-- Authentication and authorization
-- Data encryption in transit and at rest
-- Regular security audits
-```
+Security requirements are integrated into every layer of the architecture, creating defense-in-depth protection that safeguards user data and system integrity. This comprehensive approach includes input validation and sanitization to prevent injection attacks, robust authentication and authorization systems to control access, data encryption both in transit and at rest to protect sensitive information, and regular security audits to identify and address emerging vulnerabilities.
 
 ## Practice Exercises
 
 ### Exercise 1: Architecture Planning Session
-**Scenario**: You want to build a task management application for small teams.
 
-**Your Task**: Have a planning session with Architect Mode
-1. Start with: "Help me architect a team task management application"
-2. Answer Architect Mode's discovery questions thoughtfully
-3. Review the proposed architecture
-4. Ask for clarification on any decisions you don't understand
-5. Request a development roadmap
+This exercise introduces you to collaborative architectural planning through a realistic scenario where you want to build a task management application for small teams. Begin your planning session with Architect Mode by stating "Help me architect a team task management application," then engage thoughtfully with the discovery questions that follow. As Architect Mode presents its proposed architecture, take time to review each component and ask for clarification on any decisions you don't understand, ensuring you grasp the reasoning behind each choice. Complete the exercise by requesting a development roadmap that breaks the architecture into implementable phases.
 
-**Learning Goals**:
-- Experience collaborative planning
-- Understand architectural decision-making
-- See how requirements influence technical choices
+This collaborative planning experience teaches you how architectural decision-making works in practice, demonstrating how your specific requirements and constraints directly influence technical choices. You'll gain firsthand experience with the iterative nature of architectural design and learn to ask the right questions that lead to better system designs.
 
 ### Exercise 2: System Redesign
-**Scenario**: You have a poorly organized React app that needs restructuring.
 
-**Your Task**:
-1. Describe a messy React application to Architect Mode
-2. Ask for an architectural assessment
-3. Request a refactoring plan
-4. Understand the reasoning behind each improvement
-5. Get a step-by-step implementation roadmap
+This exercise focuses on the common real-world challenge of improving poorly organized code through architectural redesign. Start by describing a messy React application to Architect Mode, including details about current problems like mixed concerns, poor state management, or lack of structure. Request an architectural assessment that identifies specific issues, then ask for a comprehensive refactoring plan that addresses each problem systematically. As you work through the recommendations, focus on understanding the reasoning behind each improvement and how it contributes to better maintainability.
 
-**Learning Goals**:
-- Learn to identify architectural problems
-- Understand refactoring strategies
-- See how good architecture improves maintainability
+The exercise concludes with obtaining a step-by-step implementation roadmap that makes the refactoring process manageable and reduces the risk of introducing new problems. Through this process, you'll develop skills in identifying architectural problems, understanding proven refactoring strategies, and seeing how thoughtful architecture dramatically improves code maintainability and developer productivity.
 
 ### Exercise 3: Technology Decision Making
-**Scenario**: You need to choose between different technology options for a project.
 
-**Your Task**:
-1. Present a technical decision to Architect Mode (e.g., database choice, state management, hosting platform)
-2. Ask for a structured comparison of options
-3. Understand the decision framework used
-4. Learn about trade-offs and implications
-5. Get implementation recommendations
+This exercise develops your ability to make informed technology decisions using structured analysis rather than intuition or popularity. Present a specific technical decision to Architect Mode, such as choosing between different databases, state management solutions, or hosting platforms for your project context. Request a structured comparison that evaluates each option against your specific requirements, then work to understand the decision framework being applied and how different factors are weighted.
 
-**Learning Goals**:
-- Learn structured decision-making processes
-- Understand technology trade-offs
-- See how business requirements influence technical choices
+Focus on learning about the trade-offs and long-term implications of each choice, recognizing that there are rarely perfect solutions, only solutions that fit your context better than others. The exercise teaches you structured decision-making processes that you can apply to future technology choices, helping you understand how business requirements, team capabilities, and project constraints should influence technical decisions rather than following trends or personal preferences.
 
 ## Integration with Other Modes
 
@@ -582,70 +506,43 @@ Debug Mode: "Let me analyze the specific queries causing the performance bottlen
 
 ### Getting the Most from Architect Mode
 
-**1. Be Specific About Context**
-- ❌ "Help me build an app"
-- ✅ "Help me architect a B2B SaaS application for project management with 50-500 user companies"
+To maximize the value you get from Architect Mode, specificity in your initial requests makes an enormous difference in the quality of recommendations you receive. Rather than asking vague questions like "Help me build an app," provide rich context such as "Help me architect a B2B SaaS application for project management with 50-500 user companies." This level of detail allows Architect Mode to tailor its recommendations to your specific use case and scale requirements.
 
-**2. Share Your Constraints**
-- Budget limitations
-- Team size and experience
-- Timeline requirements
-- Technical preferences or restrictions
+Sharing your constraints upfront enables Architect Mode to provide realistic, actionable recommendations that fit your actual situation. These constraints include budget limitations that might favor certain technology choices, team size and experience levels that influence complexity decisions, timeline requirements that affect architectural scope, and any technical preferences or restrictions from existing systems or organizational standards.
 
-**3. Ask for Rationale**
-- Don't just accept recommendations
-- Ask "Why did you choose X over Y?"
-- Understand the trade-offs involved
+Active engagement with the architectural reasoning process deepens your understanding and improves decision quality. Rather than simply accepting recommendations, ask probing questions like "Why did you choose X over Y?" to understand the trade-offs involved in each decision. This dialogue helps you learn architectural thinking patterns while ensuring the recommendations align with your priorities and constraints.
 
-**4. Request Documentation**
-- Ask for architectural decision records
-- Request implementation roadmaps
-- Get documentation for different audiences
+Documentation requests transform architectural conversations into lasting project assets that serve multiple purposes throughout development. Ask for architectural decision records that capture the reasoning behind major choices, request implementation roadmaps that break complex architectures into manageable phases, and seek documentation tailored for different audiences including developers, stakeholders, and future team members.
 
-**5. Iterate on Designs**
-- Architecture is rarely perfect on the first try
-- Ask for alternatives and refinements
-- Consider different scenarios and edge cases
+Remember that architecture is an iterative process that rarely achieves perfection on the first attempt. Embrace this reality by asking for alternatives and refinements as your understanding deepens, and consider different scenarios and edge cases that might influence your architectural decisions. This iterative approach leads to more robust, thoughtful system designs.
 
 ### Common Architect Mode Patterns
 
-**The Discovery Session**: Architect Mode asks probing questions to understand requirements
-**The Options Analysis**: Comparing different technical approaches with pros/cons
-**The Roadmap Creation**: Breaking down architecture into implementable phases
-**The Risk Assessment**: Identifying potential problems and mitigation strategies
-**The Documentation Generation**: Creating comprehensive architectural documentation
+Architect Mode follows several recognizable interaction patterns that you can leverage for different types of architectural work. The Discovery Session pattern involves Architect Mode asking probing questions to understand your requirements, constraints, and goals before making any technical recommendations. This thorough upfront investigation ensures that architectural decisions align with your actual needs rather than generic best practices.
+
+The Options Analysis pattern emerges when you face technical decisions, with Architect Mode comparing different approaches using structured pros and cons analysis. This systematic evaluation helps you understand not just what to choose, but why certain options work better for your specific context. The Roadmap Creation pattern breaks down complex architectures into implementable phases, making large systems feel manageable and providing clear development milestones.
+
+Risk Assessment represents Architect Mode's proactive approach to identifying potential problems and developing mitigation strategies before they impact your project. Finally, the Documentation Generation pattern produces comprehensive architectural documentation that serves as a reference throughout development and helps onboard new team members effectively.
 
 ## Troubleshooting Architect Mode
 
 ### When Architect Mode Seems Too Abstract
-**Problem**: Responses are too high-level, not actionable
-**Solution**: Ask for more specific implementation details
-- "Can you break this down into specific development tasks?"
-- "What would the actual folder structure look like?"
-- "Can you show me example code for this pattern?"
+
+When Architect Mode's responses feel too high-level and not immediately actionable, the solution lies in requesting more specific implementation details that bridge the gap between architectural concepts and concrete development work. Ask questions like "Can you break this down into specific development tasks?" to transform broad architectural recommendations into actionable steps. Request concrete examples such as "What would the actual folder structure look like?" to visualize how the architecture translates into real project organization, or "Can you show me example code for this pattern?" to see how architectural concepts become working code.
 
 ### When Recommendations Don't Fit Your Context
-**Problem**: Suggestions seem inappropriate for your situation
-**Solution**: Provide more context about your constraints
-- "I should mention that I'm a solo developer with limited time"
-- "My team is new to React, so we need simpler solutions"
-- "We have a strict budget, so we need free/low-cost options"
+
+Sometimes Architect Mode's suggestions may seem inappropriate for your specific situation, which typically indicates that more context about your constraints would help tailor the recommendations. Provide additional details about your circumstances, such as "I should mention that I'm a solo developer with limited time" to get solutions that work for individual developers rather than large teams. Share team experience levels with statements like "My team is new to React, so we need simpler solutions" to receive recommendations that match your team's capabilities, or mention budget constraints with "We have a strict budget, so we need free/low-cost options" to focus on cost-effective architectural choices.
 
 ### When You Need More Technical Depth
-**Problem**: Need deeper technical details
-**Solution**: Switch to Code Mode for implementation or Ask Mode for explanations
-- "Can you switch to Code Mode and show me how to implement this?"
-- "I need Ask Mode to explain this concept in more detail"
+
+When you need deeper technical details than Architect Mode typically provides, the most effective approach is switching to other RooCode modes that specialize in implementation details or detailed explanations. Request "Can you switch to Code Mode and show me how to implement this?" when you need to see actual code implementations of architectural patterns, or ask for "Ask Mode to explain this concept in more detail" when you need deeper understanding of the underlying principles and technologies being recommended.
 
 ## What's Next?
 
 Congratulations! You now understand how to leverage Architect Mode for strategic system design and planning. In the next section, we'll explore **Iterative Development** - how to use multiple RooCode modes together in real development workflows.
 
-You'll learn:
-- How to coordinate multiple modes for complex tasks
-- Iterative development strategies with AI assistance
-- Advanced context management across development sessions
-- Real-world project workflows using RooCode and RooFlow
+You'll learn how to coordinate multiple modes for complex tasks, creating seamless workflows where each mode contributes its specialized expertise to larger development challenges. The section covers iterative development strategies with AI assistance, showing you how to break down complex projects into manageable cycles that leverage AI capabilities effectively. You'll master advanced context management across development sessions, ensuring that your AI assistants maintain continuity and build upon previous work rather than starting fresh each time. Finally, you'll explore real-world project workflows using RooCode and RooFlow, seeing how professional development teams integrate these tools into their daily practices.
 
 The combination of solid architectural planning (what you just learned) with iterative development practices (what's coming next) forms the foundation of professional AI-assisted development.
 

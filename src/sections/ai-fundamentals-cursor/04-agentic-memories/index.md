@@ -1,64 +1,11 @@
 ## What is Agentic AI?
 
-So far, we've been using AI as a **reactive tool**—you ask a question, it gives an answer. But what if AI could be more **proactive** and **autonomous**? That's where **agentic AI** comes in.
+So far, we've been using AI as a **reactive** too*—you ask a question, it gives an answer. But what if AI could be more proactive and autonomous? That's where agentic AI comes in.
 
-**Agentic AI** refers to AI systems that can:
-- **Take initiative** - Suggest next steps without being asked
-- **Maintain context** - Remember previous conversations and decisions
-- **Work independently** - Complete multi-step tasks with minimal supervision
-- **Learn from interactions** - Improve responses based on your preferences and patterns
+Agentic AI refers to AI systems that can take initiative by suggesting next steps without being asked, maintain context by remembering previous conversations and decisions, work independently to complete multi-step tasks with minimal supervision, and learn from interactions to improve responses based on your preferences and patterns.
 
 Think of it as the difference between a **calculator** (reactive) and a **personal assistant** (agentic).
 
-```sh
-echo 'hello world'
-```
-
-```py
-# LearningAPI/metrics.py
-from prometheus_client import Counter, Histogram, Gauge
-
-# Example Counter: Tracks the total number of API requests
-api_requests_total = Counter(
-    'api_requests_total',
-    'Total number of API requests',
-    ['method', 'endpoint'] # Labels for method (GET, POST, etc.) and endpoint
-)
-
-# Example Histogram: Tracks the duration of API requests
-api_request_duration_seconds = Histogram(
-    'api_request_duration_seconds',
-    'Histogram of API request durations',
-    ['method', 'endpoint']
-)
-```
-
-```yaml
-paths:
-  /api/users/{id}:
-    get:
-      summary: Retrieve user by ID
-      description: Returns detailed user information for the specified user ID
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-            format: int64
-          description: Unique identifier for the user
-      responses:
-        '200':
-          description: User information retrieved successfully
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
-        '404':
-          description: User not found
-        '500':
-          description: Internal server error
-```
 
 ### Traditional AI vs. Agentic AI
 
@@ -88,11 +35,7 @@ AI: [Creates comprehensive plan, remembers it, and guides you through implementa
 
 Remember from Chapter 1 that LLMs have **context window limits**—they can only "remember" a certain amount of conversation. For most models, this is equivalent to about 20-50 pages of text.
 
-**What happens when you exceed this limit:**
-- **Early conversation is forgotten** - The AI loses track of your project goals
-- **Repeated explanations** - You have to re-explain your setup constantly
-- **Inconsistent suggestions** - AI might contradict earlier recommendations
-- **Lost architectural decisions** - Important project decisions get forgotten
+**What happens when you exceed this limit:** Early conversation is forgotten as the AI loses track of your project goals, leading to repeated explanations where you have to re-explain your setup constantly. This results in inconsistent suggestions where the AI might contradict earlier recommendations, and lost architectural decisions where important project choices get forgotten entirely.
 
 ### Real-World Example
 
@@ -111,30 +54,13 @@ Without memory, each week feels like starting over with a new developer who know
 
 ### How Memories Work
 
-Think of AI memories like a **digital notebook** that the AI maintains about your project:
-
-- **Project Context** - Goals, architecture, technology choices
-- **Code Patterns** - Your preferred coding styles and conventions
-- **Decisions Made** - Important choices and their reasoning
-- **Progress Tracking** - What's been completed and what's next
-- **Personal Preferences** - How you like to work and communicate
+Think of AI memories like a **digital notebook** that the AI maintains about your project. This notebook contains your project context including goals, architecture, and technology choices, along with your preferred code patterns, coding styles, and conventions. It also tracks decisions made with their reasoning, monitors progress by recording what's been completed and what's next, and learns your personal preferences about how you like to work and communicate.
 
 ### Types of Memory Systems
 
-**1. Session Memory (Short-term)**
-- Remembers the current conversation
-- Lost when you close the chat
-- Like human short-term memory
-
-**2. Project Memory (Medium-term)**
-- Remembers information about specific projects
-- Persists across multiple sessions
-- Like taking notes in a project notebook
-
-**3. Personal Memory (Long-term)**
-- Learns your general preferences and patterns
-- Applies across all projects
-- Like a colleague who knows how you work
+1. **Session Memory (Short-term)** remembers the current conversation but is lost when you close the chat, functioning much like human short-term memory.
+2. **Project Memory (Medium-term)** remembers information about specific projects and persists across multiple sessions, similar to taking notes in a project notebook that you can reference later.
+3. **Personal Memory (Long-term)** learns your general preferences and patterns, applying this knowledge across all projects like a colleague who has worked with you long enough to understand how you prefer to work.
 
 ## Cursor's Memories Feature
 
@@ -142,163 +68,94 @@ Cursor includes a **Memories** feature that provides project-level context persi
 
 ### How to Use Cursor Memories
 
-**1. Enable Memories**
-- Open Cursor Settings
-- Navigate to "Features" → "Memories"
-- Toggle "Enable Memories" to ON
+Enable **Memories** by:
 
-**2. Create Project Memories**
-- In any chat, mention key project information
-- Cursor automatically identifies important context
-- You can also manually add memories
+1. Open Cursor Settings
+2. Click on **Rules & Memories**
+3. Ensure that the **Memories** toggle button is set to ON.
 
-**3. Review and Manage Memories**
-- View stored memories in Settings → Memories
-- Edit or delete memories as needed
-- Organize memories by project
 
-### What Cursor Remembers
+**Create Project Memories** by mentioning key project information in any chat, as Cursor automatically identifies important context, though you can also manually add memories when needed.
 
-**Automatically Captured:**
-- Technology stack and frameworks you're using
-- Code patterns and architectural decisions
-- Project structure and file organization
-- Common errors and their solutions
+**Examples of what triggers Cursor to store memories:**
 
-**Manually Added:**
-- Project goals and requirements
-- Team conventions and standards
-- Important architectural decisions
-- Personal preferences for this project
+- **Technology Stack Mentions**: "I'm building a React app with TypeScript and Firebase"
+- **Project Architecture Decisions**: "We're using a microservices architecture with separate APIs for user management and payments"
+- **Code Patterns and Conventions**: "In this project, we always use async/await instead of .then() for promises"
+- **Database Schema Information**: "Our User table has fields for email, username, created_at, and profile_image_url"
+- **API Endpoints and Structure**: "The authentication API is at /api/auth with endpoints for login, register, and refresh-token"
+- **Team Conventions**: "We follow the Airbnb ESLint rules and use Prettier for code formatting"
+- **Project Goals and Requirements**: "This is an e-commerce site that needs to handle 1000+ concurrent users"
+
+**Example of manually forcing a Memory:**
+
+| Participant | Content |
+| --- | --- |
+| **You** | "Please remember that in this project we always use styled-components for CSS-in-JS, never regular CSS files. This is a team convention that should be applied to all new components." |
+| **Cursor** | "I'll remember that your team uses styled-components for all styling instead of regular CSS files. This will help me suggest the right approach for future components." |
+
+
+### Review and Manage Memories
+
+In the same panel where you activated Memories, there is a section where you can view everything that Cursor has saved as long-term context about your project. Just click the **Show** button. You can also delete any of the Memories when strategies change or become obsolete.
 
 ### Example: Building with Memories
 
-**First Conversation:**
-```
-You: "I'm starting a React e-commerce project using Firebase and Stripe"
-Cursor: "Great! I'll remember that you're using React, Firebase for backend, and Stripe for payments. What's the first feature you'd like to build?"
-```
+Here's how Memories can help you have more natural conversations with the LLM as project context is stored over time.
 
-**Later Conversation (Days Later):**
-```
-You: "I need to add user authentication"
-Cursor: "Since you're using Firebase, I'll create authentication using Firebase Auth to integrate with your existing setup. Should I also set up the Firestore user profiles we discussed?"
-```
+#### First Conversation
 
-*Notice how Cursor remembered the tech stack and previous discussions*
+| Participant | Content |
+| --- | --- |
+| **You** | "I'm starting a React e-commerce project using Firebase and Stripe" |
+| **Cursor** | "Great! I'll remember that you're using React, Firebase for backend, and Stripe for payments. What's the first feature you'd like to build?" |
+| **You** | "I'd like to start by installing the dependencies for Firebase and set up project configurations for it." |
+| **Cursor** | "Let's get started..." |
+
+#### Later Conversation (Days Later)
+
+| Participant | Content |
+| --- | --- |
+| **You** | "I need to add user authentication to my project" |
+| **Cursor** | "Since you're using Firebase, you can use the existing Firebase Auth feature to integrate with your existing setup. Should I set up the Firestore user profiles we discussed, or start building a React component for displaying the Firebase authentication view?" |
 
 ## Benefits of Memory-Enabled AI
 
-### 1. Consistent Architecture
-- AI maintains awareness of your project's overall structure
-- Suggestions align with previous decisions
-- Reduces architectural inconsistencies
+### Consistent Architecture
 
-### 2. Faster Development
-- No need to re-explain your setup each time
-- AI can reference previous work
-- Builds on existing patterns
+AI maintains awareness of your project's overall structure, ensuring suggestions align with previous decisions and reducing architectural inconsistencies.
 
-### 3. Better Code Quality
-- AI learns your coding standards
-- Maintains consistency across features
-- Applies lessons learned from previous code
+### Faster Development
 
-### 4. Project Continuity
-- Pick up where you left off, even after breaks
-- AI remembers incomplete features and next steps
-- Maintains context across team members
+There's no need to re-explain your setup each time—the AI can reference previous work and build on existing patterns.
 
-## Limitations and Considerations
+### Better Code Quality
 
-### Current Limitations
+This is a possible benefit from the AI learning your coding standards, maintaining consistency across features, and applying lessons learned from previous code.
 
-**1. Memory Accuracy**
-- AI might misremember or misinterpret information
-- Important to review and correct memories periodically
+### Project Continuity
 
-**2. Privacy Concerns**
-- Memories are stored by the AI service
-- Be mindful of sensitive information
+It can allow you to pick up where you left off even after breaks, as the AI remembers incomplete features and next steps while maintaining context across team members.
 
-**3. Over-reliance Risk**
-- Don't let AI memory replace your own documentation
-- Maintain your own project records
+## Best Practices for AI Memories
 
-### Best Practices for AI Memories
+Follow these essential practices to maximize the benefits of AI memories while avoiding common pitfalls.
 
-**Do's ✅**
-- **Review memories regularly** - Ensure accuracy
-- **Be explicit about important decisions** - Help AI capture key information
-- **Update memories when requirements change** - Keep information current
-- **Use memories as a supplement** - Not a replacement for proper documentation
+- Review memories regularly to ensure accuracy
+- Be explicit about important decisions to help the AI capture key information effectively.
+- Update memories when requirements change to keep information current
+- Use memories as a supplement rather than a replacement for proper documentation.
 
-**Don'ts ❌**
-- **Don't store sensitive data** - API keys, passwords, personal information
-- **Don't rely solely on AI memory** - Maintain your own project documentation
-- **Don't assume perfect recall** - AI can still make mistakes
-- **Don't share memories across projects** - Keep project contexts separate
+## Practice
 
-## Looking Ahead: Advanced Agentic Tools
-
-While Cursor's Memories feature is a great introduction to persistent AI context, next week we'll explore more sophisticated agentic AI tools:
-
-### RooCode with RooFlow
-- **Multiple specialized AI modes** - Different AI personalities for different tasks
-- **Local memory banks** - Project context stored on your machine
-- **Cross-conversation continuity** - Seamless context across multiple sessions
-- **Advanced orchestration** - AI that can manage complex, multi-step projects
-
-### What Makes These Tools "Agentic"
-- **Proactive suggestions** - AI suggests next steps
-- **Multi-step planning** - AI can break down complex tasks
-- **Context awareness** - Deep understanding of your project
-- **Autonomous execution** - AI can complete tasks with minimal guidance
-
-## Preparing for Advanced Agentic Development
-
-### Skills to Develop
-1. **Clear communication** - Agentic AI needs good initial context
-2. **Project planning** - Break down complex tasks into manageable steps
-3. **Code review skills** - More important when AI generates more code
-4. **Architectural thinking** - Guide AI toward good design decisions
-
-### Mindset Shifts
-- **From asking questions to having conversations** - Engage with AI as a collaborator
-- **From single tasks to project workflows** - Think in terms of ongoing development
-- **From reactive to proactive** - Let AI suggest improvements and next steps
-- **From tool user to AI collaborator** - Work with AI as a development partner
-
-## Key Takeaways
-
-1. **Agentic AI is proactive and context-aware** - Goes beyond simple question-and-answer
-2. **Memory systems solve the context window problem** - Enable continuity across conversations
-3. **Cursor's Memories feature** provides basic project-level context persistence
-4. **Advanced agentic tools** offer more sophisticated memory and autonomous capabilities
-5. **Memory-enabled AI requires new skills** - Clear communication and ongoing collaboration
-6. **Always maintain your own documentation** - AI memory supplements but doesn't replace proper project records
-
-## Practice Assignment
-
-Before next week's session on advanced agentic tools:
-
-1. **Enable Cursor Memories** in your settings
-2. **Start a practice project** - Something simple like a todo app or calculator
-3. **Have multiple conversations** about the project across different days
-4. **Notice how context is maintained** - What does Cursor remember? What does it forget?
-5. **Document your experience** - What worked well? What was frustrating?
-6. **Review your memories** - Check what Cursor stored and edit if needed
-
-This hands-on experience will prepare you for the more advanced memory and context management systems we'll explore with RooCode and RooFlow next week.
+**Enable Cursor Memories** in your settings to begin experimenting with persistent AI context. **Start a practice project** with something simple like a todo app or calculator that you can develop over multiple sessions. **Have multiple conversations** about the project across different days to experience how memory persistence works in practice. **Notice how context is maintained** by observing what Cursor remembers and what it forgets between sessions. **Document your experience** by recording what worked well and what was frustrating about the memory system. **Review your memories** by checking what Cursor stored and editing the information if needed to ensure accuracy.
 
 ## Section 1 Summary
 
 Congratulations! You've completed the foundation section of this workshop. You now understand:
 
 - **How LLMs work** as prediction engines
-- **Cursor IDE's AI features** and how to use them effectively
 - **The importance of context** in professional AI-assisted development
 - **Prompt engineering techniques** for better AI responses
+- **Cursor IDE's AI features** and how to use them effectively
 - **Agentic AI concepts** and memory systems
-
-Next week, we'll build on these foundations with more sophisticated agentic AI tools that will transform how you approach software development projects.

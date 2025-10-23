@@ -9,7 +9,7 @@ import content from "./index.md?raw";
 
 export default {
     id: "agentic-memories",
-    title: "Introduction to Agentic AI and Memories",
+    title: "Remembering Project Context",
     previousChapterId: "prompt-engineering",
     nextChapterId: null,
     requiresAuth: false,

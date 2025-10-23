@@ -9,7 +9,7 @@ import content from "./index.md?raw";
 
 export default {
     id: "prompt-engineering",
-    title: "Context and Prompt Engineering Basics",
+    title: "Context Engineering",
     previousChapterId: "cursor-setup",
     nextChapterId: "agentic-memories",
     requiresAuth: false,

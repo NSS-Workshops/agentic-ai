@@ -9,7 +9,7 @@ import content from "./index.md?raw";
 
 export default {
     id: "llm-fundamentals",
-    title: "Understanding Large Language Models",
+    title: "Understanding LLMs",
     previousChapterId: null,
     nextChapterId: "cursor-setup",
     requiresAuth: false,
