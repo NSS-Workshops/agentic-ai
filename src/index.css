@@ -7,6 +7,10 @@ section pre[class^="language-"] {
     font-size: 1rem;
 }
 
+div[class$="contentContainer"] {
+  padding: 2.5rem;
+}
+
 .mermaid {
     display: flex;
     justify-content: center;

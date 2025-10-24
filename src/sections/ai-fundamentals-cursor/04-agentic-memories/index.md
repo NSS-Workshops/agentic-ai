@@ -1,6 +1,6 @@
 ## What is Agentic AI?
 
-So far, we've been using AI as a **reactive** too*—you ask a question, it gives an answer. But what if AI could be more proactive and autonomous? That's where agentic AI comes in.
+So far, we've been using AI as a **reactive** tool—you ask a question, it gives an answer. But what if AI could be more proactive and autonomous? That's where agentic AI comes in.
 
 Agentic AI refers to AI systems that can take initiative by suggesting next steps without being asked, maintain context by remembering previous conversations and decisions, work independently to complete multi-step tasks with minimal supervision, and learn from interactions to improve responses based on your preferences and patterns.
 
@@ -10,23 +10,28 @@ Think of it as the difference between a **calculator** (reactive) and a **person
 ### Traditional AI vs. Agentic AI
 
 **Traditional AI Interaction:**
-```
-You: "Write a login function"
-AI: [Generates code]
-You: "Add error handling"
-AI: [Generates updated code]
-You: "Make it work with our database"
-AI: [Generates another version]
-```
+
+| Participant | Content |
+| --- | --- |
+| **You** | "Write a login function" |
+| **AI** | [Generates simplistic code] |
+| **You** | "Add error handling" |
+| **AI** | [Generates updated code for login] |
+| **You** | "Make it work with our database" |
+| **AI** | [Generates low quality code for connecting to a database you don't use] |
+
 *Each interaction starts from scratch*
 
 **Agentic AI Interaction:**
-```
-You: "I'm building a user authentication system"
-AI: "I'll help you build this step by step. First, let me understand your requirements. Based on your project, I suggest we start with login, then registration, then password reset. Should I create a plan?"
-You: "Yes"
-AI: [Creates comprehensive plan, remembers it, and guides you through implementation]
-```
+
+| Participant | Content |
+| --- | --- |
+| **You** | "I'm building a user authentication system" |
+| **AI** | "I'll help you build this step by step. First, let me understand your requirements. Based on your project, I suggest we start with login, then registration, then password reset. Should I create a plan?" |
+| **You** | "Yes" |
+| **AI** | [Creates comprehensive plan, remembers it, and guides you through implementation] |
+
+
 *The AI maintains context and takes initiative*
 
 ## The Memory Problem in AI Development
@@ -50,11 +55,11 @@ Without memory, each week feels like starting over with a new developer who know
 
 ## Introducing AI Memories
 
-**AI Memories** solve the context problem by giving AI systems the ability to **persistently store and recall information** across conversations.
+**AI Memories** solve the context problem by giving AI systems the ability to persistently store and recall information across conversations.
 
 ### How Memories Work
 
-Think of AI memories like a **digital notebook** that the AI maintains about your project. This notebook contains your project context including goals, architecture, and technology choices, along with your preferred code patterns, coding styles, and conventions. It also tracks decisions made with their reasoning, monitors progress by recording what's been completed and what's next, and learns your personal preferences about how you like to work and communicate.
+Think of AI memories like a digital notebook that the AI maintains about your project. This notebook contains your project context including goals, architecture, and technology choices, along with your preferred code patterns, coding styles, and conventions. It also tracks decisions made with their reasoning, monitors progress by recording what's been completed and what's next, and learns your personal preferences about how you like to work and communicate.
 
 ### Types of Memory Systems
 

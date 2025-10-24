@@ -9,7 +9,7 @@ import content from "./index.md?raw";
 
 export default {
     id: "roocode-setup-security",
-    title: "RooCode Setup and Security",
+    title: "RooCode Setup",
     previousChapterId: null,
     nextChapterId: "roocode-modes-rooflow",
     requiresAuth: false,
