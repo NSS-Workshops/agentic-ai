@@ -345,14 +345,20 @@ When crafting prompts, always include relevant code, requirements, and constrain
 
 Remember that prompt engineering is an iterative process—use follow-up prompts to refine and improve results as you work toward your ideal solution. The time you invest in creating quality context directly translates to receiving quality code that meets your professional standards and project requirements.
 
-## Practice Assignment
+## Practice
 
-Choose a small feature from a current or practice project and:
+Currently, the Coins R Us application only allows new coins to be added, but the inventory view is not implemented yet. This is your opportunity to practice your **context engineering** skills.
 
-Start by writing a low-context prompt for your chosen feature and observe what the AI generates. Then rewrite the same request using the CONTEXT framework, providing comprehensive information about your project, requirements, and constraints. Compare the results by documenting the differences in code quality, relevance, and production-readiness between the two approaches.
+- Envision the layout of the UI and provide those specifics
+- Should there be buttons? What color should they be? What happens when they are clicked?
+- Are there any CSS embellishments or animations you'd like to have?
+- How should HTTP exceptions be handled if `json-server` isn't running?
+- What should be displayed if there are no coins in the database?
+- Where should the module be created?
+- What current dependencies should be used for the implementation?
+
+Think of these issues, and more, for your high-context prompt. Your goal should be to have the LLM generate code that looks very near to the code that **YOU** would write.
 
 Continue the exercise by using follow-up prompts to refine the high-context result, demonstrating how iterative improvement works in practice. Finally, test the generated code in your actual project to verify that it integrates properly and meets your requirements.
 
 This hands-on exercise will help you internalize the importance of context and develop your prompt engineering skills through direct experience with the dramatic differences that quality context can make.
-
-In the next chapter, we'll explore how agentic AI tools can maintain context across longer conversations and projects, taking your AI-assisted development to the next level.
