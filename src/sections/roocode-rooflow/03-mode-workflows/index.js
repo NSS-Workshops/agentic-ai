@@ -8,10 +8,10 @@
 import content from "./index.md?raw";
 
 export default {
-    id: "roocode-setup-security",
-    title: "RooCode Setup",
-    previousChapterId: null,
-    nextChapterId: "roocode-modes-rooflow",
+    id: "mode-workflows",
+    title: "Mode Workflows",
+    previousChapterId: "rooflow-setup",
+    nextChapterId: "architect-mode-implementation",
     requiresAuth: false,
     exercise: null,
     content

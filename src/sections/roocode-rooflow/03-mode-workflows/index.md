@@ -1,26 +1,30 @@
 Now that you have RooCode set up securely with the RooFlow system prompts, it's time to explore what makes it truly powerful: its specialized AI modes. Think of this as upgrading from having one general assistant to having a specialized team of experts, each with their own expertise and personality.
 
-## Understanding RooCode Modes
+## Understanding Modes
 
-Traditional AI assistants try to be everything to everyone. RooCode takes a different approach by providing **specialized modes**, each optimized for specific types of development tasks. This is like having different specialists on your development team rather than one person trying to do everything.
+Traditional AI assistants try to be everything to everyone. RooCode and RooFlow take a different approach by providing **specialized modes**, each optimized for specific types of development tasks. This is like having different specialists on your development team rather than one person trying to do everything.
 
 ### The Core Modes
 
 #### Flow Ask Mode
 
-Ask Mode serves as your dedicated research assistant and explainer, designed with a patient, educational personality that excels at thorough explanations. This mode becomes your go-to resource when you need to understand concepts and technologies, get clear explanations of existing code, conduct research and learning, or ask quick questions that need clarification. Think of Ask Mode as that knowledgeable colleague who always has time to explain things clearly and never makes you feel rushed.
+This mode serves as your dedicated research assistant and explainer, designed with a patient, educational personality that excels at thorough explanations. This mode becomes your go-to resource when you need to understand concepts and technologies, get clear explanations of existing code, conduct research and learning, or ask quick questions that need clarification.
 
-When you interact with Ask Mode, you'll notice its educational approach immediately. For example, when you ask "Can you explain how React hooks work?", Ask Mode responds with comprehensive explanations like "React hooks are functions that let you 'hook into' React state and lifecycle features from function components..." The mode takes time to build understanding progressively, ensuring you grasp both the concept and its practical applications.
+Think of Ask Mode as that knowledgeable colleague who always has time to explain things clearly and never makes you feel rushed. It will never modify your code like **Flow Code** and **Flow Debug** will.
+
+When you interact with Ask Mode, you'll notice its educational approach immediately. For example, when you ask "Can you explain how React hooks work?", it responds with comprehensive explanations. The mode takes time to build understanding progressively, ensuring you grasp both the concept and its practical applications.
 
 #### Flow Code Mode
 
-Code Mode functions as your dedicated implementation specialist, bringing a focused, practical, code-first approach to every interaction. This mode excels when you need to write new code, refactor existing implementations, conduct code reviews and optimization, or implement specific features with precision and efficiency. Code Mode cuts straight to the implementation details, providing working solutions rather than lengthy explanations.
+This mode functions as your dedicated implementation specialist, bringing a focused, practical, code-first approach to every interaction. This mode excels when you need to write new code, refactor existing implementations, conduct code reviews and optimization, or implement specific features with precision and efficiency. Code Mode cuts straight to the implementation details, providing working solutions rather than lengthy explanations.
 
 The personality of Code Mode reflects its purpose—it's direct, solution-oriented, and always ready to produce tangible results. When you request "I need a React component for user authentication," Code Mode immediately responds with "I'll create a comprehensive auth component with form validation..." and then delivers functional code that you can use immediately. This mode understands that sometimes you need less talking and more doing.
 
 #### Flow Architect Mode
 
-Architect Mode serves as your system designer and project planner, embodying strategic, big-picture thinking with a strong focus on documentation and long-term project success. This mode becomes invaluable when you need to plan project structure, design system architecture, make critical technology decisions, or create comprehensive documentation and specifications. Architect Mode thinks beyond immediate implementation needs, considering scalability, maintainability, and team collaboration from the outset.
+This mode serves as your system designer and project planner, embodying strategic, big-picture thinking with a strong focus on documentation and long-term project success. This mode becomes invaluable when you need to plan project structure, design system architecture, make critical technology decisions, or create comprehensive documentation and specifications.
+
+Architect mode also excels at creating documentation for your planning and strategies as you discuss them. It will not modify your existing code files, but will generate some code snippets in the documentation when you, or it, feels it necessary.
 
 The strategic personality of Architect Mode shines through in every interaction. When you request "Help me plan a new e-commerce application," Architect Mode responds thoughtfully with "Let's start by defining the core requirements and system architecture..." This mode takes time to understand your broader goals before diving into technical details, ensuring that every architectural decision aligns with your project's long-term vision and constraints.
 
@@ -83,12 +87,6 @@ Continuity represents another major advantage, as context persists across sessio
 The Memory Bank also enables true collaboration by allowing multiple team members to access the same project memory. When your colleagues interact with RooCode on the same project, they benefit from the accumulated knowledge, decisions, and patterns that the team has established over time. This shared context ensures that everyone works from the same understanding of the project's goals, constraints, and established practices.
 
 Perhaps most powerfully, the Memory Bank learns your project's patterns and preferences over time, becoming increasingly valuable as your project evolves. The system recognizes recurring themes in your decisions, understands your preferred approaches to common problems, and adapts its suggestions to align with your established patterns. This learning capability means that RooCode becomes more effective and personalized the longer you work with it on a project.
-
-#### Workflow Templates
-
-RooFlow provides pre-built workflows for common development scenarios, eliminating the need to reinvent processes for routine development tasks. The New Feature Development template guides you through the complete lifecycle from initial planning and design through implementation, testing, and documentation. The Bug Investigation and Fix workflow provides a systematic approach to identifying, analyzing, and resolving issues while ensuring proper testing and prevention measures.
-
-The Code Review and Refactoring template helps maintain code quality by providing structured approaches to reviewing existing code and implementing improvements safely. Architecture Planning workflows assist with system design decisions, technology evaluations, and long-term planning considerations. Finally, Documentation Creation templates ensure that your project knowledge is captured effectively, whether you're creating API documentation, user guides, or technical specifications.
 
 ## Practical Mode Usage Examples
 
