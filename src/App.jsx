@@ -22,7 +22,6 @@ function App() {
     // Re-render diagrams and highlight code when content changes
     const observer = new MutationObserver(() => {
       renderMermaidDiagrams().catch(console.error);
-      // Add a small delay to ensure DOM is fully rendered
       setTimeout(() => enhancedHighlightCodeBlocks(), 100);
     });
 
@@ -33,7 +32,6 @@ function App() {
 
     // Initial render of any existing diagrams and code highlighting
     renderMermaidDiagrams().catch(console.error);
-    // Add a small delay to ensure DOM is fully rendered
     setTimeout(() => enhancedHighlightCodeBlocks(), 500);
 
     return () => observer.disconnect();

@@ -43,7 +43,7 @@ For example, when you ask _"Orchestrate all of the specific tasks needed to plan
 
 ### Mode Switching and Context
 
-One of RooCode's key advantages is **context preservation** across modes. When you switch from Ask Mode to Code Mode, the conversation history and project understanding carries over seamlessly. This creates a natural workflow where you can research concepts and gather information with Ask Mode, then transition to strategic planning with Architect Mode, move into active implementation with Code Mode, and finally troubleshoot any issues with Debug Mode—all while maintaining the same project context and conversation thread.
+One of RooCode's key advantages is _context preservation_ across modes. When you switch from Ask Mode to Code Mode, the conversation history and project understanding carries over seamlessly. This creates a natural workflow where you can research concepts and gather information with Ask Mode, then transition to strategic planning with Architect Mode, move into active implementation with Code Mode, and finally troubleshoot any issues with Debug Mode—all while maintaining the same project context and conversation thread.
 
 This context preservation transforms how you approach development work. Instead of starting fresh with each new task or losing important details when switching between different types of work, RooCode maintains a continuous understanding of your project, your decisions, and your progress. The result is a more cohesive development experience that mirrors how you naturally think about and work on projects.
 
