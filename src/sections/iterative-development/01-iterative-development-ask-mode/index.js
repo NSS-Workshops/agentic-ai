@@ -11,7 +11,7 @@ export default {
     id: "iterative-development-ask-mode",
     title: "Learn with Architect+Ask",
     previousChapterId: null,
-    nextChapterId: "cross-task-context-memory-bank",
+    nextChapterId: "orchestration-mode",
     requiresAuth: false,
     exercise: null,
     content

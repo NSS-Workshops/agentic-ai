@@ -53,27 +53,42 @@ Let's walk through how you might use this approach to build a simple task manage
 
 ### Step 1: Strategic Planning with Architect Mode
 
-**Your prompt to Architect mode:**
-```
-I want to build a simple task management web application using React. The app should allow users to add tasks, mark them as complete, and delete tasks. I want to build this iteratively, one feature at a time. Can you help me break this down into manageable steps?
+**Architect mode prompt:**
+
+```txt
+I want to build a simple task management web application using React. The app should allow
+users to add tasks, mark them as complete, and delete tasks. I want to build this
+iteratively, one feature at a time. Can you help me break this down into manageable steps?
+Document them in `INITIAL_STEPS.md`.
 ```
 
 **Architect mode might respond with a structured plan:** First, set up the basic React project structure to establish your foundation. Next, create a simple task display component to handle individual task presentation. Then add functionality to display a list of hardcoded tasks, followed by implementing the ability to add new tasks. After that, add a task completion toggle feature, implement task deletion capabilities, and finally add basic styling and polish to complete the application.
 
 ### Step 2: Implementation with Ask Mode
 
-Now you switch to **Ask** mode and request one step at a time:
+Now you switch to **Ask** mode and build the project incrementally.
 
-**First Ask mode prompt:**
-```
-Based on the plan we created, let's start with step 1: Set up the basic React project structure. Please create the initial components and file structure for a task management app, but don't implement any functionality yet—just the skeleton.
-```
+**Ask mode prompt:**
 
-After reviewing and testing this implementation, you continue:
+```txt
+Based on the plan we created in `INITIAL_STEPS.md`, I want to implement them one step at a time.
+Walk me through the process of implementing all of the tasks, one step at a time.
+
+- Do not generate a list of all steps
+- Generate one step at a time for me to implement and ask follow-up questions
+- Do not show me the next step until I tell you that I am ready for it
+```
+---
+
+
+After reviewing and testing the initial implementation, you continue learning things that still confuse you.
 
 **Second Ask mode prompt:**
-```
-Great! The project structure looks good. Now let's move to step 2: Create a simple task display component that shows a single hardcoded task with a title and completion status.
+
+```txt
+All steps are implemented, however I am still confused about why the form for
+adding a task had to be in a separate component than the task list. Can you explain
+why this is important?
 ```
 
 ### The Key Difference
@@ -136,8 +151,10 @@ Now it's time to practice this approach. You'll be building a personal portfolio
 
 Open RooCode and switch to **Architect** mode. Here's a sample prompt to get you started:
 
-```
-I want to build a personal portfolio website using Astro. The site should showcase my skills as a web developer and include pages for my introduction, background, projects, and contact information. I want to build this iteratively, one piece at a time. Can you help me create a step-by-step plan for building this portfolio site?
+```txt
+I want to build a personal portfolio website using Astro. The site should showcase my skills as a web developer and
+include pages for my introduction, background, projects, and contact information. I want to build this iteratively,
+one piece at a time. Can you help me create a step-by-step plan for building this portfolio site?
 ```
 
 Remember: The goal isn't to complete the entire portfolio in this exercise. Focus on understanding the iterative process and implementing just the first few steps.

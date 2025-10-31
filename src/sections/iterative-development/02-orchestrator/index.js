@@ -8,8 +8,8 @@
 import content from "./index.md?raw";
 
 export default {
-    id: "cross-task-context-memory-bank",
-    title: "Cross-task Context with Memory Bank",
+    id: "orchestration-mode",
+    title: "Orchestration Mode",
     previousChapterId: "iterative-development-ask-mode",
     nextChapterId: null,
     requiresAuth: false,
