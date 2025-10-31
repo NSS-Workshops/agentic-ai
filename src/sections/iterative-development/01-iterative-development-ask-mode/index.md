@@ -78,8 +78,6 @@ Walk me through the process of implementing all of the tasks, one step at a time
 - Generate one step at a time for me to implement and ask follow-up questions
 - Do not show me the next step until I tell you that I am ready for it
 ```
----
-
 
 After reviewing and testing the initial implementation, you continue learning things that still confuse you.
 
@@ -139,6 +137,13 @@ While planning is important, don't spend too much time creating elaborate plans.
 
 Now it's time to practice this approach. You'll be building a personal portfolio website using the [Astro framework](https://astro.build/). Astro is a modern web framework that's perfect for content-focused sites like portfolios.
 
+### Setup
+
+- Create a new project directory
+- Follow the steps to install RooFlow
+- Open the project directory in VS Code
+- Activate the memory bank feature of RooFlow
+
 ### Your Task
 
 **Start with Architect Mode** by asking it to help you plan a personal portfolio site that includes a homepage with your introduction, an about page with your background, a projects page showcasing your work, and a contact page with your information.
@@ -147,22 +152,14 @@ Now it's time to practice this approach. You'll be building a personal portfolio
 
 **Begin Implementation** by using Ask mode to implement just the first step, focusing on understanding and testing that single piece before moving forward.
 
-### Getting Started
-
-Open RooCode and switch to **Architect** mode. Here's a sample prompt to get you started:
-
-```txt
-I want to build a personal portfolio website using Astro. The site should showcase my skills as a web developer and
-include pages for my introduction, background, projects, and contact information. I want to build this iteratively,
-one piece at a time. Can you help me create a step-by-step plan for building this portfolio site?
-```
-
-Remember: The goal isn't to complete the entire portfolio in this exercise. Focus on understanding the iterative process and implementing just the first few steps.
+> Remember: The goal isn't to complete the entire portfolio in this exercise. Focus on understanding the iterative process and implementing just the first few steps.
 
 ## Key Takeaways
 
-Iterative development fundamentally keeps you in control of the development process, ensuring you understand and approve each step before moving forward. **Architect mode helps you plan** by breaking down complex projects into manageable phases, while **Ask mode helps you implement** by focusing on one specific step at a time rather than attempting large, complex features all at once.
+Iterative development fundamentally keeps you in control of the development process, ensuring you understand and approve each step before moving forward.
+
+**Architect mode helps you plan** by breaking down complex projects into manageable phases, while
+
+**Ask mode helps you implement** by focusing on one specific step at a time rather than attempting large, complex features all at once.
 
 The success of this approach depends on taking time to review and understand each step before moving to the next, never hesitating to ask questions or request modifications when something doesn't feel right, and testing frequently to catch issues early when they're easier to fix. This methodical approach builds both your understanding of the codebase and your confidence as a developer.
-
-In the next chapter, you'll learn how to maintain context across multiple development sessions using RooFlow's Memory Bank feature, ensuring your iterative development process can span multiple work sessions without losing important context.
