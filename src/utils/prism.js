@@ -3,6 +3,7 @@ import Prism from 'prismjs';
 // Import core languages
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-python';
+import 'prismjs/components/prism-csharp';
 import 'prismjs/components/prism-yaml';
 import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-json';
@@ -22,6 +23,8 @@ const languageAliases = {
   'ts': 'javascript',
   'tsx': 'javascript',
   'yml': 'yaml',
+  'cs': 'csharp',
+  'csharp': 'csharp',
   'html': 'markup',
   'xml': 'markup'
 };

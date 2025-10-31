@@ -17,6 +17,10 @@ const __dirname = dirname(__filename)
  */
 export const smartStaticCopyPlugin = {
   name: 'smart-static-copy',
+  configureServer(server) {
+    // Store server reference on the plugin object
+    smartStaticCopyPlugin._server = server
+  },
   async buildStart() {
     const projectRoot = path.resolve(__dirname, '..')
     const imagePattern = path.resolve(projectRoot, 'src/sections/**/*.{png,jpg,jpeg,svg,gif,webp,avif}')
@@ -27,12 +31,10 @@ export const smartStaticCopyPlugin = {
       return
     }
 
-    // Determine destination directory based on environment
-    // Development: copy to public/assets (served by Vite dev server)
-    // Production: copy to dist/assets (for build output)
-    const destDir = process.env.NODE_ENV === 'production'
-      ? path.resolve(projectRoot, 'dist/assets')
-      : path.resolve(projectRoot, 'public/assets')
+    // Always copy to public/assets - Vite will handle copying to dist during build
+    // Development: served directly by Vite dev server from public/assets
+    // Production: Vite copies public/assets to dist/assets during build
+    const destDir = path.resolve(projectRoot, 'public/assets')
 
     console.log(`[smart-static-copy] Using destination directory: ${destDir}`)
     let destFiles = []
@@ -105,6 +107,12 @@ export const smartStaticCopyPlugin = {
       }
 
       console.log(`[smart-static-copy] Copied ${copiedCount} files.`)
+
+      // Trigger server reload in development mode so Vite recognizes new assets
+      if (smartStaticCopyPlugin._server) {
+        console.log('[smart-static-copy] Reloading server to recognize new assets...')
+        smartStaticCopyPlugin._server.restart()
+      }
     } else {
       console.log('[smart-static-copy] All files up to date, skipping copy operation.')
     }
