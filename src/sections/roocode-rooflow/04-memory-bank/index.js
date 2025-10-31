@@ -8,8 +8,8 @@
 import content from "./index.md?raw";
 
 export default {
-    id: "architect-mode-implementation",
-    title: "Architect Mode Implementation",
+    id: "memory-bank",
+    title: "Memory Bank",
     previousChapterId: "mode-workflows",
     nextChapterId: null,
     requiresAuth: false,

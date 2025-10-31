@@ -47,121 +47,78 @@ One of RooCode's key advantages is _context preservation_ across modes. When you
 
 This context preservation transforms how you approach development work. Instead of starting fresh with each new task or losing important details when switching between different types of work, RooCode maintains a continuous understanding of your project, your decisions, and your progress. The result is a more cohesive development experience that mirrors how you naturally think about and work on projects.
 
-### Best Practices for Token Management
-
-Effective token management starts with being concise in your communications. Clear, specific requests use fewer tokens than rambling descriptions, making your interactions more efficient and leaving more room for detailed responses. For example, instead of saying "So I'm working on this project and I think I need some kind of component that handles user stuff and maybe authentication and I'm not sure how to structure it..." you'll get better results with "I need a React authentication component with login/logout functionality."
-
-
-## The Memory Bank System
-
-The Memory Bank is RooFlow's persistent memory system that maintains project context across sessions and modes. Think of it as your project's "institutional memory." It is a more powerful, accessible and customizeable version of the Cursor Memories feature.
-
-### Memory Bank Components
-
-#### Product Context
-
-Product Context serves as the repository for high-level project information that defines the foundation of your development work. This component stores your project goals and requirements, providing a clear reference point for what you're building and why. It maintains records of technology stack decisions, documenting not just what technologies you've chosen but the reasoning behind those choices. The overall architecture lives here as well, giving every mode access to your system's big-picture design. Additionally, Product Context captures key constraints and considerations that influence development decisions, ensuring that limitations and requirements remain visible throughout the project lifecycle.
-
-#### Active Context
-
-Active Context focuses on current session information, maintaining awareness of what you're actively working on right now. This component tracks recent decisions and changes, providing immediate context about the latest developments in your project. It maintains a running list of open questions and issues that need attention, ensuring that important concerns don't get lost in the flow of development work. Active Context also manages your next steps and priorities, helping maintain focus and direction across different modes and sessions.
-
-#### Decision Log
-
-The Decision Log captures important decisions and their rationale, creating a historical record of your project's evolution. This component documents technology choices along with the reasoning behind them, helping future decisions build on past thinking rather than repeating analysis. Architecture decisions are preserved here with their context and alternatives considered, providing valuable insight when similar decisions arise later. Implementation approaches are recorded along with the trade-offs and alternatives that were evaluated, creating a knowledge base that grows more valuable over time.
-
-#### Progress Tracking
-
-Progress Tracking maintains a comprehensive view of development progress across all aspects of your project. This component keeps records of completed tasks, providing a sense of accomplishment and a reference for what has already been achieved. Current work items are tracked with their status and context, ensuring that nothing falls through the cracks when switching between modes or sessions. The system also monitors blockers and dependencies, helping identify and resolve issues that could impede progress. Timeline and milestones are maintained to provide project-level visibility into progress and planning.
-
-#### System Patterns
-
-System Patterns stores reusable patterns and standards that maintain consistency across your project. This component documents coding conventions that your project follows, ensuring that all generated code adheres to your established style and practices. Architecture patterns are captured and can be referenced when similar design challenges arise, promoting consistency and leveraging proven solutions. Common solutions to recurring problems are stored here, building a project-specific knowledge base that improves efficiency over time. Best practices specific to your project are documented and accessible to all modes, ensuring that hard-won insights are preserved and applied consistently.
-
-### Memory Bank Benefits
-
-The Memory Bank delivers consistency by ensuring all modes access the same project information, which guarantees that whether you're working in Ask Mode, Code Mode, Architect Mode, or Debug Mode, you'll receive responses that align with your project's established context, decisions, and patterns. This shared knowledge base eliminates the confusion that can arise when different tools or assistants provide conflicting advice based on incomplete information.
-
-Continuity represents another major advantage, as context persists across sessions regardless of how long you're away from your project. You can close RooCode, work on other projects, or take a break for days or weeks, then return to find your project context fully intact and ready to support your continued development work. This persistence transforms how you can approach long-term projects, removing the friction of re-establishing context every time you return to work.
-
-The Memory Bank also enables true collaboration by allowing multiple team members to access the same project memory. When your colleagues interact with RooCode on the same project, they benefit from the accumulated knowledge, decisions, and patterns that the team has established over time. This shared context ensures that everyone works from the same understanding of the project's goals, constraints, and established practices.
-
-Perhaps most powerfully, the Memory Bank learns your project's patterns and preferences over time, becoming increasingly valuable as your project evolves. The system recognizes recurring themes in your decisions, understands your preferred approaches to common problems, and adapts its suggestions to align with your established patterns. This learning capability means that RooCode becomes more effective and personalized the longer you work with it on a project.
-
 ## Practical Mode Usage Examples
 
 ### Scenario 1: Building a New Feature
 
-**Starting Point**: "I need to add user profiles to my React app"
+**Action**: You set the mode to **Flow Architect**
 
-**RooFlow Workflow**: RooFlow begins by engaging Architect Mode to design the user profile system, asking strategic questions like "What data do you need to store?" to establish the foundation and requirements. The workflow then transitions seamlessly to Code Mode, which takes the architectural decisions and creates the actual profile components and API integration with proper structure and functionality. Debug Mode follows to test the implementation thoroughly and handle edge cases that might not have been apparent during initial development. Finally, Ask Mode concludes the workflow by providing comprehensive documentation on how to use the new profile system, ensuring that the feature is not only built but also properly explained for future reference and team adoption.
+**Initial Prompt**: "I need to add a new feature to my project that displays products related to the product that the user is currently viewing. Access my memory bank and help me design this in architect mode. Record our decisions in a RELATED_PRODUCTS.md file."
+
+**RooFlow Workflow**: RooFlow begins by reading all of the relevent text that is stored in the memory bank files. Once it has retrieved the context that it needs, it will either ask questions if it needs more context, or will begin making recommendations on  structure, naming convention, files to be created, etc. and producing documentation in the specified file.
+
+You can review the suggestions, and continue to make changes until you are happy with the plan.
+
+The workflow can then transition seamlessly to Code Mode, which takes the architectural decisions and creates the modules and code that were agreed upon.
 
 ### Scenario 2: Debugging an Issue
 
-**Starting Point**: "My app crashes when users click the submit button"
+**Action**: You set the mode to **Flow Debug**
 
-**RooFlow Workflow**: RooFlow immediately engages Debug Mode to systematically analyze the error and identify the root cause through methodical investigation techniques. Once the problem is understood, Code Mode takes over to implement the necessary fix and add appropriate error handling to prevent similar issues in the future. The workflow concludes with Ask Mode providing a clear explanation of what caused the issue and comprehensive guidance on how to prevent similar problems, turning the debugging experience into a learning opportunity that strengthens the overall application.
+**Initial Prompt**: "When my workflow sends a document to be updated via the Google Docs API, the update never happens. Here is the log message for that action: [you would insert the log message here]"
+
+**RooFlow Workflow**: RooCode begins to systematically analyze the error and identify the root cause through methodical investigation techniques. Once the problem is understood, debug mode will make an attempt at implementing a fix unless you explicitly instruct it not to.
 
 ### Scenario 3: Planning a New Project
 
-**Starting Point**: "I want to build a task management application"
+**Action**: You set the mode to **Flow Ask**
 
-**RooFlow Workflow**: RooFlow starts with Ask Mode to explore task management patterns and gather requirements, ensuring a solid understanding of the problem domain and user needs before making any technical decisions. Architect Mode then takes the research and requirements to design the system architecture and select an appropriate technology stack that aligns with the project goals and constraints. Finally, Code Mode begins the implementation process by creating the core components and data models that form the foundation of the task management application, establishing the essential building blocks for future development.
+**Initial Prompt**: "I want to start a project to use Terraform to automate setting up my cloud infrastructure"
 
-## Memory Bank in Action
+**RooFlow Workflow**: Starting with Ask Mode allows you to explore how Terraform works, learn modern best practices, and establish requirements. This way, you ensure a solid understanding of the technology and your needs before making any technical decisions.
 
-Let's see how the Memory Bank maintains context across a development session:
+Flow Architect mode can then takes the research and requirements to design the system architecture and select an appropriate technology stack that aligns with the project goals and constraints.
 
-### Initial Setup (Architect Mode)
-```
-You: "I'm building a recipe sharing app with React and Node.js"
-Architect: "I'll help you design this system. Let me update the Memory Bank with your project details..."
+Finally, switching to Flow Code mode begins the implementation process by creating the initial files and configurations that were designed in architect mode.
 
-[Memory Bank Updated]
-- Product Context: Recipe sharing application
-- Technology Stack: React frontend, Node.js backend
-- Current Phase: Planning
-```
+## Practice: Design Coin Marketplace
 
-### Implementation (Code Mode)
-```
-You: "Now I need to create the recipe component"
-Code: "Based on your recipe sharing app requirements, I'll create a comprehensive recipe component..."
+Use RooFlow to design a new **Marketplace** view where users can browse listed coins, place buy or sell orders, and view their active orders and balances. It will be a searchable list/grid of all coins in the database displaying the current price, and a Buy button next to each one.
 
-[Accesses Memory Bank]
-- Knows this is for recipe sharing
-- Understands React is the frontend framework
-- Maintains consistent naming conventions
-```
+### Prompt
 
-### Later Session (Ask Mode)
-```
-You: "How should I handle recipe image uploads?"
-Ask: "For your recipe sharing app, here are the best practices for image uploads..."
+Design a "Coin Marketplace" or this project that displays all coins and a blue **Buy** button next to each one. When the button is clicked, the API should be updated so that the chosen coin is no longer able to be purchased.
 
-[Memory Bank provides context]
-- Remembers this is a recipe app
-- Knows the technology stack
-- Provides relevant, project-specific advice
+Add the following information to a `MARKETPLACE_DESIGN.md` file:
+
+- proposed file/component list with responsibilities
+- API contract (endpoints, request/response shapes)
+- UI wireframe notes
+- Data/state shapes, validation rules, and
+- A list of small implementation tasks that must be done to implement the feature.
+
+### Possible Issues
+
+#### Service Unavailable
+
+You may receive a message that the Gemini service is unavailable:
+
+```txt
+Gemini generate context stream error: got status: 503 Service Unavailable. {"error":{"message":"{\n  "error": {\n    "code": 503,\n    "message": "The model is overloaded. Please try again later.",\n    "status": "UNAVAILABLE"\n  }\n}\n","code":503,"status":"Service Unavailable"}}
 ```
 
+If this happens, just be patient and it will continue to retry until it is available again.
 
-## Practice Exercises
+#### Model Thought Process Failed
 
-### Exercise 1: Mode Exploration
+If you see the following response:
 
-This exercise helps you experience each mode's personality and capabilities firsthand. Begin by engaging Ask Mode with "Explain the difference between props and state in React" to experience its educational, thorough approach to explanations. Next, switch to Code Mode and request "Create a React counter component" to see how it immediately focuses on implementation without lengthy explanations. Move to Architect Mode and ask it to "Plan the structure for a blog application" to observe its strategic, big-picture thinking approach. Finally, engage Debug Mode with "Help me understand this error: 'Cannot read property of undefined'" to experience its methodical, analytical problem-solving style. This progression will give you a clear sense of how each mode's personality and capabilities differ.
+```txt
+This may indicate a failure in the model's thought process or inability to use a tool properly, which can be mitigated with some user guidance (e.g. "Try breaking down the task into smaller steps").
+```
 
-### Exercise 2: Memory Bank Usage
-
-This exercise demonstrates how the Memory Bank builds up project context across different modes. Start with Architect Mode to define a simple project such as an expense tracker, allowing it to establish the foundational project context in the Memory Bank. Then switch to Code Mode and implement a core component, observing how it accesses and builds upon the project context established by Architect Mode. Next, engage Ask Mode to ask about best practices for your specific project, noting how it provides advice tailored to your expense tracker rather than generic guidance. Throughout this exercise, verify that each mode remembers your project context by observing how their responses reference previous decisions and maintain consistency with your established project goals.
-
-### Exercise 3: RooFlow Workflow
-
-This exercise lets you experience RooFlow's orchestration capabilities for complete feature development. Begin with the high-level request "Help me add user authentication to my app" and let RooFlow take the lead in coordinating the workflow. Follow RooFlow's suggested workflow as it moves between modes, paying attention to how each transition builds logically on the previous mode's work. Notice how modes coordinate seamlessly and how context flows naturally from planning through implementation to testing and documentation. Complete the entire feature development process with RooFlow guidance, observing how the orchestration system manages complexity while keeping you focused on the actual development work rather than workflow management.
+Click the **Proceed Anyway** button and the process will move forward.
 
 ## What's Next?
 
-In the next chapter, we'll dive deep into **Architect Mode** - the strategic planning mode that helps you design robust, scalable applications. You'll discover how to leverage Architect Mode for comprehensive system architecture design that considers scalability, maintainability, and long-term project success. The chapter will guide you through making informed technology stack decisions that align with your project goals and constraints, while also covering effective project planning and documentation strategies that keep your development work organized and purposeful.
-
-Additionally, you'll learn about quality improvement strategies that Architect Mode can help you implement throughout your project lifecycle. We'll also explore the powerful integration between Architect Mode and the Memory Bank, showing how this combination maintains long-term project vision and consistency across all your development work. This deep dive will transform how you approach the strategic aspects of software development, giving you the tools to build applications that are not just functional, but truly well-architected.
+In the next chapter, we'll explore how the **Memory Bank** system of RooFlow works to maintain long-term context and decisions about your project.

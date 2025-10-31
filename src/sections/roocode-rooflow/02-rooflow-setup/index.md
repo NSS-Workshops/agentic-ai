@@ -18,19 +18,26 @@ Before installing RooFlow, ensure you have:
    pip3 install pyyaml
    ```
 
+### Project Directory
+
+RooFlow is installed per project—it's not a global install, so make sure you are in the Coins R Us directory.
+
+```sh
+cd ~/agentic-ai-workshop/coins-r-us
+```
+
 ### Installation Steps for macOS or Linux
 
-1. Open your terminal and navigate to your project's root directory
-2. Download the RooFlow installation script:
-   ```bash
+1. Download the RooFlow installation script:
+   ```sh
    curl -O https://raw.githubusercontent.com/GreatScottyMac/RooFlow/main/config/install_rooflow.sh
    ```
-3. Make the script executable:
-   ```bash
+2. Make the script executable:
+   ```sh
    chmod +x install_rooflow.sh
    ```
-4. Run the installation script:
-   ```bash
+3. Run the installation script:
+   ```sh
    ./install_rooflow.sh
    ```
 
@@ -38,11 +45,11 @@ Before installing RooFlow, ensure you have:
 
 1. Open Command Prompt or PowerShell and navigate to your project's root directory
 2. Download the RooFlow installation script:
-   ```cmd
+   ```sh
    curl -O https://raw.githubusercontent.com/GreatScottyMac/RooFlow/main/config/install_rooflow.cmd
    ```
 3. Run the installation script:
-   ```cmd
+   ```sh
    install_rooflow.cmd
    ```
 
@@ -61,15 +68,6 @@ After the script runs successfully:
 
 These Flow modes will appear alongside your standard Roo Code modes, and you can switch between them at any time.
 
-## Memory Bank
-
-1. Start a new task in Roo Code
-2. Choose **Flow Architect** mode
-3. Enter the prompt `Initialize the memory bank for this project`
-4. Follow the prompts and when it asks how you want to create the initial context, answer with "Access the initial context from the README.md document"
-
-It will create many markdown files during this process, so just be patient until it completes.
-
 ## What's Next?
 
-In the next chapter, we'll explore mode workflows in detail. You'll learn how different modes work together and how the Memory Bank system maintains context across complex development tasks.
+In the following chapters, we'll explore mode workflows in detail. You'll learn how different modes work together and how the Memory Bank system maintains context across complex development tasks.

@@ -1,5 +1,3 @@
-# Iterative Development with Ask Mode
-
 In the previous section, you learned how **Architect** mode helps you plan and strategize your development approach. Now you'll discover how to combine **Architect** and **Ask** modes for iterative development—a powerful approach that keeps you actively involved in the development process while leveraging AI assistance.
 
 ## What is Iterative Development?

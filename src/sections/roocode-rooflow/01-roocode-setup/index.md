@@ -37,7 +37,7 @@ code ~/agentic-ai-workshop/coins-r-us
 
 RooCode is distributed as a VS Code extension, making installation straightforward through VS Code's built-in extension marketplace. Open VS Code and navigate to the Extensions panel using Ctrl+Shift+X (or Cmd+Shift+X on Mac), then search for "Roo Code" and click Install on the official RooCode extension. For developers who prefer command-line installation, you can also install RooCode directly using the command:
 
-```bash
+```sh
 code --install-extension roocode.roocode
 ```
 

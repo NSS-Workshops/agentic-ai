@@ -11,7 +11,7 @@ export default {
     id: "mode-workflows",
     title: "Mode Workflows",
     previousChapterId: "rooflow-setup",
-    nextChapterId: "architect-mode-implementation",
+    nextChapterId: "memory-bank",
     requiresAuth: false,
     exercise: null,
     content
