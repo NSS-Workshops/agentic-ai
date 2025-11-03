@@ -16,15 +16,15 @@ Ask mode is your detective partner when exploring unfamiliar codebases. It can r
 
 When you first encounter a new codebase, begin with these high-level questions:
 
-```
+```txt
 What is the overall architecture of this React application?
 ```
 
-```
+```txt
 Can you explain the main components and how they relate to each other?
 ```
 
-```
+```txt
 What state management approach is being used here?
 ```
 
@@ -34,15 +34,15 @@ Ask mode will analyze the project structure, identify key files, and provide you
 
 Once you have the big picture, you can ask more targeted questions:
 
-```
+```txt
 How does user authentication work in this application?
 ```
 
-```
+```txt
 Can you trace the data flow from when a user submits the contact form?
 ```
 
-```
+```txt
 What testing patterns are being used, and are there any gaps in test coverage?
 ```
 
@@ -50,15 +50,15 @@ What testing patterns are being used, and are there any gaps in test coverage?
 
 Every development team has their own way of doing things. Ask mode can help you identify these patterns:
 
-```
+```txt
 What naming conventions are used for components and functions?
 ```
 
-```
+```txt
 How are API calls typically structured in this codebase?
 ```
 
-```
+```txt
 What patterns are used for error handling?
 ```
 
@@ -86,15 +86,15 @@ Ask mode can help you create comprehensive documentation by transforming your an
 
 While analyzing code, Ask mode can help you identify potential issues:
 
-```
+```txt
 Are there any code smells, anti-patterns, or areas that might need refactoring?
 ```
 
-```
+```txt
 Can you identify any security concerns or potential vulnerabilities in this code?
 ```
 
-```
+```txt
 Are there any performance bottlenecks or inefficient patterns?
 ```
 

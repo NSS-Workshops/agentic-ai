@@ -18,8 +18,10 @@ Architect mode helps you avoid these pitfalls by creating a comprehensive plan b
 
 Start by having Architect mode analyze the feature request in the context of the existing codebase:
 
-```
-I need to add a user favorites feature to this e-commerce app. Can you analyze the existing code and create a strategy for implementing this feature that maintains consistency with current patterns?
+```txt
+I need to add a user favorites feature to this e-commerce app. Can you analyze the existing
+ code and create a strategy for implementing this feature that maintains consistency with
+ current patterns?
 ```
 
 Architect mode will examine existing user management patterns to understand how user data is currently handled, identify where favorites data should be stored within the existing data architecture, determine which components need modification and how those changes will ripple through the system, suggest API endpoints that follow existing conventions and naming patterns, and plan the UI integration points that align with the current user interface design.
@@ -28,8 +30,9 @@ Architect mode will examine existing user management patterns to understand how 
 
 Before implementing, understand what will be affected:
 
-```
-What existing components and functions will need to be modified to add the favorites feature? Are there any potential breaking changes I should be aware of?
+```txt
+What existing components and functions will need to be modified to add the favorites feature?
+Are there any potential breaking changes I should be aware of?
 ```
 
 This comprehensive impact assessment helps you identify all touchpoints for the new feature, ensuring nothing is overlooked during implementation. You'll be able to plan for necessary updates to existing code, understanding exactly which files and functions need modification. This process also helps you anticipate potential conflicts or issues before they become problems, and estimate the scope of work accurately so you can set realistic timelines and expectations.
@@ -38,8 +41,9 @@ This comprehensive impact assessment helps you identify all touchpoints for the 
 
 Ensure your new feature matches existing patterns:
 
-```
-Based on how other similar features are implemented in this codebase, what naming conventions, file structure, and coding patterns should I follow for the favorites feature?
+```txt
+Based on how other similar features are implemented in this codebase, what naming conventions,
+file structure, and coding patterns should I follow for the favorites feature?
 ```
 
 This consistency analysis ensures that your new feature maintains consistent naming across the application, preventing the confusion that comes from mixed naming conventions. You'll establish proper file organization that follows the existing project structure, maintain matching code style and structure that makes the codebase feel cohesive, and ensure adherence to established architectural patterns that other developers on the team will recognize and understand.
