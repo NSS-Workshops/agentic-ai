@@ -43,14 +43,17 @@ cd ~/agentic-ai-workshop/coins-r-us
 
 ### Installation Steps for Windows
 
-1. Open Command Prompt or PowerShell and navigate to your project's root directory
+1. Open PowerShell and navigate to your project's root directory
+   ```sh
+   cd ~/agentic-ai-workshop/coins-r-us
+   ```
 2. Download the RooFlow installation script:
    ```sh
-   curl -O https://raw.githubusercontent.com/GreatScottyMac/RooFlow/main/config/install_rooflow.cmd
+   Invoke-WebRequest -Uri "https://raw.githubusercontent.com/GreatScottyMac/RooFlow/main/config/install_rooflow.cmd" -OutFile ".\install_rooflow.cmd"
    ```
 3. Run the installation script:
    ```sh
-   install_rooflow.cmd
+   .\install_rooflow.cmd
    ```
 
 ### Verify Installation
