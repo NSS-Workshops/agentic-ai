@@ -87,10 +87,24 @@ Ask: "For your recipe sharing app, here are the best practices for image uploads
 - Provides relevant, project-specific advice
 ```
 
-## What's Next?
+## Practice
 
-You'll learn how to coordinate multiple modes for complex tasks, creating seamless workflows where each mode contributes its specialized expertise to larger development challenges. The section covers iterative development strategies with AI assistance, showing you how to break down complex projects into manageable cycles that leverage AI capabilities effectively.
+You will continue to work on your Marketplace feature for the Coins R Us team project. However, at this point, you are going to store strategic and architectual decision for long-term context in the Memory Bank.
 
-You'll practice advanced context management across development sessions, ensuring that your AI assistants maintain continuity and build upon previous work rather than starting fresh each time. Finally, you'll explore real-world project workflows using RooCode and RooFlow, seeing how professional development teams integrate these tools into their daily practices.
+Use this prompt in a new task in Roo Code, making sure that you are in **Flow Architect** mode.
 
-The combination of solid architectural planning (what you just learned) with iterative development practices (what's coming next) forms the foundation of professional AI-assisted development.
+```
+Activate the memory bank for this task.
+
+Read the contents of my design document for the Marketplace feature: {insert your file name here}
+
+Import all decisions and patterns into the memory bank
+```
+
+If your team hasn't completed this feateure yet, continue to develop it with the assistance of the LLM.
+
+If your team has already implement the Marketplace, consider implementing one of these features. Make sure that you explicitly tell the LLM to activate the memory bank during the planning stage to store decisions:
+
+1. Coin Bank - A new view that lists the coins owned by the current user
+2. Coin Images - Augment the Add Coin form to allow the user to upload an image file for a coin _(you can search the web for example images)_
+3. Coin Notes - Add a new button to the UI next to each coin the user owns that, when clicked, shows a new view that allows the user to enter in addtional notes about it.
