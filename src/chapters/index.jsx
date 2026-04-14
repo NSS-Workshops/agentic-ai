@@ -1,57 +1,57 @@
 import { nav } from "./nav.js";
 
-import whatYoullNeed from "./1_getting_started/what_youll_need.md?raw";
-import proPlanVsApiCredits from "./1_getting_started/pro_plan_vs_api_credits.md?raw";
-import installingClaudeCode from "./1_getting_started/installing_claude_code.md?raw";
-import rareRepoSetup from "./1_getting_started/rare_repo_setup.md?raw";
-import githubCli from "./1_getting_started/github_cli.md?raw";
+import whatYoullNeed from "./1_getting_started/1_what_youll_need.md?raw";
+import proPlanVsApiCredits from "./1_getting_started/2_pro_plan_vs_api_credits.md?raw";
+import installingClaudeCode from "./1_getting_started/3_installing_claude_code.md?raw";
+import rareRepoSetup from "./1_getting_started/4_rare_repo_setup.md?raw";
+import githubCli from "./1_getting_started/5_github_cli.md?raw";
 
-import thePredictionRobot from "./2_llms_and_agents/the_prediction_robot.md?raw";
-import tokens from "./2_llms_and_agents/tokens.md?raw";
-import theContextWindow from "./2_llms_and_agents/the_context_window.md?raw";
-import confidentlyWrong from "./2_llms_and_agents/confidently_wrong.md?raw";
-import fromLlmToAgent from "./2_llms_and_agents/from_llm_to_agent.md?raw";
-import permissionPrompts from "./2_llms_and_agents/permission_prompts.md?raw";
+import thePredictionRobot from "./2_llms_and_agents/1_the_prediction_robot.md?raw";
+import tokens from "./2_llms_and_agents/2_tokens.md?raw";
+import theContextWindow from "./2_llms_and_agents/3_the_context_window.md?raw";
+import confidentlyWrong from "./2_llms_and_agents/4_confidently_wrong.md?raw";
+import fromLlmToAgent from "./2_llms_and_agents/5_from_llm_to_agent.md?raw";
+import permissionPrompts from "./2_llms_and_agents/6_permission_prompts.md?raw";
 
-import whyPromptingMatters from "./3_prompting_fundamentals/why_prompting_matters.md?raw";
-import anatomyOfAStrongPrompt from "./3_prompting_fundamentals/anatomy_of_a_strong_prompt.md?raw";
-import kindsOfContextToProvide from "./3_prompting_fundamentals/kinds_of_context_to_provide.md?raw";
-import goodVsBadPrompts from "./3_prompting_fundamentals/good_vs_bad_prompts.md?raw";
-import promptingIsIterative from "./3_prompting_fundamentals/prompting_is_iterative.md?raw";
+import whyPromptingMatters from "./3_prompting_fundamentals/1_why_prompting_matters.md?raw";
+import anatomyOfAStrongPrompt from "./3_prompting_fundamentals/2_anatomy_of_a_strong_prompt.md?raw";
+import kindsOfContextToProvide from "./3_prompting_fundamentals/3_kinds_of_context_to_provide.md?raw";
+import goodVsBadPrompts from "./3_prompting_fundamentals/4_good_vs_bad_prompts.md?raw";
+import promptingIsIterative from "./3_prompting_fundamentals/5_prompting_is_iterative.md?raw";
 
-import theNewHireMindset from "./4_exploring_unknown_codebase/the_new_hire_mindset.md?raw";
-import questionsToAskANewCodebase from "./4_exploring_unknown_codebase/questions_to_ask_a_new_codebase.md?raw";
-import turningExplorationIntoArtifacts from "./4_exploring_unknown_codebase/turning_exploration_into_artifacts.md?raw";
-import verifyingWhatClaudeGenerates from "./4_exploring_unknown_codebase/verifying_what_claude_generates.md?raw";
+import theNewHireMindset from "./4_exploring_unknown_codebase/1_the_new_hire_mindset.md?raw";
+import questionsToAskANewCodebase from "./4_exploring_unknown_codebase/2_questions_to_ask_a_new_codebase.md?raw";
+import turningExplorationIntoArtifacts from "./4_exploring_unknown_codebase/3_turning_exploration_into_artifacts.md?raw";
+import verifyingWhatClaudeGenerates from "./4_exploring_unknown_codebase/4_verifying_what_claude_generates.md?raw";
 
-import theLoop from "./5_claude_code_modes/the_loop.md?raw";
-import whyModesExist from "./5_claude_code_modes/why_modes_exist.md?raw";
-import planMode from "./5_claude_code_modes/plan_mode.md?raw";
-import askBeforeEdits from "./5_claude_code_modes/ask_before_edits.md?raw";
-import editAutomatically from "./5_claude_code_modes/edit_automatically.md?raw";
-import modeChoiceIsDeliberate from "./5_claude_code_modes/mode_choice_is_deliberate.md?raw";
+import theLoop from "./5_claude_code_modes/1_the_loop.md?raw";
+import whyModesExist from "./5_claude_code_modes/2_why_modes_exist.md?raw";
+import planMode from "./5_claude_code_modes/3_plan_mode.md?raw";
+import askBeforeEdits from "./5_claude_code_modes/4_ask_before_edits.md?raw";
+import editAutomatically from "./5_claude_code_modes/5_edit_automatically.md?raw";
+import modeChoiceIsDeliberate from "./5_claude_code_modes/6_mode_choice_is_deliberate.md?raw";
 
-import the50FirstDatesCoworker from "./6_context_and_memory/the_50_first_dates_coworker.md?raw";
-import claudeMdAsPersistentContext from "./6_context_and_memory/claude_md_as_persistent_context.md?raw";
-import whatBelongsInAClaudeMd from "./6_context_and_memory/what_belongs_in_a_claude_md.md?raw";
-import claudeMdGrowsWithYourProject from "./6_context_and_memory/claude_md_grows_with_your_project.md?raw";
-import managingContextWithinASession from "./6_context_and_memory/managing_context_within_a_session.md?raw";
-import whatNotToPersist from "./6_context_and_memory/what_not_to_persist.md?raw";
+import the50FirstDatesCoworker from "./6_context_and_memory/1_the_50_first_dates_coworker.md?raw";
+import claudeMdAsPersistentContext from "./6_context_and_memory/2_claude_md_as_persistent_context.md?raw";
+import whatBelongsInAClaudeMd from "./6_context_and_memory/3_what_belongs_in_a_claude_md.md?raw";
+import claudeMdGrowsWithYourProject from "./6_context_and_memory/4_claude_md_grows_with_your_project.md?raw";
+import managingContextWithinASession from "./6_context_and_memory/5_managing_context_within_a_session.md?raw";
+import whatNotToPersist from "./6_context_and_memory/6_what_not_to_persist.md?raw";
 
-import theLoopInPractice from "./7_implementing_features/the_loop_in_practice.md?raw";
-import avoidingVibeCoding from "./7_implementing_features/avoiding_vibe_coding.md?raw";
-import featureWalkthroughs from "./7_implementing_features/feature_walkthroughs.md?raw";
-import midFeaturePivots from "./7_implementing_features/mid_feature_pivots.md?raw";
+import theLoopInPractice from "./7_implementing_features/1_the_loop_in_practice.md?raw";
+import avoidingVibeCoding from "./7_implementing_features/2_avoiding_vibe_coding.md?raw";
+import featureWalkthroughs from "./7_implementing_features/3_feature_walkthroughs.md?raw";
+import midFeaturePivots from "./7_implementing_features/4_mid_feature_pivots.md?raw";
 
-import whatYouveLearnedCondensed from "./8_workflows_and_tandem/what_youve_learned_condensed.md?raw";
-import whyWorkflowsMatter from "./8_workflows_and_tandem/why_workflows_matter.md?raw";
-import whatIsAClaudeCodeSkill from "./8_workflows_and_tandem/what_is_a_claude_code_skill.md?raw";
-import introducingTandem from "./8_workflows_and_tandem/introducing_tandem.md?raw";
-import userLevelClaudeMdAndDevProfile from "./8_workflows_and_tandem/user_level_claude_md_and_dev_profile.md?raw";
+import whatYouveLearnedCondensed from "./8_workflows_and_tandem/1_what_youve_learned_condensed.md?raw";
+import whyWorkflowsMatter from "./8_workflows_and_tandem/2_why_workflows_matter.md?raw";
+import whatIsAClaudeCodeSkill from "./8_workflows_and_tandem/3_what_is_a_claude_code_skill.md?raw";
+import introducingTandem from "./8_workflows_and_tandem/4_introducing_tandem.md?raw";
+import userLevelClaudeMdAndDevProfile from "./8_workflows_and_tandem/5_user_level_claude_md_and_dev_profile.md?raw";
 
-import greenfieldIsDifferentFromBrownfield from "./9_capstone/greenfield_is_different_from_brownfield.md?raw";
-import workingWithAnUnfamiliarStack from "./9_capstone/working_with_an_unfamiliar_stack.md?raw";
-import scopeDiscipline from "./9_capstone/scope_discipline.md?raw";
+import greenfieldIsDifferentFromBrownfield from "./9_capstone/1_greenfield_is_different_from_brownfield.md?raw";
+import workingWithAnUnfamiliarStack from "./9_capstone/2_working_with_an_unfamiliar_stack.md?raw";
+import scopeDiscipline from "./9_capstone/3_scope_discipline.md?raw";
 
 // Chapter entries are built module-by-module below. Within a module, each
 // chapter's `previousChapterId` points at the preceding chapter so the "next /
