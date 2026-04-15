@@ -1,10 +1,9 @@
 import { nav } from "./nav.js";
 
 import whatYoullNeed from "./1_getting_started/1_what_youll_need.md?raw";
-import proPlanVsApiCredits from "./1_getting_started/2_pro_plan_vs_api_credits.md?raw";
-import installingClaudeCode from "./1_getting_started/3_installing_claude_code.md?raw";
-import rareRepoSetup from "./1_getting_started/4_rare_repo_setup.md?raw";
-import githubCli from "./1_getting_started/5_github_cli.md?raw";
+import installingClaudeCode from "./1_getting_started/2_installing_claude_code.md?raw";
+import rareRepoSetup from "./1_getting_started/3_rare_repo_setup.md?raw";
+import githubCli from "./1_getting_started/4_github_cli.md?raw";
 
 import thePredictionRobot from "./2_llms_and_agents/1_the_prediction_robot.md?raw";
 import tokens from "./2_llms_and_agents/2_tokens.md?raw";
@@ -59,7 +58,6 @@ import scopeDiscipline from "./9_capstone/3_scope_discipline.md?raw";
 
 const module1 = [
   { title: "What you'll need", content: whatYoullNeed },
-  { title: "Pro plan vs. API credits", content: proPlanVsApiCredits },
   { title: "Installing Claude Code", content: installingClaudeCode },
   { title: "Rare repo setup", content: rareRepoSetup },
   { title: "GitHub CLI", content: githubCli },
