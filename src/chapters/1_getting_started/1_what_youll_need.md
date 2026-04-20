@@ -1,8 +1,9 @@
 Welcome. Before you write a single prompt, you need a workstation that can actually run the tools this course is built around. This chapter is a checklist. Nothing conceptual, no heavy ideas. You'll install what's missing and confirm what's already there.
 
-> You've just been hired at **Rare Publishing Inc.**, a blogging platform. The previous developer left abruptly, with no handoff, no documentation, no warm-introduction email. On your first morning, a short message lands in your inbox from **Devon**, the tech lead:
+> You've just been hired at **Rare Publishing Inc.**, a fully remote blogging platform. The previous developer left abruptly, with no handoff, no documentation, no warm-introduction email. On your first morning, your laptop is on, Slack is open, and a DM is already waiting from **Devon**, the tech lead:
 >
-> > *"Welcome aboard. Sorry the onboarding's a mess. The last person didn't leave us much to work with. Get your machine set up, poke around the code, and ping me when you're stuck. We'll lean on AI tooling to get you productive fast. Devon."*
+> > **Devon** 9:02 AM
+> > Welcome aboard. Sorry the onboarding's a mess. The last person didn't leave us much to work with. Get your machine set up, poke around the code, and ping me when you're stuck. We'll lean on AI tooling to get you productive fast.
 >
 > Renee (Product Owner) will start dropping things on you soon. Jamie (Designer) cares about the details and will notice when something's off. For now, it's just you and Devon's terse welcome. Time to set up.
 
@@ -58,7 +59,7 @@ git config --global user.email "you@example.com"
 
 ### Docker Desktop
 
-Rare's API runs in Docker. You'll start the containers in Module III; install it now so it's ready.
+Rare's API runs in Docker. You'll start the containers in Module II; install it now so it's ready.
 
 - Download from [docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop/).
 - Launch the Docker Desktop app after install. Docker commands won't work unless the app is running.

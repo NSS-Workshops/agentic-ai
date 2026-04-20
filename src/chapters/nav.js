@@ -6,15 +6,9 @@ export const nav = [
     required: true,
   },
   {
-    id: "llms-and-agents",
-    title: "Understanding LLMs and Agents",
-    description: "Build the mental model: tokens, context windows, hallucinations, and what makes a chatbot an agent.",
-    required: true,
-  },
-  {
-    id: "prompting-fundamentals",
-    title: "Prompting Fundamentals",
-    description: "Anatomy of a strong prompt, the kinds of context to provide, and iterating when the first response doesn't land.",
+    id: "llms-and-prompting",
+    title: "Understanding LLMs and Prompting",
+    description: "Build the mental model (tokens, context, agents, hallucinations), then the skill that rides on top of it: writing prompts that actually land.",
     required: true,
   },
   {
@@ -32,7 +26,7 @@ export const nav = [
   {
     id: "context-and-memory",
     title: "Context and Long-Term Memory",
-    description: "Solve the \"50 First Dates coworker\" problem with CLAUDE.md — persistent context that survives across sessions.",
+    description: "Solve the \"50 First Dates coworker\" problem with CLAUDE.md, persistent context that survives across sessions.",
     required: true,
   },
   {

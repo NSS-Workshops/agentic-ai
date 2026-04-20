@@ -51,7 +51,7 @@ Both are real, working repos with their own `.git/` directories. Commits you mak
 
 ### 3. Add a `.gitignore`
 
-Even though `rare-project/` isn't a Git repo right now, you may want to make it one later (for instance, when Module VI introduces `CLAUDE.md` and you'll want to version-control that file). When that happens, Git will try to track everything inside the folder by default, including both cloned repos, which are already tracked separately. That's a mess.
+Even though `rare-project/` isn't a Git repo right now, you may want to make it one later (for instance, when Module V introduces `CLAUDE.md` and you'll want to version-control that file). When that happens, Git will try to track everything inside the folder by default, including both cloned repos, which are already tracked separately. That's a mess.
 
 Head this off now. Inside `rare-project/`, create a `.gitignore` containing:
 
