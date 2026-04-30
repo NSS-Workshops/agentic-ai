@@ -25,10 +25,8 @@ import modeChoiceIsDeliberate from "./4_claude_code_modes/6_mode_choice_is_delib
 
 import the50FirstDatesCoworker from "./5_context_and_memory/1_the_50_first_dates_coworker.md?raw";
 import claudeMdAsPersistentContext from "./5_context_and_memory/2_claude_md_as_persistent_context.md?raw";
-import whatBelongsInAClaudeMd from "./5_context_and_memory/3_what_belongs_in_a_claude_md.md?raw";
+import seeTheDifference from "./5_context_and_memory/3_see_the_difference.md?raw";
 import claudeMdGrowsWithYourProject from "./5_context_and_memory/4_claude_md_grows_with_your_project.md?raw";
-import managingContextWithinASession from "./5_context_and_memory/5_managing_context_within_a_session.md?raw";
-import whatNotToPersist from "./5_context_and_memory/6_what_not_to_persist.md?raw";
 
 import theLoopInPractice from "./6_implementing_features/1_the_loop_in_practice.md?raw";
 import avoidingVibeCoding from "./6_implementing_features/2_avoiding_vibe_coding.md?raw";
@@ -83,10 +81,8 @@ const module4 = [
 const module5 = [
   { title: "The 50 First Dates coworker", content: the50FirstDatesCoworker },
   { title: "CLAUDE.md as persistent context", content: claudeMdAsPersistentContext },
-  { title: "What belongs in a CLAUDE.md", content: whatBelongsInAClaudeMd },
+  { title: "See the difference", content: seeTheDifference },
   { title: "CLAUDE.md grows with your project", content: claudeMdGrowsWithYourProject },
-  { title: "Managing context within a session", content: managingContextWithinASession },
-  { title: "What not to persist", content: whatNotToPersist },
 ];
 
 const module6 = [
