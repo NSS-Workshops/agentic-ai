@@ -28,10 +28,11 @@ import claudeMdAsPersistentContext from "./5_context_and_memory/2_claude_md_as_p
 import seeTheDifference from "./5_context_and_memory/3_see_the_difference.md?raw";
 import claudeMdGrowsWithYourProject from "./5_context_and_memory/4_claude_md_grows_with_your_project.md?raw";
 
-import theLoopInPractice from "./6_implementing_features/1_the_loop_in_practice.md?raw";
-import avoidingVibeCoding from "./6_implementing_features/2_avoiding_vibe_coding.md?raw";
-import featureWalkthroughs from "./6_implementing_features/3_feature_walkthroughs.md?raw";
-import midFeaturePivots from "./6_implementing_features/4_mid_feature_pivots.md?raw";
+import shipWithOwnership from "./6_implementing_features/1_ship_with_ownership.md?raw";
+import debuggingWithClaude from "./6_implementing_features/2_debugging_with_claude.md?raw";
+import profileEditing from "./6_implementing_features/3_profile_editing.md?raw";
+import postCards from "./6_implementing_features/4_post_cards.md?raw";
+import markdownForAPublishingPlatform from "./6_implementing_features/5_markdown_for_a_publishing_platform.md?raw";
 
 import whatYouveLearnedCondensed from "./7_workflows_and_tandem/1_what_youve_learned_condensed.md?raw";
 import whyWorkflowsMatter from "./7_workflows_and_tandem/2_why_workflows_matter.md?raw";
@@ -86,10 +87,11 @@ const module5 = [
 ];
 
 const module6 = [
-  { title: "The loop in practice", content: theLoopInPractice },
-  { title: "Avoiding vibe coding", content: avoidingVibeCoding },
-  { title: "Feature walkthroughs", content: featureWalkthroughs },
-  { title: "Mid-feature pivots", content: midFeaturePivots },
+  { title: "Ship with ownership", content: shipWithOwnership },
+  { title: "Debugging with Claude", content: debuggingWithClaude },
+  { title: "Profile editing", content: profileEditing },
+  { title: "Post cards with engagement counts", content: postCards },
+  { title: "Markdown for a publishing platform", content: markdownForAPublishingPlatform },
 ];
 
 const module7 = [

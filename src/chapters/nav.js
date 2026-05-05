@@ -32,7 +32,7 @@ export const nav = [
   {
     id: "implementing-features",
     title: "Implementing Features in Rare",
-    description: "Ship real features with ownership. Avoid vibe coding. Handle mid-feature pivots gracefully.",
+    description: "Debug real issues, ship real features, and own every line you commit. Three bugs and three features using the full loop.",
     required: true,
   },
   {
