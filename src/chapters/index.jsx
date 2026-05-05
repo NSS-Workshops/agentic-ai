@@ -38,6 +38,7 @@ import fromHabitsToWorkflow from "./7_workflows_and_tandem/1_from_habits_to_work
 import pairProgrammingWithTandem from "./7_workflows_and_tandem/2_pair_programming_with_tandem.md?raw";
 import aSecondRide from "./7_workflows_and_tandem/3_a_second_ride.md?raw";
 import loadingAndErrorStates from "./7_workflows_and_tandem/4_loading_and_error_states.md?raw";
+import whatsNext from "./7_workflows_and_tandem/5_whats_next.md?raw";
 
 import greenfieldIsDifferentFromBrownfield from "./8_capstone/1_greenfield_is_different_from_brownfield.md?raw";
 import workingWithAnUnfamiliarStack from "./8_capstone/2_working_with_an_unfamiliar_stack.md?raw";
@@ -98,6 +99,7 @@ const module7 = [
   { title: "Pair programming with Tandem", content: pairProgrammingWithTandem },
   { title: "A second ride", content: aSecondRide },
   { title: "Loading and error states", content: loadingAndErrorStates },
+  { title: "What's next", content: whatsNext },
 ];
 
 const module8 = [
