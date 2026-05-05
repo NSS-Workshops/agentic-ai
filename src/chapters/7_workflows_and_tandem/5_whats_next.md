@@ -6,7 +6,7 @@ That workflow isn't tied to Rare, or to Claude Code, or to Tandem. It's a set of
 
 You can drop into an unfamiliar codebase and get productive. You know how to ask the right questions, generate documentation artifacts, and build understanding before making changes.
 
-You can ship features with AI assistance without losing ownership of the code. You know what vibe coding is, when it's fine, and when it's not. You read diffs. You write tests. You can explain what you committed.
+You can ship features with AI assistance without losing ownership of the code. You read diffs. You write tests. You can explain what you committed.
 
 You can debug systematically. You reproduce, investigate, understand the system, and choose a fix you can defend.
 
@@ -20,4 +20,4 @@ It's optional because the core of this course is already behind you. But if you 
 
 ## Keep going
 
-Update your Developer Profile as your skills change. Add to your `CLAUDE.md` files as you learn new conventions and domain rules. Refine your workflow. The tools will keep evolving. The habits compound.
+Update your Developer Profile as your skills change. Refine your workflow. The tools will keep evolving. The habits compound.
