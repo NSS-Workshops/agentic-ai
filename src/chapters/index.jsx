@@ -34,11 +34,10 @@ import profileEditing from "./6_implementing_features/3_profile_editing.md?raw";
 import postCards from "./6_implementing_features/4_post_cards.md?raw";
 import markdownForAPublishingPlatform from "./6_implementing_features/5_markdown_for_a_publishing_platform.md?raw";
 
-import whatYouveLearnedCondensed from "./7_workflows_and_tandem/1_what_youve_learned_condensed.md?raw";
-import whyWorkflowsMatter from "./7_workflows_and_tandem/2_why_workflows_matter.md?raw";
-import whatIsAClaudeCodeSkill from "./7_workflows_and_tandem/3_what_is_a_claude_code_skill.md?raw";
-import introducingTandem from "./7_workflows_and_tandem/4_introducing_tandem.md?raw";
-import userLevelClaudeMdAndDevProfile from "./7_workflows_and_tandem/5_user_level_claude_md_and_dev_profile.md?raw";
+import fromHabitsToWorkflow from "./7_workflows_and_tandem/1_from_habits_to_workflow.md?raw";
+import pairProgrammingWithTandem from "./7_workflows_and_tandem/2_pair_programming_with_tandem.md?raw";
+import aSecondRide from "./7_workflows_and_tandem/3_a_second_ride.md?raw";
+import loadingAndErrorStates from "./7_workflows_and_tandem/4_loading_and_error_states.md?raw";
 
 import greenfieldIsDifferentFromBrownfield from "./8_capstone/1_greenfield_is_different_from_brownfield.md?raw";
 import workingWithAnUnfamiliarStack from "./8_capstone/2_working_with_an_unfamiliar_stack.md?raw";
@@ -95,11 +94,10 @@ const module6 = [
 ];
 
 const module7 = [
-  { title: "What you've learned, condensed", content: whatYouveLearnedCondensed },
-  { title: "Why workflows matter", content: whyWorkflowsMatter },
-  { title: "What is a Claude Code skill?", content: whatIsAClaudeCodeSkill },
-  { title: "Introducing Tandem", content: introducingTandem },
-  { title: "Your user-level CLAUDE.md and Dev Profile", content: userLevelClaudeMdAndDevProfile },
+  { title: "From habits to workflow", content: fromHabitsToWorkflow },
+  { title: "Pair programming with Tandem", content: pairProgrammingWithTandem },
+  { title: "A second ride", content: aSecondRide },
+  { title: "Loading and error states", content: loadingAndErrorStates },
 ];
 
 const module8 = [

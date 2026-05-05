@@ -38,13 +38,14 @@ export const nav = [
   {
     id: "workflows-and-tandem",
     title: "Workflows and Tandem",
-    description: "Package your habits into a reusable workflow. Install Tandem, set up a Dev Profile, ship features through pair-program.",
+    description: "Package your habits into a reusable workflow. Install Tandem, set up a Dev Profile, ship three features through /pair-program.",
     required: true,
   },
   {
     id: "capstone",
     title: "Capstone: Greenfield with Tandem",
     description: "Apply everything to a brand-new project in an unfamiliar stack. Ship something small that runs.",
-    required: true,
+    required: false,
+    optional: true,
   },
 ];
