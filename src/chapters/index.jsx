@@ -40,9 +40,9 @@ import aSecondRide from "./7_workflows_and_tandem/3_a_second_ride.md?raw";
 import loadingAndErrorStates from "./7_workflows_and_tandem/4_loading_and_error_states.md?raw";
 import whatsNext from "./7_workflows_and_tandem/5_whats_next.md?raw";
 
-import greenfieldIsDifferentFromBrownfield from "./8_capstone/1_greenfield_is_different_from_brownfield.md?raw";
-import workingWithAnUnfamiliarStack from "./8_capstone/2_working_with_an_unfamiliar_stack.md?raw";
-import scopeDiscipline from "./8_capstone/3_scope_discipline.md?raw";
+import greenfieldIsDifferent from "./8_capstone/1_greenfield_is_different.md?raw";
+import pickYourProject from "./8_capstone/2_pick_your_project.md?raw";
+import buildIt from "./8_capstone/3_build_it.md?raw";
 
 // Chapter entries are built module-by-module below. Within a module, each
 // chapter's `previousChapterId` points at the preceding chapter so the "next /
@@ -103,9 +103,9 @@ const module7 = [
 ];
 
 const module8 = [
-  { title: "Greenfield is different from brownfield", content: greenfieldIsDifferentFromBrownfield },
-  { title: "Working with an unfamiliar stack", content: workingWithAnUnfamiliarStack },
-  { title: "Scope discipline", content: scopeDiscipline },
+  { title: "Greenfield is different", content: greenfieldIsDifferent },
+  { title: "Pick your project", content: pickYourProject },
+  { title: "Build it", content: buildIt },
 ];
 
 const slug = (title) =>

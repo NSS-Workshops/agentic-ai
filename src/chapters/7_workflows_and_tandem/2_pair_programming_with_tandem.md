@@ -9,7 +9,7 @@ This is your first time using Tandem on real work. Type `/pair-program` and desc
 
 Watch what happens. Tandem loads your project context, reads your Dev Profile, and breaks the work into sub-steps. For each step, it explains what needs to happen, asks whether you or Claude should implement it, and checks your understanding before moving on.
 
-Pay attention to the understanding checks. If Django pagination is new territory for you (and it probably is -- you haven't used `Paginator` or page query parameters in this course), the questions should push you to think, not just confirm. That's the Dev Profile at work.
+Pay attention to the understanding checks. If Django pagination is new territory for you (and it probably is, since you haven't used `Paginator` or page query parameters in this course), the questions should push you to think, not just confirm. That's the Dev Profile at work.
 
 Build through the sub-steps. The feature touches both the API (paginated responses with page metadata) and the client (page controls, passing page params, preserving filters across pages).
 

@@ -12,11 +12,11 @@ You can debug systematically. You reproduce, investigate, understand the system,
 
 You can set up persistent context that makes every session smarter than the last. And you can calibrate an AI workflow to your own skill level so it teaches you where you need it and stays out of your way where you don't.
 
-## The optional capstone
+## The portfolio project
 
-Module VIII is there when you're ready. It's a greenfield project in a stack you're not comfortable with, using the full Tandem workflow from scratch: PRD, architecture, roadmap, issues, and pair-programming. Everything you've practiced on Rare, applied to something brand new.
+Module VIII is there when you're ready. It's a greenfield project of your choosing, using the full Tandem workflow from scratch: PRD, architecture, roadmap, issues, and pair-programming. Everything you've practiced on Rare, applied to something brand new. Something you can show off in an interview that demonstrates both your technical skills and your ability to work effectively with AI tools.
 
-It's optional because the core of this course is already behind you. But if you want to see how far these habits take you on unfamiliar ground, that's where to go.
+It's optional because the core of this course is already behind you. But if you want to see how far these habits take you on new ground, that's where to go.
 
 ## Keep going
 

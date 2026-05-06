@@ -26,17 +26,17 @@ Tandem is an open-source set of skills for Claude Code that encodes a workflow s
 
 ## The Developer Profile
 
-What Tandem adds that your current setup doesn't have is the **Developer Profile** -- a personal configuration that tells `/pair-program` what you're learning, what you're comfortable with, and what you're strong in.
+What Tandem adds that your current setup doesn't have is the **Developer Profile**, a personal configuration that tells `/pair-program` what you're learning, what you're comfortable with, and what you're strong in.
 
 In Module V, you created `rare-project/CLAUDE.md`. That file is project-level: shared with the team, specific to Rare. The Developer Profile lives in `~/.claude/CLAUDE.md`, your **user-level** configuration. It's personal and applies to every project you open in Claude Code.
 
 The profile has three tiers:
 
-**Currently Learning** -- topics you're actively studying. `/pair-program` gives the deepest explanations and asks the hardest understanding questions here.
+**Currently Learning** is for topics you're actively studying. `/pair-program` gives the deepest explanations and asks the hardest understanding questions here.
 
-**Deepening** -- topics you're familiar with but want production-level confidence in. Moderate depth.
+**Deepening** is for topics you're familiar with but want production-level confidence in. Moderate depth.
 
-**Strong Skills** -- topics where you're confident. `/pair-program` keeps explanations brief unless something unusual comes up.
+**Strong Skills** is for topics where you're confident. `/pair-program` keeps explanations brief unless something unusual comes up.
 
 ## Exercise 7.1: Install Tandem and write your Dev Profile
 
@@ -52,7 +52,7 @@ Run `/create-manifest` in Claude Code. This scans your project and creates `tand
 
 ### Write your Developer Profile
 
-Create `~/.claude/CLAUDE.md` if it doesn't exist already. This is your user-level file -- not the project-level one at `rare-project/CLAUDE.md`.
+Create `~/.claude/CLAUDE.md` if it doesn't exist already. This is your user-level file, not the project-level one at `rare-project/CLAUDE.md`.
 
 You can write the profile from scratch, but you don't have to. Claude Code has the Developer Profile template from Tandem's installed files. Ask Claude to help you draft it:
 

@@ -42,9 +42,9 @@ export const nav = [
     required: true,
   },
   {
-    id: "capstone",
-    title: "Capstone: Greenfield with Tandem",
-    description: "Apply everything to a brand-new project in an unfamiliar stack. Ship something small that runs.",
+    id: "portfolio-project",
+    title: "Portfolio Project: Greenfield with Tandem",
+    description: "Apply everything to a personal project in a stack you want to learn. Something you can show off in an interview.",
     required: false,
     optional: true,
   },
