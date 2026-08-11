@@ -1,9 +1,6 @@
 import { nav } from "./nav.js";
 
-import whatYoullNeed from "./1_getting_started/1_what_youll_need.md?raw";
-import installingClaudeCode from "./1_getting_started/2_installing_claude_code.md?raw";
-import rareRepoSetup from "./1_getting_started/3_rare_repo_setup.md?raw";
-import githubCli from "./1_getting_started/4_github_cli.md?raw";
+import automatedSetup from "./1_getting_started/1_automated_setup.md?raw";
 
 import thePredictionRobot from "./2_llms_and_prompting/1_the_prediction_robot.md?raw";
 import tokensAndContextWindow from "./2_llms_and_prompting/2_tokens_and_the_context_window.md?raw";
@@ -49,10 +46,7 @@ import buildIt from "./8_capstone/3_build_it.md?raw";
 // previous" buttons chain correctly.
 
 const module1 = [
-  { title: "What you'll need", content: whatYoullNeed },
-  { title: "Installing Claude Code", content: installingClaudeCode },
-  { title: "Rare repo setup", content: rareRepoSetup },
-  { title: "GitHub CLI", content: githubCli },
+  { title: "Class Setup", content: automatedSetup }
 ];
 
 const module2 = [
