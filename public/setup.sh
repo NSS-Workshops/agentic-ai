@@ -963,3 +963,11 @@ run_rare_locally
 
 echo
 ok "Setup complete! Head back to the course and pick up where you left off."
+
+cd "$ROOT_DIR"
+ok "Switching your shell into $ROOT_DIR"
+if [ -t 0 ]; then
+  exec "${SHELL:-bash}" -l
+else
+  exec "${SHELL:-bash}" -l < /dev/tty
+fi
