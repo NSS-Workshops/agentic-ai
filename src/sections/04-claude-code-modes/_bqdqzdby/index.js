@@ -2,8 +2,8 @@ import content from "./index.md?raw";
 
 export default {
   id: "bqdqzdby",
-  title: "TODO: exercise title",
-  description: "TODO: one-line description",
+  title: "Human-in-the-loop",
+  description: "",
   exercise: null,
-  content
-}
+  content,
+};
