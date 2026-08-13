@@ -511,7 +511,7 @@ check_core_tools() {
   auto_install_or_wait "VS Code" "have_cmd code" "$(vscode_install_cmd)" \
     "Download from https://code.visualstudio.com/" \
     "Then in VS Code: Cmd/Ctrl+Shift+P -> 'Shell Command: Install code command in PATH'" \
-    "On WSL, VS Code itself installs on the Windows host, not inside WSL — install it there, then add the 'WSL' extension."
+    "On WSL, VS Code itself installs on the Windows host, not inside WSL — install it there."
 
   auto_install_or_wait "Git" "have_cmd git" "$(git_install_cmd)" \
     "macOS: a system dialog for the Xcode Command Line Tools (includes Git) should have appeared — complete it, or run 'xcode-select --install' yourself" \
@@ -651,6 +651,51 @@ install_vscode_extension() {
   fi
 
   section_done "VS Code extension"
+}
+
+#######################################
+# VS Code "WSL" extension (WSL only — lets VS Code on the Windows host
+# attach to this WSL distro)
+#######################################
+install_vscode_wsl_extension() {
+  if [ "$OS_FAMILY" != "WSL" ]; then
+    return
+  fi
+
+  step "Checking the VS Code WSL extension"
+
+  if ! have_cmd code; then
+    warn "VS Code's 'code' command isn't available — skipping the extension install."
+    warn "Once VS Code is set up, install the extension by searching \"WSL\" in the Extensions panel."
+    section_done "VS Code WSL extension"
+    return
+  fi
+
+  if code --list-extensions 2>/dev/null | grep -qi '^ms-vscode-remote\.remote-wsl$'; then
+    ok "VS Code WSL extension already installed."
+    section_done "VS Code WSL extension"
+    return
+  fi
+
+  warn "VS Code WSL extension not found. Installing it now..."
+  code --install-extension ms-vscode-remote.remote-wsl >/dev/null 2>&1 || true
+
+  if code --list-extensions 2>/dev/null | grep -qi '^ms-vscode-remote\.remote-wsl$'; then
+    ok "Installed the VS Code WSL extension."
+  else
+    warn "Could not confirm the extension installed automatically."
+    printf '\n  Install it by hand:\n'
+    printf '    1. Open VS Code\n'
+    printf '    2. Go to the Extensions panel (Ctrl+Shift+X)\n'
+    printf '    3. Search "WSL" (publisher: Microsoft) and click Install\n\n'
+
+    while ! code --list-extensions 2>/dev/null | grep -qi '^ms-vscode-remote\.remote-wsl$'; do
+      ask "Press Enter once it's installed: " reply
+    done
+    code --list-extensions 2>/dev/null | grep -qi '^ms-vscode-remote\.remote-wsl$' && ok "VS Code WSL extension found."
+  fi
+
+  section_done "VS Code WSL extension"
 }
 
 #######################################
@@ -999,6 +1044,7 @@ check_core_tools
 install_github_cli
 install_claude_code
 install_vscode_extension
+install_vscode_wsl_extension
 setup_rare_workspace
 run_rare_locally
 
