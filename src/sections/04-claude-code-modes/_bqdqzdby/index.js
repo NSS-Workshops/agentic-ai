@@ -2,7 +2,7 @@ import content from "./index.md?raw";
 
 export default {
   id: "bqdqzdby",
-  title: "Human-in-the-loop",
+  title: "Claude Code Modes",
   description: "",
   exercise: null,
   content,
