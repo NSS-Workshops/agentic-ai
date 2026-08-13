@@ -1,5 +1,3 @@
-If anything came up during Exercise 5.2 that felt worth writing down, go add it to your `CLAUDE.md` now. That instinct is the whole point of this chapter.
-
 ## The Capture habit
 
 In Module IV, the development loop was five steps: Understand, Plan, Break down, Build, Confirm. There's a sixth:
@@ -26,13 +24,3 @@ Not every exercise produces something worth capturing. But building the habit of
 A `CLAUDE.md` with ten sharp entries beats one with fifty. Every entry should earn its spot. If you added something months ago and it's no longer relevant (the convention changed, the domain rule was refactored), remove it. Treat it like code: maintain it, don't just append to it.
 
 When sessions get long, run `/clear` to reset the conversation. Your `CLAUDE.md` stays loaded, your files are untouched, but the accumulated back-and-forth is gone. Short focused sessions beat long sprawling ones. Remember the quadratic cost from Module II: a 20-turn conversation costs roughly four times what a 10-turn one costs. `CLAUDE.md` is what makes short sessions free, because everything important persists in the file instead of the conversation.
-
-## Checkpoint
-
-By the end of this module, you should have:
-
-- A working `CLAUDE.md` at `rare-project/CLAUDE.md` that changes Claude's behavior on a cold start.
-- Post count working on user profiles (Exercise 5.1).
-- Author search working on the search page (Exercise 5.2).
-- Tests for the post count feature.
-- The ability to explain what's in your `CLAUDE.md` and why each entry is there.
