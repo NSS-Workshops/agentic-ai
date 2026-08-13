@@ -9,9 +9,7 @@ import anatomyOfAStrongPrompt from "./2_llms_and_prompting/4_anatomy_of_a_strong
 import goodPromptsInPractice from "./2_llms_and_prompting/5_good_prompts_in_practice.md?raw";
 
 import theNewHireMindset from "./3_exploring_unknown_codebase/1_the_new_hire_mindset.md?raw";
-import questionsToAskANewCodebase from "./3_exploring_unknown_codebase/2_questions_to_ask_a_new_codebase.md?raw";
-import turningExplorationIntoArtifacts from "./3_exploring_unknown_codebase/3_turning_exploration_into_artifacts.md?raw";
-import verifyingWhatClaudeGenerates from "./3_exploring_unknown_codebase/4_verifying_what_claude_generates.md?raw";
+import verifyingWhatClaudeGenerates from "./3_exploring_unknown_codebase/2_verifying_what_claude_generates.md?raw";
 
 import theLoop from "./4_claude_code_modes/1_the_loop.md?raw";
 import whyModesExist from "./4_claude_code_modes/2_why_modes_exist.md?raw";
@@ -22,20 +20,12 @@ import modeChoiceIsDeliberate from "./4_claude_code_modes/6_mode_choice_is_delib
 
 import the50FirstDatesCoworker from "./5_context_and_memory/1_the_50_first_dates_coworker.md?raw";
 import claudeMdAsPersistentContext from "./5_context_and_memory/2_claude_md_as_persistent_context.md?raw";
-import seeTheDifference from "./5_context_and_memory/3_see_the_difference.md?raw";
-import claudeMdGrowsWithYourProject from "./5_context_and_memory/4_claude_md_grows_with_your_project.md?raw";
+import claudeMdGrowsWithYourProject from "./5_context_and_memory/3_claude_md_grows_with_your_project.md?raw";
 
 import shipWithOwnership from "./6_implementing_features/1_ship_with_ownership.md?raw";
-import debuggingWithClaude from "./6_implementing_features/2_debugging_with_claude.md?raw";
-import profileEditing from "./6_implementing_features/3_profile_editing.md?raw";
-import postCards from "./6_implementing_features/4_post_cards.md?raw";
-import markdownForAPublishingPlatform from "./6_implementing_features/5_markdown_for_a_publishing_platform.md?raw";
 
 import fromHabitsToWorkflow from "./7_workflows_and_tandem/1_from_habits_to_workflow.md?raw";
-import pairProgrammingWithTandem from "./7_workflows_and_tandem/2_pair_programming_with_tandem.md?raw";
-import aSecondRide from "./7_workflows_and_tandem/3_a_second_ride.md?raw";
-import loadingAndErrorStates from "./7_workflows_and_tandem/4_loading_and_error_states.md?raw";
-import whatsNext from "./7_workflows_and_tandem/5_whats_next.md?raw";
+import whatsNext from "./7_workflows_and_tandem/2_whats_next.md?raw";
 
 import greenfieldIsDifferent from "./8_capstone/1_greenfield_is_different.md?raw";
 import pickYourProject from "./8_capstone/2_pick_your_project.md?raw";
@@ -45,9 +35,7 @@ import buildIt from "./8_capstone/3_build_it.md?raw";
 // chapter's `previousChapterId` points at the preceding chapter so the "next /
 // previous" buttons chain correctly.
 
-const module1 = [
-  { title: "Class Setup", content: automatedSetup }
-];
+const module1 = [{ title: "Class Setup", content: automatedSetup }];
 
 const module2 = [
   { title: "The prediction robot", content: thePredictionRobot },
@@ -59,13 +47,17 @@ const module2 = [
 
 const module3 = [
   { title: "The new-hire mindset", content: theNewHireMindset },
-  { title: "Questions to ask a new codebase", content: questionsToAskANewCodebase },
-  { title: "Turning exploration into artifacts", content: turningExplorationIntoArtifacts },
-  { title: "Verifying what Claude generates", content: verifyingWhatClaudeGenerates },
+  {
+    title: "Verifying what Claude generates",
+    content: verifyingWhatClaudeGenerates,
+  },
 ];
 
 const module4 = [
-  { title: "The loop: Understand → Plan → Break down → Build → Confirm", content: theLoop },
+  {
+    title: "The loop: Understand → Plan → Break down → Build → Confirm",
+    content: theLoop,
+  },
   { title: "Why modes exist", content: whyModesExist },
   { title: "Plan mode", content: planMode },
   { title: "Ask before edits", content: askBeforeEdits },
@@ -75,24 +67,20 @@ const module4 = [
 
 const module5 = [
   { title: "The 50 First Dates coworker", content: the50FirstDatesCoworker },
-  { title: "CLAUDE.md as persistent context", content: claudeMdAsPersistentContext },
-  { title: "See the difference", content: seeTheDifference },
-  { title: "CLAUDE.md grows with your project", content: claudeMdGrowsWithYourProject },
+  {
+    title: "CLAUDE.md as persistent context",
+    content: claudeMdAsPersistentContext,
+  },
+  {
+    title: "CLAUDE.md grows with your project",
+    content: claudeMdGrowsWithYourProject,
+  },
 ];
 
-const module6 = [
-  { title: "Ship with ownership", content: shipWithOwnership },
-  { title: "Debugging with Claude", content: debuggingWithClaude },
-  { title: "Profile editing", content: profileEditing },
-  { title: "Post cards with engagement counts", content: postCards },
-  { title: "Markdown for a publishing platform", content: markdownForAPublishingPlatform },
-];
+const module6 = [{ title: "Ship with ownership", content: shipWithOwnership }];
 
 const module7 = [
   { title: "From habits to workflow", content: fromHabitsToWorkflow },
-  { title: "Pair programming with Tandem", content: pairProgrammingWithTandem },
-  { title: "A second ride", content: aSecondRide },
-  { title: "Loading and error states", content: loadingAndErrorStates },
   { title: "What's next", content: whatsNext },
 ];
 
