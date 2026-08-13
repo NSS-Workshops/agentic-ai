@@ -150,6 +150,26 @@ detect_platform() {
       if grep -qi microsoft /proc/version 2>/dev/null || [ -n "${WSL_DISTRO_NAME:-}" ]; then
         OS_FAMILY="WSL"
         ok "Detected WSL (Windows Subsystem for Linux)."
+        printf '\n  Docker on WSL needs one manual one-time setting in Docker Desktop (on Windows):\n'
+        printf '    Settings -> Resources -> WSL Integration -> enable "%s" -> Apply & Restart\n' "${WSL_DISTRO_NAME:-your distro}"
+        printf '  Without it, plain `docker` may work but `docker compose` will report missing.\n'
+
+        # There's no reliable way to detect this from inside WSL: typing
+        # `bash` into a plain cmd.exe/PowerShell window silently forwards
+        # into this same real WSL environment (same uname, same
+        # WSL_DISTRO_NAME) when a default distro is registered — the two
+        # cases are indistinguishable from here. This is a best-effort,
+        # non-blocking nudge based on soft signals from terminal apps that
+        # are known-good for this course, not a hard gate.
+        if [ -z "${WT_SESSION:-}" ] && [ "${TERM_PROGRAM:-}" != "vscode" ]; then
+          printf '\n'
+          warn "Couldn't confirm you're in a proper WSL terminal (Windows Terminal or the VS Code integrated terminal)."
+          printf '  If you typed this command into Command Prompt or PowerShell, it can silently\n'
+          printf '  drop into WSL like this and mostly work — but some later steps assume a real\n'
+          printf '  WSL terminal window. For the smoothest experience, open "Windows Terminal" or\n'
+          printf '  the "Ubuntu" app from the Start menu (or use VS Code'"'"'s integrated terminal) and\n'
+          printf '  re-run this command there instead.\n'
+        fi
       else
         OS_FAMILY="Linux"
         warn "Detected plain Linux. This course is built for macOS and Ubuntu on WSL; Linux should mostly work but isn't officially covered."
@@ -354,12 +374,16 @@ check_docker() {
   done
   ok "Docker daemon is running."
 
-  if [ -d "$API_DIR" ] && ( cd "$API_DIR" && docker compose config >/dev/null 2>&1 ); then
-    local reply
-    ask "Found an existing rare-api Docker project (from a previous run). Stop and remove its containers, images, and volumes before continuing? [y/N] " reply
-    if [[ "$reply" =~ ^[Yy]$ ]]; then
-      ok "Removing existing rare-api containers, images, and volumes..."
-      ( cd "$API_DIR" && docker compose down --rmi all -v ) || warn "Cleanup failed — check the output above."
+  if [ -d "$API_DIR" ]; then
+    local existing_containers
+    existing_containers="$(cd "$API_DIR" && docker compose ps -a -q 2>/dev/null)"
+    if [ -n "$existing_containers" ]; then
+      local reply
+      ask "Found existing rare-api Docker containers (from a previous run). Stop and remove its containers, images, and volumes before continuing? [y/N] " reply
+      if [[ "$reply" =~ ^[Yy]$ ]]; then
+        ok "Removing existing rare-api containers, images, and volumes..."
+        ( cd "$API_DIR" && docker compose down --rmi all -v ) || warn "Cleanup failed — check the output above."
+      fi
     fi
   fi
 
@@ -396,7 +420,12 @@ check_docker() {
 
   while ! docker compose version >/dev/null 2>&1; do
     warn "'docker compose' isn't available."
-    printf '  Docker Desktop bundles Compose v2 — update Docker Desktop to the latest version.\n\n'
+    if [ "$OS_FAMILY" = "WSL" ]; then
+      printf '  Docker Desktop bundles Compose v2 — make sure Settings -> Resources -> WSL Integration\n'
+      printf '  has your distro enabled, and that Docker Desktop is updated to the latest version.\n\n'
+    else
+      printf '  Docker Desktop bundles Compose v2 — update Docker Desktop to the latest version.\n\n'
+    fi
     ask "Press Enter once Compose is available: " reply
   done
   docker compose version >/dev/null 2>&1 && ok "Found docker compose."
@@ -482,7 +511,7 @@ check_core_tools() {
   auto_install_or_wait "VS Code" "have_cmd code" "$(vscode_install_cmd)" \
     "Download from https://code.visualstudio.com/" \
     "Then in VS Code: Cmd/Ctrl+Shift+P -> 'Shell Command: Install code command in PATH'" \
-    "On WSL, VS Code itself installs on the Windows host, not inside WSL — install it there, then add the 'WSL' extension."
+    "On WSL, VS Code itself installs on the Windows host, not inside WSL — install it there."
 
   auto_install_or_wait "Git" "have_cmd git" "$(git_install_cmd)" \
     "macOS: a system dialog for the Xcode Command Line Tools (includes Git) should have appeared — complete it, or run 'xcode-select --install' yourself" \
@@ -622,6 +651,51 @@ install_vscode_extension() {
   fi
 
   section_done "VS Code extension"
+}
+
+#######################################
+# VS Code "WSL" extension (WSL only — lets VS Code on the Windows host
+# attach to this WSL distro)
+#######################################
+install_vscode_wsl_extension() {
+  if [ "$OS_FAMILY" != "WSL" ]; then
+    return
+  fi
+
+  step "Checking the VS Code WSL extension"
+
+  if ! have_cmd code; then
+    warn "VS Code's 'code' command isn't available — skipping the extension install."
+    warn "Once VS Code is set up, install the extension by searching \"WSL\" in the Extensions panel."
+    section_done "VS Code WSL extension"
+    return
+  fi
+
+  if code --list-extensions 2>/dev/null | grep -qi '^ms-vscode-remote\.remote-wsl$'; then
+    ok "VS Code WSL extension already installed."
+    section_done "VS Code WSL extension"
+    return
+  fi
+
+  warn "VS Code WSL extension not found. Installing it now..."
+  code --install-extension ms-vscode-remote.remote-wsl >/dev/null 2>&1 || true
+
+  if code --list-extensions 2>/dev/null | grep -qi '^ms-vscode-remote\.remote-wsl$'; then
+    ok "Installed the VS Code WSL extension."
+  else
+    warn "Could not confirm the extension installed automatically."
+    printf '\n  Install it by hand:\n'
+    printf '    1. Open VS Code\n'
+    printf '    2. Go to the Extensions panel (Ctrl+Shift+X)\n'
+    printf '    3. Search "WSL" (publisher: Microsoft) and click Install\n\n'
+
+    while ! code --list-extensions 2>/dev/null | grep -qi '^ms-vscode-remote\.remote-wsl$'; do
+      ask "Press Enter once it's installed: " reply
+    done
+    code --list-extensions 2>/dev/null | grep -qi '^ms-vscode-remote\.remote-wsl$' && ok "VS Code WSL extension found."
+  fi
+
+  section_done "VS Code WSL extension"
 }
 
 #######################################
@@ -796,6 +870,9 @@ pipenv_install_cmd() {
     echo "pip3 install --user pipenv"
   elif have_cmd pip; then
     echo "pip install --user pipenv"
+  elif { [ "$OS_FAMILY" = "WSL" ] || [ "$OS_FAMILY" = "Linux" ]; } && have_cmd apt-get; then
+    # Ubuntu ships python3 without pip3 — python3-pip is a separate package.
+    echo "sudo apt-get update && sudo apt-get install -y python3-pip && pip3 install --user pipenv"
   else
     echo ""
   fi
@@ -809,7 +886,12 @@ ensure_pipenv() {
 
   if ! have_cmd pip3 && ! have_cmd pip && [ "$(pipenv_install_cmd)" = "" ]; then
     warn "pipenv not found, and neither Homebrew nor pip is available to install it."
-    printf '\n  Install Python (which includes pip) from https://www.python.org/downloads/\n\n'
+    if [ "$OS_FAMILY" = "WSL" ] || [ "$OS_FAMILY" = "Linux" ]; then
+      printf '\n  Install pip via your package manager, e.g. "sudo apt install python3-pip",\n'
+      printf '  or install Python from https://www.python.org/downloads/\n\n'
+    else
+      printf '\n  Install Python (which includes pip) from https://www.python.org/downloads/\n\n'
+    fi
     while ! have_cmd pip3 && ! have_cmd pip; do
       ask "Press Enter once pip is available: " reply
       hash -r 2>/dev/null || true
@@ -932,7 +1014,11 @@ monitor_rare_app() {
   fi
 
   ok "Rare is up at $client_url"
-  printf '  Log in as %sadmin_sarah%s / %spassword%s (staff), or %sdev_diana%s / %spassword%s (regular user).\n\n' "$BOLD" "$RESET" "$BOLD" "$RESET" "$BOLD" "$RESET" "$BOLD" "$RESET"
+  printf '\n  %s%s========================================================%s\n' "$BOLD" "$GREEN" "$RESET"
+  printf '  %s%sLog in as:%s\n' "$BOLD" "$GREEN" "$RESET"
+  printf '    %sadmin_sarah%s / %spassword%s   (staff)\n' "$BOLD" "$RESET" "$BOLD" "$RESET"
+  printf '    %sdev_diana%s   / %spassword%s   (regular user)\n' "$BOLD" "$RESET" "$BOLD" "$RESET"
+  printf '  %s%s========================================================%s\n\n' "$BOLD" "$GREEN" "$RESET"
 
   local reply
   ask "Open it in your browser now? [Y/n] " reply
@@ -958,8 +1044,17 @@ check_core_tools
 install_github_cli
 install_claude_code
 install_vscode_extension
+install_vscode_wsl_extension
 setup_rare_workspace
 run_rare_locally
 
 echo
 ok "Setup complete! Head back to the course and pick up where you left off."
+
+cd "$ROOT_DIR"
+ok "Switching your shell into $ROOT_DIR"
+if [ -t 0 ]; then
+  exec "${SHELL:-bash}" -l
+else
+  exec "${SHELL:-bash}" -l < /dev/tty
+fi
