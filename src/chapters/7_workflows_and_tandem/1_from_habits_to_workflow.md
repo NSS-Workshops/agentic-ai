@@ -38,26 +38,4 @@ The profile has three tiers:
 
 **Strong Skills** is for topics where you're confident. `/pair-program` keeps explanations brief unless something unusual comes up.
 
-## Exercise 7.1: Install Tandem and write your Dev Profile
 
-### Install Tandem
-
-Follow the installation instructions in the [Tandem repository](https://github.com/Valerie-Freeman/tandem) to add Tandem's skills to `rare-project/`. Once installed, you should see a `.claude/commands/` directory with the skill files.
-
-Verify it worked: type `/` in Claude Code and look for `/pair-program` in the autocomplete list.
-
-### Bootstrap the manifest
-
-Run `/create-manifest` in Claude Code. This scans your project and creates `tandem.json`, the index file that other skills use to find your documentation. Point it at the docs you created in Module III and your `CLAUDE.md`.
-
-### Write your Developer Profile
-
-Create `~/.claude/CLAUDE.md` if it doesn't exist already. This is your user-level file, not the project-level one at `rare-project/CLAUDE.md`.
-
-You can write the profile from scratch, but you don't have to. Claude Code has the Developer Profile template from Tandem's installed files. Ask Claude to help you draft it:
-
-> *"I need to set up my Tandem Developer Profile in ~/.claude/CLAUDE.md. Use the template from the Tandem skills. Let's talk through my background and you can draft it for me."*
-
-Have a conversation about your experience. What languages and frameworks are you comfortable with? What are you actively learning? What do you want to get better at? Claude will draft the three-tier profile based on your answers.
-
-Review what it produces. Adjust anything that doesn't match your honest self-assessment. The profile works best when it's accurate, not aspirational.

@@ -45,34 +45,4 @@ Even a strong prompt rarely lands perfectly on the first try. That's not a failu
 
 A practical rule: after two or three course-corrections that aren't converging, restart. The prompt itself is probably the problem.
 
-> **Renee sends you a message on Slack.**
->
-> > **Renee** 4:06 PM
-> > Before you dig in on anything big, can you make sure you can actually run the thing locally? I want to demo it Friday. I know the previous dev didn't leave any docs, so... use that AI tool everyone's excited about. Figure it out.
->
-> She follows with a 👋 and her status flips to "away."
 
-## Exercise 2.1 — Get Rare running locally
-
-Now the real work. Renee wants a demo. Your job is to get both halves of Rare running on your machine, using Claude Code to figure out how. There are no setup docs. 
-
-**The lesson is prompting, not the answer.** When you get stuck, the temptation will be to ask the instructor. Resist it for one more prompt. Try asking Claude Code, and notice what you gave it that worked (or didn't). Your instructor will step in when you're genuinely blocked, but the reps are in the struggle.
-
-A few prompting hints (not the answers):
-
-- Give it the context of what you know and don't know. Tell it specifically what you want to do.
-- Paste the full error message when something fails. Not "I got an error"; the actual traceback.
-- When Claude proposes a command, read it before approving. 
-- If a prompt isn't converging after a couple of tries, step back and rewrite the prompt using the anatomy from chapter 4.
-
-### Checkpoint
-
-You're done with this exercise when:
-
-- The API responds (hit it in a browser or with `curl` and you get something back, not a connection error).
-- The client dev server is running and the Rare home page loads.
-- You can login to Rare as a user and poke around (Renee can now demo)
-- You can describe, in one sentence each, what every command you ran actually did. If you approved something you can't explain, go back and ask Claude.
-- You can stop everything and get it up and running again without Claude's help
-
-Next module: the same prompting skill, applied to the harder problem of *understanding* a codebase you've never seen before.

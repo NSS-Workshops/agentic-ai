@@ -53,17 +53,3 @@ What `/init` won't discover on its own:
 
 And a few things that **don't belong** in `CLAUDE.md`: API keys and tokens (use `.env` files), debugging notes from a specific session, and in-progress task details ("currently working on the search feature"). If it changes faster than your conventions do, or if it's only useful for today's work, leave it out.
 
-## Exercise 5.1, Part 3: Build your CLAUDE.md
-
-Run `/init` in your `rare-project/` directory. Review what it generates. Then add the entries `/init` missed:
-
-- **The understand-first loop** from Module IV. Make it a workflow rule so every session starts with this discipline.
-- **The TDD rule** Devon established. Tests first for anything with business logic.
-- **Domain rules** you learned from writing tests in Part 2. What did the edge cases teach you about approved vs. unapproved posts?
-- **Conventions from Devon's message** that `/init` didn't capture, or didn't capture with enough context.
-
-Don't copy Devon's Slack message into the file verbatim. Write entries that reflect what you've learned and how you want Claude to work. Your `CLAUDE.md` should make sense to a developer (or an AI) reading it for the first time.
-
-When you're done, read it back. If you opened a brand-new Claude Code session right now, would this file give Claude everything it needs to work the way Devon expects?
-
-Start a fresh session before the next exercise. Close your current one and reopen Claude Code in `rare-project/` so your new `CLAUDE.md` loads from scratch.

@@ -24,37 +24,4 @@ The mapping isn't rigid, but it's a useful starting point:
 
 The Confirm step is always you, not Claude. Claude can run tests and report results, but the judgment call ("do I understand this change? does it do what I intended?") is yours.
 
-## Exercise 4.1: Same task, three modes
 
-Time to feel the difference. You'll do the same small task three times, once in each mode, and notice how the experience changes.
-
-**The task:** Display the comment count in the Comments section heading on the post detail page. Right now the heading just says "Comments." After the change, it should show the actual count.
-
-### Round 1: Plan mode
-
-Switch to plan mode (Shift+Tab until the mode indicator reads "Plan"). Describe the task to Claude Code and ask it to investigate the relevant component and propose an approach. Read what comes back. Notice: no files changed.
-
-When you're done, revert any changes (there shouldn't be any, but just in case): `git checkout -- rare-client/src/`
-
-### Round 2: Ask before edits
-
-Switch back to the default mode. Describe the same task. This time Claude will propose specific file edits and wait for your approval. Read each proposed change before accepting.
-
-When you're done, revert: `git checkout -- rare-client/src/`
-
-### Round 3: Edit automatically
-
-Switch to Edit automatically. Describe the same task again. Watch what happens.
-
-Check the result: does it work? Read the diff with `git diff`. Then revert: `git checkout -- rare-client/src/`
-
-### Reflect
-
-After all three rounds, write down:
-
-- Which mode gave you the best understanding of the code you were about to change?
-- Which mode got to a working result fastest?
-- In which mode did you feel most in control?
-- Which step of the loop (Understand, Plan, Break down, Build, Confirm) did each mode support best?
-
-There's no single right answer. The point is to notice the trade-offs so you can make deliberate choices going forward.
