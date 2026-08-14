@@ -88,115 +88,128 @@ Your repo is now allowed to run GitHub Actions.
 
 ### 2. Course Structure Setup
 
-#### Navigation Configuration
+This template uses a modular, self-contained architecture where each section and chapter manages its own configuration:
 
-Edit [`src/chapters/nav.js`](src/chapters/nav.js) to define your course modules:
-
-```javascript
-export const nav = [
-  {
-    id: "module-1", // Unique identifier for the module
-    title: "Module 1 Title",
-    description: "Brief description of what this module covers",
-    required: true, // Whether completion is required
-  },
-  {
-    id: "module-2",
-    title: "Module 2 Title", 
-    description: "Another module description",
-    required: true,
-  },
-]
+```
+src/
+├── config.js                    # Global application configuration
+├── sections/
+│   ├── index.js                 # Main sections aggregator
+│   ├── section-name/
+│   │   ├── index.js             # Section configuration and chapter imports
+│   │   ├── 01-chapter-name/
+│   │   │   ├── index.js         # Chapter configuration
+│   │   │   └── index.md         # Chapter content (markdown)
+│   │   ├── 02-another-chapter/
+│   │   │   ├── index.js         # Chapter configuration
+│   │   │   └── index.md         # Chapter content (markdown)
+│   │   └── ...
+│   └── another-section/
+│       ├── index.js             # Section configuration
+│       └── ...
 ```
 
-#### Chapter Content Configuration
-
-Edit [`src/chapters/index.jsx`](src/chapters/index.jsx) to define your course content. This file demonstrates two important import patterns:
-
-**Raw Imports (for content files):**
-```javascript
-// Use ?raw suffix for markdown content and code files that should be displayed as text
-import pageContent from "./module_1/page_one.md?raw";
-import exerciseCode from "./module_1/exercise_1.js?raw";
-import solutionCode from "./module_1/solution_1.js?raw";
-```
-
-**Module Imports (for executable code):**
-```javascript
-// Import without ?raw for JavaScript modules that export functions/objects
-import {tests as t1} from "./module_1/tests_1.js";
-import {questions as q1} from "./module_1/questions_1.jsx";
-```
+1. **Main Aggregator** ([`src/sections/index.js`](src/sections/index.js)): Imports all sections via `import.meta.glob` and combines their chapters into arrays for the application. You don't edit this to add content — new sections/chapters are picked up automatically.
+2. **Section Configuration** (e.g., [`src/sections/01-getting-started/index.js`](src/sections/01-getting-started/index.js)): Defines section metadata and imports/orders all chapters in that section.
+3. **Chapter Configuration** (e.g., [`src/sections/01-getting-started/01-class-setup/index.js`](src/sections/01-getting-started/01-class-setup/index.js)): Defines chapter metadata, navigation, and imports the chapter's markdown content.
 
 ### 3. Creating Course Content
 
-For each module, create a directory structure like:
+This walks through adding a new section titled "Deploying to Github" with two chapters: Overview and Github Actions.
 
-```
-src/chapters/
-├── nav.js                    # Module navigation configuration
-├── index.jsx                 # Chapter definitions and imports
-└── your_module_name/
-    ├── page_one.md          # Markdown content (imported with ?raw)
-    ├── page_two.md          # Additional pages as needed
-    ├── exercise_1.js        # Starter code (imported with ?raw)
-    ├── solution_1.js        # Solution code (imported with ?raw)
-    ├── tests_1.js           # Test cases (imported as module)
-    └── questions_1.jsx      # Quiz questions (imported as module)
+**Step 1: Create the section directory and its config file**
+
+```bash
+mkdir src/sections/deploy-to-github
 ```
 
-#### Content File Types
-
-**Markdown Files (`.md`)** - Course content:
-- Import with `?raw` suffix
-- Contains lesson content, explanations, instructions
-- Supports standard markdown syntax
-
-**Exercise Files (`.js`)** - Starter code:
-- Import with `?raw` suffix
-- Contains incomplete code for students to complete
-- Displayed in the code editor
-
-**Solution Files (`.js`)** - Complete solutions:
-- Import with `?raw` suffix  
-- Contains working solutions to exercises
-- Used for validation and instructor reference
-
-**Test Files (`.js`)** - Automated testing:
-- Import as JavaScript modules (no `?raw`)
-- Must export a `tests` array
-- Each test object should have `name`, `test` function, and `message`
-
-**Question Files (`.jsx`)** - Quiz questions:
-- Import as JavaScript modules (no `?raw`)
-- Must export a `questions` array
-- Used with the Checkpoint component for quizzes
-
-### 4. Chapter Configuration
-
-In [`src/chapters/index.jsx`](src/chapters/index.jsx), define your chapters:
+Create `src/sections/deploy-to-github/index.js`:
 
 ```javascript
-export const chapters = [
-  {
-    id: "unique-chapter-id",
-    title: "Chapter Title",
-    sectionId: "module-id", // Must match nav.js module id
-    previousChapterId: null, // or "previous-chapter-id"
-    content: markdownContent, // Imported markdown
-    exercise: {
-      starterCode: exerciseCode,
-      solution: solutionCode,
-      tests: testArray
-    },
-    quiz: {
-      component: () => <Checkpoint questions={questionArray}/>
-    }
-  }
-]
+// Import all chapter packages. This is a Vite feature.
+const chapterModules = import.meta.glob('./*/index.js', { eager: true })
+
+// Section configuration. This is the only code you change.
+const config = {
+  id: "deploy-to-github",
+  title: "Deploying to Github",
+  description: "Deploying your project to the Github platform",
+  order: 90, // sections render lowest order first
+  required: true, // or required: false, optional: true for elective sections
+}
+
+const chapters = Object.values(chapterModules).map(chapter => ({ ...chapter.default, sectionId: config.id }))
+
+export { chapters, config }
 ```
 
-### 5. Environment Variables
+##### Section Configuration Options
+
+| Option | Type | Description |
+|  --- | ---  | --- |
+| **id** | _string_ | A project-unique string slug identifier for this section |
+| **title** | _string_ | The value for the label in the left navigation bar |
+| **description** | _string_ | A brief description |
+| **order** | _int_ | Used to order sections vertically in the left nav, lowest first |
+| **required** / **optional** | _boolean_ | Marks the section as required work or optional/additional work in the nav |
+
+**Step 2: Create each chapter's directory and its two files**
+
+```bash
+mkdir src/sections/deploy-to-github/01-overview
+touch src/sections/deploy-to-github/01-overview/index.js
+touch src/sections/deploy-to-github/01-overview/index.md
+```
+
+Open `src/sections/deploy-to-github/01-overview/index.js`:
+
+```javascript
+import content from "./index.md?raw";
+
+export default {
+  id: "overview",
+  title: "Overview of Github Deployments",
+  previousChapterId: null,
+  nextChapterId: "github-actions",
+  exercise: null,
+  content
+}
+```
+
+##### Chapter Configuration Options
+
+| Option | Type | Description |
+|  --- | ---  | --- |
+| **id** | _string_ | A project-unique string slug identifier for this chapter |
+| **title** | _string_ | The value for the main header at the top of the content |
+| **previousChapterId** | _string \| null_ | The id of the previous chapter, needed for the **Previous Chapter** button |
+| **nextChapterId** | _string \| null_ | The id of the next chapter, needed for the **Next Chapter** button |
+| **exercise** | _object \| null_ | Optional exercise data for the chapter; `null` for a plain reading chapter |
+| **content** | _string_ | The markdown content for the chapter, imported with `?raw` |
+
+Then write the actual lesson content in `index.md`:
+
+```markdown
+Initial content for under the main header
+
+## Subheadings as needed
+
+More content...
+```
+
+> 📝 The `title` property automatically becomes the main `H1` element at the top of the content.
+
+**Step 3: Repeat for each remaining chapter**
+
+Numeric prefixes on chapter directories (`01-`, `02-`) are just for readability when browsing the file tree — they aren't read by the app. Ordering within a section comes from the `previousChapterId` / `nextChapterId` chain.
+
+### Naming Conventions
+
+- **Section directories**: numeric prefix + kebab-case (e.g., `01-getting-started`, `02-llms-and-prompting`)
+- **Chapter directories**: numeric prefix + kebab-case (e.g., `01-class-setup`, `02-tokens-and-the-context-window`)
+- **Section/Chapter IDs**: kebab-case, project-unique (chapter ids in this repo are prefixed with their section id, e.g. `llms-and-prompting-the-prediction-robot`, so they stay unique across the whole course)
+
+### 3. Environment Variables
 
 The template supports these environment variables:
 
@@ -207,7 +220,7 @@ The template supports these environment variables:
 - `VITE_OAUTH_CLIENT_ID`: OAuth client ID for authentication
 - `VITE_PROXY_DOMAIN`: Domain for OAuth proxy
 
-### 6. Deployment
+### 4. Deployment
 
 The course name in [`src/config.js`](src/config.js) automatically configures:
 - Base path in [`vite.config.js`](vite.config.js)
@@ -216,46 +229,14 @@ The course name in [`src/config.js`](src/config.js) automatically configures:
 
 Example: `"Introduction to React"` becomes `/introduction-to-react/`
 
-## File Import Patterns
-
-Understanding when to use `?raw` vs module imports:
-
-### Use `?raw` for:
-- Markdown content files (`.md`)
-- Code files that should be displayed as text
-- Exercise starter code
-- Solution code
-- Any file where you want the raw text content
-
-### Use module imports for:
-- JavaScript files that export functions or objects
-- Test files that export test arrays
-- Question files that export question arrays
-- React components
-- Any executable JavaScript code
-
-## Example Module Structure
-
-```
-src/chapters/example_module_1/
-├── page_one.md              # Lesson content
-├── page_two.md              # Additional content  
-├── exercise_1.js            # Student starter code
-├── solution_one.js          # Complete solution
-├── tests_1.js               # Automated tests
-└── questions_1.jsx          # Quiz questions
-```
-
 ## Development Workflow
 
 1. **Fork/clone this template repository**
 2. **Update [`src/config.js`](src/config.js)** with your course details
-3. **Modify [`src/chapters/nav.js`](src/chapters/nav.js)** to define your modules
-4. **Create content directories** for each module
-5. **Add content files** (markdown, exercises, tests, quizzes)
-6. **Update [`src/chapters/index.jsx`](src/chapters/index.jsx)** to import and configure your content
-7. **Test locally** with `npm run dev`
-8. **Deploy** to your hosting platform
+3. **Create a section directory** under `src/sections/` for each module, with its own `index.js` (see "Creating Course Content" above)
+4. **Create a chapter directory** inside each section for every lesson, each with its own `index.js` + `index.md`
+5. **Test locally** with `npm run dev`
+6. **Deploy** to your hosting platform
 
 ## Support
 
