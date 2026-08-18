@@ -6,6 +6,6 @@ In Module II, you learned that LLMs hallucinate: confident, fluent, wrong. You s
 
 This works on any claim the model makes about your codebase.
 
-Claude says the `Post` model has an `is_published` field? Ask: *"Which file is that field defined in? Show me the line."* If it can point you to a real line in a real file, open the file and confirm. If it hedges, backtracks, or names a file that doesn't exist, you've caught a hallucination.
+For example, Claude says the `Post` model has an `is_published` field? Ask: *"Which file is that field defined in? Show me the line."* If it can point you to a real line in a real file, open the file and confirm. If it hedges, backtracks, or names a file that doesn't exist, you've caught a hallucination.
 
 One follow-up question, one file read. It catches a whole category of codebase hallucination: claims about code that don't match what's actually there.
