@@ -1,89 +1,141 @@
-> **Renee sends you a message on Slack.**
+You just spent a whole class explaining things to Claude Code that it forgot the second the session ended. Today you write some of that down, and then prove to yourselves it actually changes how Claude behaves.
+
+> **Working in groups today.** Discuss and build each part together, but each person keeps their own `rare-project/` running. When your group agrees a step is done, everyone commits it individually in their own copy. Rotate who's at the keyboard.
+
+---
+
+## Your Task
+
+As a group: ship one small feature with no `CLAUDE.md`, build a `CLAUDE.md` together, then ship a second feature and see what's different.
+
+Record what you notice in `claude-md-notes.md` as you go. Create it at the root of `rare-project/`.
+
+<details>
+<summary>📋 claude-md-notes.md TEMPLATE <strong>👉 expand to copy 👈</strong></summary>
+
+```markdown
+# CLAUDE.md Notes
+
+## Before CLAUDE.md
+- Feature:
+- What Claude did first:
+- Anything you had to correct or explain more than once:
+
+## Entries we added to CLAUDE.md (and why)
+-
+-
+-
+
+## After CLAUDE.md
+- Feature:
+- What was different this time:
+- Did Claude explain the existing code before changing it? (Y/N)
+- Did it write a test before implementing, unprompted? (Y/N)
+- Did the new code match existing conventions? (Y/N)
+```
+
+</details>
+
+---
+
+### 1. Ship it - no `CLAUDE.md` yet
+
+> **📣 Renee sends your group a message on Slack.**
 >
 > > **Renee** 10:15 AM
 > > Quick feature request. When you look at someone's profile, we show their subscriber count but not how many posts they've published. Can you add a post count? Should only count their approved posts.
 
-## Exercise 5.1, Part 1: Implement post count on profiles
+Open Claude Code in `rare-project/`. There's no `CLAUDE.md` yet, so nothing about this team's conventions is preloaded. As a group, describe the feature and watch what Claude does with it.
 
-The feature: add a `post_count` field to the profile API endpoint showing how many approved posts a user has, and display it in `UserProfileDetail.js`. The existing `subscriber_count` field in the profile serializer is the pattern to follow.
+<details>
+<summary>💡 Sample prompt - expand if stuck</summary>
 
-No special setup for this one. Open Claude Code in `rare-project/` and build the feature.
+```
+Add a post count to user profiles, approved posts only. There's already a subscriber count on profiles working the same way. Find that pattern and follow it.
+```
 
-> **Devon sends you a message on Slack.**
+</details>
+
+**After Claude responds:** Did it explain the existing pattern before building, or go straight to code? Did it write a test on its own, without being asked? Record what you notice in `claude-md-notes.md`. Confirm the feature actually works by checking a profile with posts and a profile without any. Then each person commits it individually.
+
+---
+
+### 2. Devon has thoughts
+
+> **📣 Devon sends your group a message on Slack.**
 >
 > > **Devon** 4:47 PM
-> > I see the post count went up. Where are the tests? We test anything with business logic.
+> > I see the post count went up. Where are the tests? We test anything with business logic. Also, before you pick up anything else: models, views, and serializers are one-per-file, don't consolidate them. Views are function-based, not class-based. The rule for who gets auto-approved lives in the view on purpose, so don't "fix" that by moving it into the model. Tests run with pytest, not `manage.py test`.
 
-## Exercise 5.1, Part 2: Write tests
+That's a lot to absorb in one message same as it would be from a real tech lead in your first week. This is exactly what `CLAUDE.md` is for.
 
-Prompt Claude Code to write tests for the post count feature you just built. As you work through the test cases, think about what edge cases matter. What about unapproved posts? What if a user has zero posts? What counts as "published"?
+---
 
-The tests pass, but notice what happened: you understand the feature's domain better now than when you first implemented it. Deciding what to test forced you to think about the boundaries.
+### 3. Build `CLAUDE.md`
 
-## Quick self-check
+Run `/init` in `rare-project/`. As a group, read what it generated and compare it against Devon's message:
 
-Think about how Claude approached this work.
+- What did `/init` already pick up on its own, just from reading the code?
+- What's missing? Are there things Devon said that you couldn't have guessed from the code alone?
 
-1. Did it walk you through the existing code before implementing, or did it jump straight to building?
-2. Did it write tests on its own, or only after Devon asked?
-3. If you closed this session and opened a new one, which of those habits would carry over?
+Add what's missing, **in your own words** (don't paste Devon's message in verbatim). Think about three kinds of entries: a **workflow rule** (how you want Claude to approach any task, not just this one), a **testing expectation**, and a **domain rule** (something Claude shouldn't "helpfully" change even if it looks refactorable).
 
-Before the next chapter, run `/clear` in your Claude Code session. This resets the conversation history without touching your files.
+Record which entries you added and why in `claude-md-notes.md`.
 
-## Exercise 5.1, Part 3: Build your CLAUDE.md
+When your group agrees it's solid, each person commits their own copy:
 
-Run `/init` in your `rare-project/` directory. Review what it generates. Then add the entries `/init` missed:
+```bash
+git add CLAUDE.md
+git commit -m "Add CLAUDE.md"
+git push
+```
 
-- **The understand-first loop** from Module IV. Make it a workflow rule so every session starts with this discipline.
-- **The TDD rule** Devon established. Tests first for anything with business logic.
-- **Domain rules** you learned from writing tests in Part 2. What did the edge cases teach you about approved vs. unapproved posts?
-- **Conventions from Devon's message** that `/init` didn't capture, or didn't capture with enough context.
+---
 
-Don't copy Devon's Slack message into the file verbatim. Write entries that reflect what you've learned and how you want Claude to work. Your `CLAUDE.md` should make sense to a developer (or an AI) reading it for the first time.
+### 4. Start fresh
 
-When you're done, read it back. If you opened a brand-new Claude Code session right now, would this file give Claude everything it needs to work the way Devon expects?
+Close Claude Code and reopen it (or run `/clear`) in `rare-project/`. This matters! You're about to find out whether the file you just wrote actually changes anything, and it needs to load into a clean session to be a fair test.
 
-Start a fresh session before the next exercise. Close your current one and reopen Claude Code in `rare-project/` so your new `CLAUDE.md` loads from scratch.
+---
 
-You have a `CLAUDE.md`. You started a fresh session. Time to see what changes.
+### 5. See the difference
 
-> **Renee sends you a message on Slack.**
+> **📣 Renee sends your group a message on Slack.**
 >
 > > **Renee** 2:30 PM
-> > The search page only searches by title right now. Can you add an author search? Users want to find posts by a specific writer's username. Should work alongside the existing title search so you can combine them.
+> > The search page only searches by title right now. Can you add an author search? Should work alongside the existing title search - combinable, not either/or.
 
-## Exercise 5.2: See the difference
+As a group, describe the feature to Claude. This time, watch specifically for whether the entries you wrote into `CLAUDE.md` actually show up in how Claude works.
 
-The feature: add an `author` query parameter to the post search endpoint. Currently `/posts/search?q=` matches post titles only. After your change, `/posts/search?author=<username>` should filter by author username (case-insensitive), and the two parameters should be combinable (`?q=python&author=diana` finds posts by diana with "python" in the title). The client's `PostSearch.js` needs an author input field too.
+<details>
+<summary>💡 Sample prompt - expand if stuck</summary>
 
-This is a part of the codebase you haven't worked in. You'll be touching the search view, the manager, and the search component for the first time.
+```
+Add an author search to the post search endpoint. Filter by username, case-insensitive, combinable with the existing title search. You don't need to touch the search page's UI for this, just the backend. Tell me how to test it directly in the browser.
+```
 
-As you work, watch for three things your `CLAUDE.md` rules should be producing:
+</details>
 
-- **Understand-first.** Does Claude explain the existing search view before proposing changes? You're in unfamiliar code. The understand-first rule should kick in.
-- **TDD.** Does Claude write tests before modifying the view?
-- **Conventions.** Does Claude match the existing `@api_view` pattern and queryset style in the search view?
+**After Claude responds:**
 
-If any of these aren't happening, check your `CLAUDE.md`. The rules might need to be clearer, or Claude might need a nudge. Either way, you're learning what makes a good entry.
+- Did it explain the existing search code before touching it?
+- Did it write a test before implementing, or did someone have to ask for one?
+- Does the new code look like it belongs in that file, or does it look bolted on?
 
-## Debrief
+Test it by visiting the endpoint directly in your browser (something like `http://localhost:8088/posts/search?author=<username>`). Record what you noticed in `claude-md-notes.md`, then each person commits:
 
-Compare this exercise to Exercise 5.1 Part 1. Think about the process, not just the result.
+```bash
+git add -A
+git commit -m "Add author search"
+git push
+```
 
-1. How did Claude's approach differ? What did it do first?
-2. Did the understand-first rule help you learn the search code you'd never read before?
-3. Did anything come up during this exercise that's worth adding to your `CLAUDE.md`?
+---
 
-That last question matters. Hold onto your answer for the next chapter.
+### 6. One more thing to capture
 
-If anything came up during Exercise 5.2 that felt worth writing down, go add it to your `CLAUDE.md` now. That instinct is the whole point of this chapter.
+Before you move on: did anything in step 5 come up that's worth adding to `CLAUDE.md` right now, while it's fresh? If so, add it and commit again. Noticing something worth writing down and doing it immediately - that's the whole point of today.
 
-## Checkpoint
+---
 
-By the end of this module, you should have:
-
-- A working `CLAUDE.md` at `rare-project/CLAUDE.md` that changes Claude's behavior on a cold start.
-- Post count working on user profiles (Exercise 5.1).
-- Author search working on the search page (Exercise 5.2).
-- Tests for the post count feature.
-- The ability to explain what's in your `CLAUDE.md` and why each entry is there.
+We'll reconvene as a full group to compare notes across teams.
