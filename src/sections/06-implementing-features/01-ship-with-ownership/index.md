@@ -46,7 +46,3 @@ When Claude handles the bulk of an implementation and you review the result, tha
 Module V's sixth step of the loop still matters here. After each feature, ask: did I learn something a teammate starting tomorrow would need to know? If yes, add it to `CLAUDE.md`. If it's specific to one debugging session, leave it out.
 
 You'll be moving faster this module. The instinct to skip Capture when things go smoothly is the moment it matters most.
-
-## What's coming
-
-The rest of this module is hands-on. Your team has bug reports and feature requests. You'll work through them using the full loop, choosing your own modes, writing your own prompts, and committing code you can walk through line by line.
