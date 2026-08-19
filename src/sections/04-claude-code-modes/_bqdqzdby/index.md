@@ -1,90 +1,143 @@
-## Exercise 4.1: Same task, three modes
+You've read about the [loop](https://nss-workshops.github.io/agentic-ai/llms-and-prompting-from-llm-to-agent) and Claude Code's modes. Today you'll feel the difference by working through one real request end-to-end, choosing your mode on purpose at every step instead of staying in whatever mode Claude Code happens to already be in.
 
-Time to feel the difference. You'll do the same small task three times, once in each mode, and notice how the experience changes.
+The goal isn't just to get author names linking to profiles. It's to notice which mode helped you actually understand the code, which mode felt fastest, and which mode you stayed in real control of the whole way through.
 
-**The task:** Display the comment count in the Comments section heading on the post detail page. Right now the heading just says "Comments." After the change, it should show the actual count.
+> **Working in groups today.** Talk through each step together. Read Claude's response as a group, and decide together whether a proposed change is right before anyone approves it. When you're ready to commit, each person applies the agreed change in their own `rare-project/` and commits individually. Rotate who's at the keyboard each step so everyone gets time driving.
 
-### Round 1: Plan mode
+---
+## Setup
+From the project root `rare-project`:
+```bash
+cd rare-api
+```
 
-Switch to plan mode (Shift+Tab until the mode indicator reads "Plan"). Describe the task to Claude Code and ask it to investigate the relevant component and propose an approach. Read what comes back. Notice: no files changed.
+## Your Task
 
-When you're done, revert any changes (there shouldn't be any, but just in case): `git checkout -- rare-client/src/`
+Renee wants author names on the post detail page to link to that author's profile.
 
-### Round 2: Ask before edits
+Work through the request as a group using the loop - Understand → Plan → Build → Confirm. At each step, choose a mode on purpose and record why in `mode-log.md`.
 
-Switch back to the default mode. Describe the same task. This time Claude will propose specific file edits and wait for your approval. Read each proposed change before accepting.
+Create `mode-log.md` at the root of `rare-api/`. You'll commit it as you go - the first commit can be right after step 1.
 
-When you're done, revert: `git checkout -- rare-client/src/`
+<details>
+<summary>📋 mode-log.md TEMPLATE <strong>👉 expand to copy 👈</strong></summary>
 
-### Round 3: Edit automatically
+```markdown
+# Mode Log - Author Link
 
-Switch to Edit automatically. Describe the same task again. Watch what happens.
+## 1. Understand
+- Mode used:
+- What you asked Claude:
+- What Claude found:
+- What did you verify yourselves, and how?
 
-Check the result: does it work? Read the diff with `git diff`. Then revert: `git checkout -- rare-client/src/`
+## 2. Plan
+- The smallest fix, in one sentence:
 
-### Reflect
+## 3. Build
+- Mode used:
+- Why that mode, and not one of the others?
+- What changed:
 
-After all three rounds, write down:
+## 4. Confirm
+- What you tested:
+- Result:
 
-- Which mode gave you the best understanding of the code you were about to change?
-- Which mode got to a working result fastest?
-- In which mode did you feel most in control?
-- Which step of the loop (Understand, Plan, Break down, Build, Confirm) did each mode support best?
+## 5. Stretch (optional)
+- What you tried:
+- Mode used:
+- What you noticed:
+```
 
-There's no single right answer. The point is to notice the trade-offs so you can make deliberate choices going forward.
+</details>
 
-> **Renee sends you a message on Slack.**
+---
+
+### 1. Understand
+
+> **📣 Renee sends your group a message on Slack.**
 >
 > > **Renee** 2:14 PM
 > > Readers keep asking about this: when I'm reading a post and I see the author's name, clicking it should take me to their profile. Should be an easy one, right?
->
-> You give her message a thumbs-up and open Claude Code.
 
-## Exercise 4.2: Investigate the author link
+Switch to **Plan mode** (Shift+Tab until the mode indicator reads "Plan"). Open a terminal at `rare-project/` and start Claude Code:
 
-Renee wants clickable author names on the post detail page. Before you touch any code, switch to plan mode and investigate.
+```bash
+claude
+```
 
-Your goal is to answer three questions before writing a single line:
+Ask Claude to investigate. Don't fix anything yet.
 
-1. **Where does the author's name appear?** Which component renders it, and how?
-2. **Does a profile page already exist?** If so, what route serves it, and does it work for all authenticated users?
-3. **What's the smallest change that connects the two?**
+<details>
+<summary>💡 Sample prompt - expand if stuck</summary>
 
-Start in plan mode. Craft a prompt based on what Renee asked for and what you want to learn. Let Claude investigate. Read what comes back. Chase anything you want to verify (remember Module III, Chapter 4: "which file did you find this in?").
+```
+Renee wants the author's name on the post detail page to link to that author's profile. Before we change anything: where does the author's name currently render, does a profile page already exist, and if so what route serves it? Does it work for any logged-in user or just the post's own author? Don't propose or make any edits yet, just explain what's there.
+```
 
-Once you have answers to all three questions, switch to ask-before-edits mode and implement the fix. It should be small.
+</details>
 
-Test it: navigate to a post, click the author's name. Do you land on their profile? Does the profile page display correctly? Try it for a post you didn't write, too.
+**After Claude responds:**
 
-Commit when it works.
+As a group, decide: does a profile page already exist? Who can view it? Open whatever file(s) Claude points to and check for yourselves, don't just take its word for it. This is the habit from exploring an unknown codebase in  Module III: which file did you find that in?
 
-> **Devon sends you a message on Slack.**
->
-> > **Devon** 9:41 AM
-> > I'm sure you've noticed by now that rare-client is running on Create React App. CRA has been deprecated since early 2025, it's no longer maintained, the dev server is slow, and every `npm install` dumps a wall of security warnings we can't fix. We need to migrate to Vite. 
->
-> This is exactly the kind of task where diving straight to edits will break things. How should you tackle this?
+Record what you asked and what you found in `mode-log.md`.
 
-## Exercise 4.3: Migrate rare-client from CRA to Vite
+---
 
-This is the biggest exercise in the module and the one that pulls the whole loop together.
+### 2. Plan
 
-Devon wants the CRA-to-Vite migration, what mode should you start in? The loop for this task:
+Still as a group: what's the smallest change that connects the author's name to the profile page that's already there? Say it in one sentence and write it in `mode-log.md`.
 
-**Understand.** What does CRA actually provide? What does `react-scripts` handle that you'll need to replace? What CRA-specific files and configuration exist in `rare-client` right now?
+Then decide, out loud, which mode fits the Build step for a change this size in a file you only partly understand: *"We're using ___ mode because ___."*
 
-**Plan.** Which files need to be added, changed, or deleted? What's the order of operations? What could break?
+---
 
-**Break down.** Split the plan into steps small enough to verify individually. A migration that changes config, scripts, and entry points all at once is hard to debug when something goes wrong.
+### 3. Build
 
-**Build.** Switch to ask-before-edits and implement one step at a time. Review each proposed change before approving it.
+Switch to the mode your group picked. Ask Claude to make the change.
 
-**Confirm.** After the migration: does `npm run dev` start the dev server? Does the app load in the browser? Can you log in and navigate around? Does the build (`npm run build`) succeed?
+<details>
+<summary>💡 Sample prompt - expand if stuck</summary>
 
-One more thing to watch for: you wrote a getting-started guide in Module III (Exercise 3.5). If that guide mentions `npm start` as the command to start the client, that's no longer correct after this migration. If you notice and update it, good instinct.
+```
+Wrap the author's name in a link to their profile page, using the route you found. Keep the change as small as possible. Don't touch anything else.
+```
 
-### Checkpoint
+</details>
 
-- Author names on the post detail page link to the author's profile, and the profile page loads correctly.
-- rare-client runs on Vite. `npm run dev` starts the dev server and the app works.
-- You can name the five steps of the loop and explain which mode fits which step.
+**After Claude responds:**
+
+Read the proposed diff together *before* anyone approves it. Does it match the one-sentence plan you wrote down? Is it touching anything you didn't expect? Approve it once the group agrees it's right.
+
+Record what changed in `mode-log.md`.
+
+---
+
+### 4. Confirm
+
+Run the app. As a group, check:
+
+- Click the author's name on a post one of you wrote. Does it go to your own profile?
+- Click the author's name on a post someone else in the group wrote. Does it go to their profile?
+- Does the profile page load correctly either way?
+
+Record what you tested and the result. Once it works, each person commits the change in their own `rare-api/`:
+
+```bash
+git add -A
+git commit -m "Link author name to profile"
+git push
+```
+
+---
+
+### 5. Stretch (optional)
+
+If your group finishes early: ask Claude to point out one more spot in the app with the same kind of gap (something that could link somewhere useful but doesn't), and fix that one in **Edit automatically** mode instead. Still read the diff afterward. Edit automatically skips the approval prompt, it doesn't skip Confirm.
+
+Record what you tried and what felt different about that mode in `mode-log.md`.
+
+---
+
+Once `mode-log.md` is committed, take a breath. We'll reconvene as a full group to compare notes across teams.
