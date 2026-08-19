@@ -5,6 +5,11 @@ The goal isn't just to get author names linking to profiles. It's to notice whic
 > **Working in groups today.** Talk through each step together. Read Claude's response as a group, and decide together whether a proposed change is right before anyone approves it. When you're ready to commit, each person applies the agreed change in their own `rare-project/` and commits individually. Rotate who's at the keyboard each step so everyone gets time driving.
 
 ---
+## Setup
+From the project root `rare-project`:
+```bash
+cd rare-api
+```
 
 ## Your Task
 
@@ -12,7 +17,7 @@ Renee wants author names on the post detail page to link to that author's profil
 
 Work through the request as a group using the loop - Understand → Plan → Build → Confirm. At each step, choose a mode on purpose and record why in `mode-log.md`.
 
-Create `mode-log.md` at the root of `rare-project/`. You'll commit it as you go - the first commit can be right after step 1.
+Create `mode-log.md` at the root of `rare-api/`. You'll commit it as you go - the first commit can be right after step 1.
 
 <details>
 <summary>📋 mode-log.md TEMPLATE <strong>👉 expand to copy 👈</strong></summary>
@@ -117,7 +122,7 @@ Run the app. As a group, check:
 - Click the author's name on a post someone else in the group wrote. Does it go to their profile?
 - Does the profile page load correctly either way?
 
-Record what you tested and the result. Once it works, each person commits the change in their own `rare-project/`:
+Record what you tested and the result. Once it works, each person commits the change in their own `rare-api/`:
 
 ```bash
 git add -A
