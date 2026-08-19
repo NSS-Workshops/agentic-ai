@@ -1,4 +1,4 @@
-You just spent a whole class explaining things to Claude Code that it forgot the second the session ended. Today you write some of that down, and then prove to yourselves it actually changes how Claude behaves.
+For each class you've been spending time explaining things to or asking things from Claude Code, but the moment a particular session ends all of that context is forgotten. Today you will make more persistent context by writing some rules Claude can follow for each session, and then proving to yourselves it actually changes how Claude behaves.
 
 > **Working in groups today.** Discuss and build each part together, but each person keeps their own `rare-project/` running. When your group agrees a step is done, everyone commits it individually in their own copy. Rotate who's at the keyboard.
 

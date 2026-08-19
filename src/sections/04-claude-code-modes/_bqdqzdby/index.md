@@ -1,4 +1,4 @@
-You've read about the loop and Claude Code's modes. Today you'll feel the difference by working through one real request end-to-end, choosing your mode on purpose at every step instead of staying in whatever mode Claude Code happens to already be in.
+You've read about the [loop](https://nss-workshops.github.io/agentic-ai/llms-and-prompting-from-llm-to-agent) and Claude Code's modes. Today you'll feel the difference by working through one real request end-to-end, choosing your mode on purpose at every step instead of staying in whatever mode Claude Code happens to already be in.
 
 The goal isn't just to get author names linking to profiles. It's to notice which mode helped you actually understand the code, which mode felt fastest, and which mode you stayed in real control of the whole way through.
 
