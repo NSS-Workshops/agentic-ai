@@ -11,7 +11,7 @@ git branch context
 git branch no-context
 ```
 
-These two branches are the whole point: `no-context` never gets a `CLAUDE.md` — that's your control group. `context` gets one partway through and keeps it. Keep opening Claude Code in `rare-project/` as usual — that doesn't change today. What changes is that `rare-api/` is the only one of the two folders that's an actual git repo, so every branch switch in this exercise happens there, in a terminal, alongside your Claude Code session.
+Since we want to examine how Claude operates with and without a `CLAUDE.md` file we need these two branches so we can switch between the two. The `no-context` branch never gets a `CLAUDE.md` — that's your control group. The `context` branch gets the file partway through and keeps it. Keep opening Claude Code in `rare-project/` as usual, that doesn't change today. We will, however, be doing all our work in the `rare-api/` directory because it's been initialized for git, so every branch switch in this exercise happens in `rare-api`, in a terminal, alongside your Claude Code session.
 
 You'll be switching branches back and forth, so keep `claude-md-notes.md` at the root of `rare-project/` while you work, not inside `rare-api/`. It sits outside the repo entirely, so it won't vanish or conflict when you switch branches. You'll move it into `rare-api/` and commit it once, at the very end.
 
