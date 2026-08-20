@@ -9,10 +9,9 @@ From your root directory `rare-project`:
 cd rare-api
 git branch context
 git branch no-context
-git switch no-context
 ```
 
-These two branches are the whole point: `no-context` never gets a `CLAUDE.md` — that's your control group. `context` gets one partway through and keeps it. Keep opening Claude Code in `rare-project/` as usual — that doesn't change today. What changes is that `rare-api/` is the only one of the two folders that's an actual git repo, so every branch switch, commit, and push you do in this exercise happens there, in a terminal, alongside your Claude Code session.
+These two branches are the whole point: `no-context` never gets a `CLAUDE.md` — that's your control group. `context` gets one partway through and keeps it. Keep opening Claude Code in `rare-project/` as usual — that doesn't change today. What changes is that `rare-api/` is the only one of the two folders that's an actual git repo, so every branch switch in this exercise happens there, in a terminal, alongside your Claude Code session.
 
 You'll be switching branches back and forth, so keep `claude-md-notes.md` at the root of `rare-project/` while you work, not inside `rare-api/`. It sits outside the repo entirely, so it won't vanish or conflict when you switch branches. You'll move it into `rare-api/` and commit it once, at the very end.
 
@@ -50,12 +49,17 @@ Record what you notice in `claude-md-notes.md` as you go. Create it at the root 
 
 ---
 
+```bash
+cd rare-api
+git switch no-context
+```
+
 ### 1. Ship it - no `CLAUDE.md` yet
 
 > **📣 Renee sends your group a message on Slack.**
 >
 > > **Renee** 10:15 AM
-> > Quick feature request. When you look at someone's profile, we show their subscriber count but not how many posts they've published. Can you add a post count? Should only count their approved posts.
+> > Quick feature request. When you look at someone's profile, we don't show how many posts they've published. Can you add a post count? Should only count their approved posts.
 
 Confirm you're on the `no-context` branch (`git status` in `rare-api/`). Open Claude Code in `rare-project/`. There's no `CLAUDE.md` yet, so nothing about this team's conventions is preloaded. As a group, describe the feature and watch what Claude does with it.
 
@@ -63,19 +67,12 @@ Confirm you're on the `no-context` branch (`git status` in `rare-api/`). Open Cl
 <summary>💡 Sample prompt - expand if stuck</summary>
 
 ```
-Add a post count to user profiles, approved posts only. There's already a subscriber count on profiles working the same way. Find that pattern and follow it.
+Add a post count to user profiles, approved posts only.
 ```
 
 </details>
 
-**After Claude responds:** Did it explain the existing pattern before building, or go straight to code? Did it write a test on its own, without being asked? Record what you notice in `claude-md-notes.md`. Confirm the feature actually works by checking a profile with posts and a profile without any. Then each person commits it individually, in `rare-api/`:
-
-```bash
-cd rare-api
-git add -A
-git commit -m "Add post count to profiles"
-git push -u origin no-context
-```
+**After Claude responds:** Did it explain the pattern before building, or go straight to code? Did it write a test on its own, without being asked? Record what you notice in `claude-md-notes.md`. Confirm the feature actually works by checking a profile with posts and a profile without any.
 
 ---
 
@@ -108,16 +105,6 @@ Add what's missing, **in your own words** (don't paste Devon's message in verbat
 
 Record which entries you added and why in `claude-md-notes.md`.
 
-When your group agrees it's solid, move the file into `rare-api/` before committing — that's the copy that needs to differ between your two branches, not the one at `rare-project/`'s root, which isn't tracked by git at all:
-
-```bash
-mv CLAUDE.md rare-api/CLAUDE.md
-cd rare-api
-git add CLAUDE.md
-git commit -m "Add CLAUDE.md"
-git push -u origin context
-```
-
 Each person does this in their own copy.
 
 ---
@@ -125,8 +112,6 @@ Each person does this in their own copy.
 ### 4. Start fresh
 
 Close Claude Code and reopen it (or run `/clear`) in `rare-project/`. This matters! You're about to find out whether the file you just wrote actually changes anything, and it needs to load into a clean session to be a fair test.
-
-Note that `CLAUDE.md` now lives at `rare-api/CLAUDE.md`, not at the `rare-project/` root — Claude Code picks up a subdirectory's `CLAUDE.md` once it starts working with files there, which happens naturally here since the next feature is backend work in `rare-api/`.
 
 ---
 
@@ -154,45 +139,15 @@ Add an author search to the post search endpoint. Filter by username, case-insen
 - Did it write a test before implementing, or did someone have to ask for one?
 - Does the new code look like it belongs in that file, or does it look bolted on?
 
-Test it by visiting the endpoint directly in your browser (something like `http://localhost:8088/posts/search?author=<username>`). Record what you noticed in `claude-md-notes.md`, then each person commits, still on the `context` branch:
-
-```bash
-cd rare-api
-git add -A
-git commit -m "Add author search"
-git push
-```
+Test it by visiting the endpoint directly in your browser (something like `http://localhost:8088/posts/search?author=<username>`). Record what you noticed in `claude-md-notes.md`.
 
 ---
 
 ### 6. One more thing to capture
 
-Before you move on: did anything in step 5 come up that's worth adding to `CLAUDE.md` right now, while it's fresh? If so, add it (still `rare-api/CLAUDE.md`, on the `context` branch) and commit again:
-
-```bash
-cd rare-api
-git add CLAUDE.md
-git commit -m "Update CLAUDE.md with what we learned"
-git push
-```
+Before you move on: did anything in step 5 come up that's worth adding to `CLAUDE.md` right now, while it's fresh? For instance, how were the filters combined? Was there a case-sensitive search convention? Did Claude recognize it or not? What happens on empty string or missing query params? If any convention Claude guessed at instead of matching exactly, a business rule it missed or a boundary it didn't respect that should to be added to CLAUDE.md, add it now (still `rare-project/CLAUDE.md`, on the `context` branch).
 
 Noticing something worth writing down and doing it immediately - that's the whole point of today.
-
----
-
-### 7. Save your notes
-
-`claude-md-notes.md` has been sitting at the root of `rare-project/` this whole time, untouched by any of the branch switches. Move it into `rare-api/` now and commit it, still on the `context` branch:
-
-```bash
-mv claude-md-notes.md rare-api/
-cd rare-api
-git add claude-md-notes.md
-git commit -m "Add CLAUDE.md comparison notes"
-git push
-```
-
-This is the only place any of today's work is actually saved — `rare-project/` itself was never tracked by git, so nothing left sitting there survives past your local machine.
 
 ---
 
